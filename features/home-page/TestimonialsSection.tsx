@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
           <h2 className="mb-4 gradient-text">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-shadow-md max-w-3xl mx-auto">
+          <p className="text-xl text-shadow-md font-normal max-w-3xl mx-auto">
             We've helped businesses across various industries achieve their
             technology goals.
           </p>

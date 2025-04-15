@@ -42,7 +42,7 @@ const ServicesSection = () => {
           <h2 className="mb-4 heading-gradient">
             Our Services
           </h2>
-          <p className="text-xl text-shadow-md max-w-3xl mx-auto">
+          <p className="text-xl text-shadow-md font-normal max-w-3xl mx-auto">
             We provide comprehensive technology solutions to help small
             businesses thrive in the digital age.
           </p>

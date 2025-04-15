@@ -27,7 +27,7 @@ const ValuePropositionSection = () => {
             <h3 className="text-lg text-white text-shadow-lg font-semibold mb-2">
               {feature.title}
             </h3>
-            <p className="text-sm text-white text-shadow-md leading-relaxed">
+            <p className="text-sm text-white text-shadow-md font-normal leading-relaxed">
               {feature.description}
             </p>
           </motion.div>

@@ -14,7 +14,7 @@ const Blog = ({ posts }: { posts: BlogPost[] }) => {
     <section className="py-12">
       <div className="container mx-auto text-center mb-8">
         <h2 className="font-bold mb-4 heading-gradient">Latest from Our Blog</h2>
-        <p className="text-xl max-w-75 md:max-w-3xl mx-auto">Stay updated with our insightful articles.</p>
+        <p className="text-xl font-normal max-w-75 md:max-w-3xl mx-auto">Stay updated with our insightful articles.</p>
       </div>
       <div className="w-full max-w-75 md:max-w-2xl lg:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (

@@ -43,7 +43,7 @@ const CTASection = () => {
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl text-primary mb-8"
+                className="text-xl text-primary font-normal mb-8"
               >
                 Let's discuss how our technology solutions can help your
                 business grow, increase efficiency, and stay ahead of the
@@ -70,7 +70,7 @@ const CTASection = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-primary text-primary hover:bg-primary/10"
+                    className="border-primary text-primary font-normal hover:bg-primary/10"
                   >
                     Explore Our Services
                   </Button>

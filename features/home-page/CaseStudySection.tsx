@@ -24,7 +24,7 @@ const CaseStudySection = () => {
           <h2 className="mb-4 heading-gradient">
             Featured Case Study
           </h2>
-          <p className="text-xl text-shadow-md max-w-3xl mx-auto">
+          <p className="text-xl text-shadow-md font-normal max-w-3xl mx-auto">
             See how we've helped our clients achieve remarkable results.
           </p>
         </motion.div>
@@ -66,7 +66,7 @@ const CaseStudySection = () => {
                   How RetailPlus Increased Sales by 45% with AI-Powered
                   Inventory Management
                 </h3>
-                <p className="mb-6">
+                <p className="font-normal mb-6">
                   RetailPlus, a growing chain of specialty stores, was
                   struggling with inventory management and customer engagement.
                   We implemented a custom AI solution that optimized their
@@ -76,11 +76,11 @@ const CaseStudySection = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-background/50 p-4 rounded-lg">
                     <p className="text-3xl">45%</p>
-                    <p>Increase in Sales</p>
+                    <p className="font-normal">Increase in Sales</p>
                   </div>
                   <div className="bg-background/50 p-4 rounded-lg">
                     <p className="text-3xl">60%</p>
-                    <p>
+                    <p className="font-normal">
                       Reduction in Stockouts
                     </p>
                   </div>
