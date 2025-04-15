@@ -39,12 +39,10 @@ const ServicesSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="mb-4 heading-gradient">
-            Our Services
-          </h2>
+          <h2 className="mb-4 heading-gradient">Our Services</h2>
           <p className="text-xl text-shadow-md font-normal max-w-3xl mx-auto">
-            We provide comprehensive technology solutions to help small
-            businesses thrive in the digital age.
+            Helping small businesses succeed through smart, scalable technology
+            solutions.
           </p>
         </motion.div>
 
@@ -78,13 +76,17 @@ const ServicesSection = () => {
                     <h3 className="text-base md:text-sm text-shadow-md font-semibold uppercase">
                       {service.title}
                     </h3>
-                    <p className="text-white max-md:text-xl text-shadow-lg font-semibold">{service.short}</p>
+                    <p className="text-white max-md:text-xl text-shadow-lg font-semibold">
+                      {service.short}
+                    </p>
                   </div>
 
                   <div
                     className={`mt-4 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100 transform translate-x-full opacity-0`}
                   >
-                    <p className="text-[14px] text-white max-md:text-lg text-shadow-md font-normal">{service.description}</p>
+                    <p className="text-[14px] text-white max-md:text-lg text-shadow-md font-normal">
+                      {service.description}
+                    </p>
                     <Link href={service.link} className="mt-4 block">
                       <Button
                         variant="outline"
@@ -107,14 +109,17 @@ const ServicesSection = () => {
           className="text-center mt-12"
         >
           <Link href="/services">
-            <Button size="lg" className="bg-primary rounded-full hover:bg-primary/90">
+            <Button
+              size="lg"
+              className="bg-primary rounded-full hover:bg-primary/90"
+            >
               View All Services
             </Button>
           </Link>
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default ServicesSection;

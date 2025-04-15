@@ -22,6 +22,17 @@ export const metadata: Metadata = {
   title: "Solver Deck",
   description:
     "AI Integration, Automation, and Custom Software Solutions for Growth-Focused Businesses",
+  keywords: [
+    "Solver Deck",
+    "AI Integration",
+    "Automation",
+    "Custom Software",
+    "Business Solutions",
+    "Growth-Focused",
+    "Tech Consultation",
+    "Tech Consultant",
+    "solverdeck.ai",
+  ],
 };
 
 export default function RootLayout({
@@ -31,7 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
+      <body
+        className={`${inter.variable} ${poppins.variable} font-sans bg-[#050e28]`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -19,7 +19,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">
-              Solver Deck
+              SolverDeck
             </h3>
             <p className="text-muted-foreground mb-4">
               Transforming small businesses through intelligent technology
@@ -146,7 +146,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Solver Deck. All rights reserved.
+            © {new Date().getFullYear()} SolverDeck. All rights reserved.
           </p>
           <div className="mt-2 space-x-4">
             <Link

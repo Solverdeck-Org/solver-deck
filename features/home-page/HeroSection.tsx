@@ -71,7 +71,7 @@ const HeroSection = () => {
                   variant="outline"
                   className="border-primary text-primary rounded-full hover:bg-primary/10"
                 >
-                  Book a Free Consultation
+                  Book a Consultation
                 </Button>
               </Link>
             </motion.div>

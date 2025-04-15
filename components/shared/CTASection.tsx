@@ -61,16 +61,16 @@ const CTASection = () => {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                    className="w-50 bg-primary hover:bg-primary/90 text-primary-foreground"
                   >
-                    Schedule a Free Consultation
+                    Schedule a Consultation
                   </Button>
                 </Link>
                 <Link href="/services">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-primary text-primary font-normal hover:bg-primary/10"
+                    className="w-50 border-primary text-primary font-normal hover:bg-primary/10"
                   >
                     Explore Our Services
                   </Button>

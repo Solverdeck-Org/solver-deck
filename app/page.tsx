@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <ValuePropositionSection />      
       <ServicesSection />
+      <ValuePropositionSection />      
       <TestimonialsSection />
       <CaseStudySection />
       <BlogSection />

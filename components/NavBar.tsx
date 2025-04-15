@@ -42,6 +42,7 @@ const NavBar = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
+                className="flex items-center gap-2"
               >
                 <Image
                   src="/sd.png"
@@ -50,6 +51,7 @@ const NavBar = () => {
                   height={30}
                   priority
                 />
+                <h3 className="text-[#050e28]">SolverDeck</h3>
               </motion.div>
             </Link>
           </div>
