@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { features } from "@/data/features";
+import StatsCard from "@/components/StatsCard";
 
 const ValuePropositionSection = () => {
   return (
@@ -34,17 +35,7 @@ const ValuePropositionSection = () => {
         ))}
       </div>
 
-      <div className="flex justify-center gap-28">
-        <div className="flex flex-col gap-4 bg-background/50 p-4 rounded-lg">
-          <h2 className="text-7xl">25+</h2>
-          <p className="text-4xl">Clients Worldwide</p>
-        </div>
-
-        <div className="flex flex-col gap-4 bg-background/50 p-4 rounded-lg">
-          <h2 className="text-7xl">30+</h2>
-          <p className="text-4xl">Projects Completed</p>
-        </div>
-      </div>
+      <StatsCard />
     </section>
   );
 };
