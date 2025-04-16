@@ -10,7 +10,7 @@ const ValuePropositionSection = () => {
         Why Choose Us?
       </h2>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -32,6 +32,18 @@ const ValuePropositionSection = () => {
             </p>
           </motion.div>
         ))}
+      </div>
+
+      <div className="flex justify-center gap-28">
+        <div className="flex flex-col gap-4 bg-background/50 p-4 rounded-lg">
+          <h2 className="text-7xl">25+</h2>
+          <p className="text-4xl">Clients Worldwide</p>
+        </div>
+
+        <div className="flex flex-col gap-4 bg-background/50 p-4 rounded-lg">
+          <h2 className="text-7xl">30+</h2>
+          <p className="text-4xl">Projects Completed</p>
+        </div>
       </div>
     </section>
   );

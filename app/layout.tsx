@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "Solver Deck",
   description:
     "AI Integration, Automation, and Custom Software Solutions for Growth-Focused Businesses",
+    icons: {
+      icon: '/favicon.ico',
+    },
   keywords: [
     "Solver Deck",
     "AI Integration",
