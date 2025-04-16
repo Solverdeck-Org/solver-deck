@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { technologies } from "@/data/technologies";
+import { OrbitingCirclesDemo } from "@/components/OrbitingCirclesDemo";
 
 const TechnologiesSection = () => {
   const ref = useRef(null);
@@ -49,23 +50,9 @@ const TechnologiesSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8"
+          className="flex"
         >
-          {technologies.map((tech, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="flex items-center justify-center"
-            >
-              <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 w-full h-24 flex items-center justify-center">
-                <img
-                  src={tech.image || "/placeholder.svg"}
-                  alt={tech.name}
-                  className="max-h-12 max-w-full"
-                />
-              </div>
-            </motion.div>
-          ))}
+          <OrbitingCirclesDemo />
         </motion.div>
       </div>
     </section>

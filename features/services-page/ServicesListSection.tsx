@@ -42,15 +42,13 @@ const ServicesListSection = () => {
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-[#050e28]/50 backdrop-blur-sm p-0">
-                <CardContent className="p-0">
-                  <div className="flex flex-col md:flex-row">
-                    <div className="md:w-1/3 bg-blue-800/10 p-6 flex justify-center items-center">
+                <CardContent className="p-0 h-full">
+                  <div className="flex flex-col md:flex-row h-full">
+                    <div className="md:w-1/3 bg-blue-800/10 p-6 flex justify-center items-center h-full">
                       <service.icon className="h-16 w-16 text-primary" />
                     </div>
                     <div className="md:w-2/3 p-6">
-                      <h3 className="mb-3 heading-gradient">
-                        {service.title}
-                      </h3>
+                      <h3 className="mb-3 heading-gradient">{service.title}</h3>
                       <p className="text-muted-foreground mb-4">
                         {service.description}
                       </p>
@@ -69,10 +67,7 @@ const ServicesListSection = () => {
                       </ul>
 
                       <Link href={service.link}>
-                        <Button
-                          variant="outline"
-                          className="w-full border-primary text-primary hover:bg-primary/5"
-                        >
+                        <Button className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:brightness-110 transition">
                           Learn More
                         </Button>
                       </Link>
