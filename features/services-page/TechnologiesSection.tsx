@@ -40,7 +40,7 @@ const TechnologiesSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
             Technologies We Work With
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             We leverage the latest technologies and platforms to deliver
             cutting-edge solutions.
           </p>

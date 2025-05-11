@@ -9,7 +9,7 @@ const ProcessSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section className="py-16 md:py-24 bg-background/30" ref={ref}>
+    <section className="py-16 md:py-24" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ const ProcessSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
             Our Process
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             We follow a structured approach to ensure successful implementation
             and measurable results.
           </p>
@@ -28,7 +28,7 @@ const ProcessSection = () => {
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 transform -translate-x-1/2 hidden md:block"></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-[#193cb8] transform -translate-x-1/2 hidden md:block"></div>
 
           <div className="space-y-12 md:space-y-0 relative">
             {processSteps.map((step, index) => (
@@ -44,17 +44,17 @@ const ProcessSection = () => {
                 <div
                   className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}
                 >
-                  <h3 className="text-2xl font-bold mb-2 gradient-text">
+                  <h3 className="text-2xl font-bold mb-2 text-[#193cb8]">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <p className="text-black">{step.description}</p>
                 </div>
 
                 <div className="my-4 md:my-0 relative">
-                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl z-10 relative">
+                  <div className="w-16 h-16 rounded-full bg-[#193cb8] flex items-center justify-center text-white font-bold text-xl z-10 relative">
                     {step.number}
                   </div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-primary/10 animate-pulse"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-[#193cb8]/50 animate-pulse"></div>
                 </div>
 
                 <div className="md:w-1/2"></div>

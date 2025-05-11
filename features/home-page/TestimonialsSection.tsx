@@ -9,7 +9,7 @@ const TestimonialsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-16 md:py-24 bg-[#050e28]" ref={ref}>
+    <section className="py-16 md:py-24 bg-white" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,10 +17,10 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="mb-4 gradient-text">
+          <h2 className="mb-4 text-[#193cb8] font-bold text-3xl">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-shadow-md font-normal max-w-3xl mx-auto">
+          <p className="text-xl font-normal max-w-3xl mx-auto text-black">
             We've helped businesses across various industries achieve their
             technology goals.
           </p>

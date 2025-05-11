@@ -41,15 +41,15 @@ const ServicesListSection = () => {
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-[#050e28]/50 backdrop-blur-sm p-0">
+              <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white shadow-md p-0">
                 <CardContent className="p-0 h-full">
                   <div className="flex flex-col md:flex-row h-full">
                     <div className="md:w-1/3 bg-blue-800/10 p-6 flex justify-center items-center h-full">
-                      <service.icon className="h-16 w-16 text-primary" />
+                      <service.icon className="h-16 w-16 text-[#193cb8]" />
                     </div>
                     <div className="md:w-2/3 p-6">
                       <h3 className="mb-3 heading-gradient">{service.title}</h3>
-                      <p className="text-muted-foreground mb-4">
+                      <p className="text-black mb-4">
                         {service.description}
                       </p>
 
@@ -57,9 +57,9 @@ const ServicesListSection = () => {
                         {service.features.map((feature, i) => (
                           <li key={i} className="flex items-start">
                             <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center mr-2 mt-0.5">
-                              <div className="h-2 w-2 rounded-full bg-primary"></div>
+                              <div className="h-2 w-2 rounded-full bg-black"></div>
                             </div>
-                            <span className="text-foreground/80">
+                            <span className="text-black">
                               {feature}
                             </span>
                           </li>
@@ -67,7 +67,7 @@ const ServicesListSection = () => {
                       </ul>
 
                       <Link href={service.link}>
-                        <Button className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:brightness-110 transition">
+                        <Button className="w-full bg-[#193cb8] text-white hover:bg-[#193cb8]/90">
                           Learn More
                         </Button>
                       </Link>

@@ -21,18 +21,18 @@ export const blogs = [
     slug: 'remote-work-strategies',
     title: 'Effective Strategies for Successful Remote Work',
     excerpt: 'Master the art of remote work with our proven tips and techniques to enhance productivity, collaboration, and well-being...',
-    thumbnail: 'https://via.placeholder.com/600/c0c0c0', // Replace with actual image URL
+    thumbnail: '/cyber-sec.jpg',
   },
   {
     slug: 'data-analytics-for-growth',
     title: 'Leveraging Data Analytics to Drive Business Growth',
     excerpt: 'Understand how data analytics can unlock valuable insights, inform decision-making, and fuel sustainable growth for your business...',
-    thumbnail: 'https://via.placeholder.com/600/b0b0b0', // Replace with actual image URL
+    thumbnail: '/cyber-sec.jpg',
   },
   {
     slug: 'the-importance-of-ux-design',
     title: 'The Critical Importance of User Experience (UX) Design',
     excerpt: 'Explore why a user-centric approach to design is essential for creating successful products and services that delight your customers...',
-    thumbnail: 'https://via.placeholder.com/600/a0a0a0', // Replace with actual image URL
+    thumbnail: '/cloud-comp.jpg',
   },
 ];

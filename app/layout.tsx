@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans bg-[#050e28]`}
+        className={`${inter.variable} ${poppins.variable} font-sans bg-white`}
       >
         <ThemeProvider
           attribute="class"

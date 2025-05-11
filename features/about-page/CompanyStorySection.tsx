@@ -23,7 +23,7 @@ const CompanyStorySection = () => {
 
             <div className="space-y-4 text-muted-foreground">
               <p>
-                TechInnovate was founded in 2018 by a group of technology
+                SolverDeck was founded in 2018 by a group of technology
                 experts who saw that small businesses were being left behind in
                 the AI and automation revolution. While enterprise companies had
                 the resources to implement cutting-edge technology, smaller
@@ -46,17 +46,17 @@ const CompanyStorySection = () => {
             </div>
 
             <div className="mt-8 space-y-4">
-              <div className="border-l-4 border-primary pl-4">
+              <div className="border-l-4 border-[#193cb8] pl-4">
                 <h3 className="font-bold gradient-text">Our Mission</h3>
-                <p className="text-muted-foreground">
+                <p className="text-black">
                   To empower small businesses with enterprise-grade technology
                   solutions that drive growth and efficiency.
                 </p>
               </div>
 
-              <div className="border-l-4 border-primary pl-4">
+              <div className="border-l-4 border-[#193cb8] pl-4">
                 <h3 className="font-bold gradient-text">Our Vision</h3>
-                <p className="text-muted-foreground">
+                <p className="text-black">
                   A world where businesses of all sizes can harness the full
                   potential of technology to thrive in the digital economy.
                 </p>

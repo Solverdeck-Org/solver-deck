@@ -37,7 +37,7 @@ const HeroSection = () => {
               className="mb-6 text-shadow-lg"
             >
               Transforming Small Businesses Through{" "}
-              <span className="gradient-text">Intelligent Technology</span>
+              <span className="">Intelligent Technology</span>
             </motion.h1>
 
             <motion.p
@@ -66,13 +66,9 @@ const HeroSection = () => {
               </Link>
 
               <Link href="/">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary text-primary rounded-full hover:bg-primary/10"
-                >
-                  Book a Consultation
-                </Button>
+              <Button className="bg-[#193cb8] text-white rounded-full hover:bg-[#193cb8]/90">
+                Book a Consultation
+              </Button>
               </Link>
             </motion.div>
           </div>
@@ -109,7 +105,7 @@ const HeroSection = () => {
                     duration: 2,
                   },
                 }}
-                className="absolute -bottom-6 -left-6 bg-[#050e28] rounded-[8px] shadow-lg p-4 w-40"
+                className="absolute -bottom-6 -left-6 bg-white rounded-[8px] shadow-lg p-4 w-40"
               >
                 <div className="flex items-center">
                   <div className="small-dot bg-green-500" />
@@ -129,7 +125,7 @@ const HeroSection = () => {
                     duration: 2.5,
                   },
                 }}
-                className="absolute -top-6 -right-6 bg-[#050e28] rounded-[8px] shadow-lg p-4 w-40"
+                className="absolute -top-6 -right-6 bg-white rounded-[8px] shadow-lg p-4 w-40"
               >
                 <div className="flex items-center">
                   <div className="small-dot bg-blue-500" />

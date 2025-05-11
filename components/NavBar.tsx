@@ -47,11 +47,11 @@ const NavBar = () => {
                 <Image
                   src="/sd.png"
                   alt="SolverDeck Logo"
-                  width={30}
-                  height={30}
+                  width={100}
+                  height={50}
                   priority
                 />
-                <h3 className="text-[#050e28]">SolverDeck</h3>
+                {/* <h3>SolverDeck</h3> */}
               </motion.div>
             </Link>
           </div>
@@ -69,8 +69,8 @@ const NavBar = () => {
                   href={link.href}
                   className={`transition-colors duration-300 font-medium ${
                     isActive(link.href)
-                      ? "text-[#050e28] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[3px] after:bg-[#050e28] after:rounded-full"
-                      : "text-gray-600 hover:text-[#050e28]"
+                      ? "text-[#193cb8] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[3px] after:bg-[#193cb8] after:rounded-full"
+                      : "text-gray-600 hover:text-[#193cb8]"
                   }`}
                 >
                   {link.name}
@@ -82,7 +82,7 @@ const NavBar = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Button className="bg-[#050e28] text-white rounded-full hover:bg-[#050e28]/90">
+              <Button className="bg-[#193cb8] text-white rounded-full hover:bg-[#193cb8]/90">
                 Book a Consultation
               </Button>
             </motion.div>
@@ -92,7 +92,7 @@ const NavBar = () => {
           <div className="flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#050e28] hover:text-[#050e28]/90"
+              className="text-[#193cb8] hover:text-[#193cb8]/90"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -108,7 +108,7 @@ const NavBar = () => {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden mt-2 rounded-xl bg-[#050e28] backdrop-blur-lg border border-border shadow-lg"
+          className="md:hidden mt-2 rounded-xl bg-[#193cb8] backdrop-blur-lg border border-border shadow-lg"
         >
           <div className="px-6 py-4 space-y-2">
             {navLinks.map((link) => (

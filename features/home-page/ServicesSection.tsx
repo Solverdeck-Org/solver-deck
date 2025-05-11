@@ -31,7 +31,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#050e28]" ref={ref}>
+    <section className="py-16 md:py-24 bg-white" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,8 +39,8 @@ const ServicesSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="mb-4 heading-gradient">Our Services</h2>
-          <p className="text-xl text-shadow-md font-normal max-w-3xl mx-auto">
+          <h2 className="mb-4 text-blue-600">Our Services</h2>
+          <p className="text-xl font-normal max-w-3xl mx-auto text-black">
             Helping small businesses succeed through smart, scalable technology
             solutions.
           </p>
@@ -54,7 +54,7 @@ const ServicesSection = () => {
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <div className="relative group overflow-hidden rounded-xl h-[400px]">
+              <div className="relative group overflow-hidden rounded-xl h-[400px] bg-white">
                 {/* Background Image */}
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-150 group-hover:origin-top-left group-hover:blur-md">
                   <Image
@@ -67,16 +67,16 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 z-10" />
+                <div className="absolute inset-0 bg-black/50 z-10" />
 
                 {/* Content on top */}
-                <div className="relative z-20 flex flex-col h-full p-6 text-white">
+                <div className="relative z-20 flex flex-col h-full p-6 text-black">
                   <div className="flex flex-col items-start gap-2">
-                    <service.icon className="h-8 w-8 text-primary" />
-                    <h3 className="text-base md:text-sm text-shadow-md font-semibold uppercase">
+                    <service.icon className="h-8 w-8 text-white" />
+                    <h3 className="text-base md:text-sm font-semibold uppercase text-white">
                       {service.title}
                     </h3>
-                    <p className="text-white max-md:text-xl text-shadow-lg font-semibold">
+                    <p className="max-md:text-xl font-semibold text-white">
                       {service.short}
                     </p>
                   </div>
@@ -84,13 +84,13 @@ const ServicesSection = () => {
                   <div
                     className={`mt-4 transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100 transform translate-x-full opacity-0`}
                   >
-                    <p className="text-[14px] text-white max-md:text-lg text-shadow-md font-normal">
+                    <p className="text-[14px] max-md:text-lg font-normal text-white">
                       {service.description}
                     </p>
                     <Link href={service.link} className="mt-4 block">
                       <Button
                         variant="outline"
-                        className="rounded-tl-2xl rounded-br-2xl px-4 py-2 border border-primary text-primary transition duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
+                        className="rounded-tl-2xl rounded-br-2xl px-4 py-2 border border-blue-600 text-white transition duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-1"
                       >
                         Learn More
                       </Button>
@@ -111,7 +111,7 @@ const ServicesSection = () => {
           <Link href="/services">
             <Button
               size="lg"
-              className="bg-primary rounded-full hover:bg-primary/90"
+              className="bg-blue-600 text-white rounded-full hover:bg-blue-700"
             >
               View All Services
             </Button>
