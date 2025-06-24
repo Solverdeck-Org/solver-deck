@@ -6,6 +6,7 @@ import HeroSection from "@/features/home-page/HeroSection"
 import ServicesSection from "@/features/home-page/ServicesSection"
 import TestimonialsSection from "@/features/home-page/TestimonialsSection"
 import ValuePropositionSection from "@/features/home-page/ValuePropositionSection"
+import ProcessSection from "@/features/services-page/ProcessSection"
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <ServicesSection />
       <ValuePropositionSection />      
       <TestimonialsSection />
+      <ProcessSection />
       <CaseStudySection />
       <BlogSection />
       <CTASection />

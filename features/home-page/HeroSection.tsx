@@ -36,7 +36,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7 }}
               className="mb-6 text-shadow-lg"
             >
-              Transforming Small Businesses Through{" "}
+              Transforming Businesses Through{" "}
               <span className="">Intelligent Technology</span>
             </motion.h1>
 
@@ -46,8 +46,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              AI Integration, Automation, and Custom Software Solutions for
-              Growth-Focused Businesses
+              Smart software applications to drive business growth with solutions
             </motion.p>
 
             <motion.div
@@ -82,7 +81,7 @@ const HeroSection = () => {
             >
               <div className="relative rounded-[1rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="/brain.jpg"
+                  src="/it-business.jpg"
                   alt="AI technology visualization"
                   width={800}
                   height={800}

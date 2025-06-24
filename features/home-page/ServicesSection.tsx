@@ -41,7 +41,7 @@ const ServicesSection = () => {
         >
           <h2 className="mb-4 text-blue-600">Our Services</h2>
           <p className="text-xl font-normal max-w-3xl mx-auto text-black">
-            Helping small businesses succeed through smart, scalable technology
+            Helping businesses succeed through smart, scalable technology
             solutions.
           </p>
         </motion.div>
@@ -50,11 +50,11 @@ const ServicesSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <div className="relative group overflow-hidden rounded-xl h-[400px] bg-white">
+              <div className="relative group overflow-hidden rounded-xl max-w-80 h-[400px] bg-white">
                 {/* Background Image */}
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-150 group-hover:origin-top-left group-hover:blur-md">
                   <Image
@@ -87,14 +87,14 @@ const ServicesSection = () => {
                     <p className="text-[14px] max-md:text-lg font-normal text-white">
                       {service.description}
                     </p>
-                    <Link href={service.link} className="mt-4 block">
+                    {/* <Link href={service.link} className="mt-4 block">
                       <Button
                         variant="outline"
                         className="rounded-tl-2xl rounded-br-2xl px-4 py-2 border border-blue-600 text-white transition duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-1"
                       >
                         Learn More
                       </Button>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>

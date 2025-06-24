@@ -25,7 +25,7 @@ const ServicesHeroSection = () => {
             className="text-xl font-normal mb-8 text-black"
           >
             We provide comprehensive technology solutions tailored to the unique
-            needs of small businesses. Our services are designed to help you
+            needs of businesses. Our services are designed to help you
             leverage the latest technologies without enterprise-level costs.
           </motion.p>
 

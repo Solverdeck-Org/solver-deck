@@ -22,7 +22,7 @@ const AboutHeroSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl"
           >
-            We're a team of technology experts dedicated to helping small
+            We're a team of technology experts dedicated to helping
             businesses harness the power of AI and automation.
           </motion.p>
         </div>

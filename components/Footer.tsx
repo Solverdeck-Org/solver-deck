@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-[#193cb8]">SolverDeck</h3>
             <p className="text-black mb-4">
-              Transforming small businesses through intelligent technology
+              Transforming businesses through intelligent technology
               solutions.
             </p>
 

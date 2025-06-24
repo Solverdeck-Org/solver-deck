@@ -21,16 +21,6 @@ export const services = [
     image: "/ai-chess.jpg",
   },
   {
-    title: "Business Analysis",
-    short:
-      "Data Analysis & Business Intelligence",
-    description:
-      "Transform your data into actionable insights with advanced analytics and visualization.",
-    icon: BarChart3,
-    link: "/services/data-analysis",
-    image: "/business-automation.jpg",
-  },
-  {
     title: "Software Development",
     short:
       "Build custom software solutions for your business",

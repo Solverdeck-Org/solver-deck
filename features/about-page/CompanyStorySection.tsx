@@ -49,7 +49,7 @@ const CompanyStorySection = () => {
               <div className="border-l-4 border-[#193cb8] pl-4">
                 <h3 className="font-bold gradient-text">Our Mission</h3>
                 <p className="text-black">
-                  To empower small businesses with enterprise-grade technology
+                  To empower businesses with enterprise-grade technology
                   solutions that drive growth and efficiency.
                 </p>
               </div>

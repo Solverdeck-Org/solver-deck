@@ -21,7 +21,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Solver Deck",
   description:
-    "AI Integration, Automation, and Custom Software Solutions for Growth-Focused Businesses",
+    "Smart software applications to drive business growth with solutions",
   keywords: [
     "SolverDeck",
     "Solver Deck",
