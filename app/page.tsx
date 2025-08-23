@@ -1,27 +1,21 @@
-import CTASection from "@/components/shared/CTASection"
-import BlogSection from "@/features/home-page/BlogSection"
-import CaseStudySection from "@/features/home-page/CaseStudySection"
-import FAQSection from "@/features/home-page/FAQSection"
-import HeroSection from "@/features/home-page/HeroSection"
-import ServicesSection from "@/features/home-page/ServicesSection"
-import TestimonialsSection from "@/features/home-page/TestimonialsSection"
-import ValuePropositionSection from "@/features/home-page/ValuePropositionSection"
-import ProcessSection from "@/features/services-page/ProcessSection"
+import HeroSection from "@/components/HeroSection";
+import About from "@/components/section/About";
+import Contact from "@/components/section/Contact";
+import Faq from "@/components/section/Faq";
+import Process from "@/components/section/Process";
+import Services from "@/components/section/Services";
 
 const Home = () => {
   return (
-    <main className="min-h-screen">
+    <main>
       <HeroSection />
-      <ServicesSection />
-      <ValuePropositionSection />      
-      <TestimonialsSection />
-      <ProcessSection />
-      <CaseStudySection />
-      <BlogSection />
-      <CTASection />
-      <FAQSection />
+      <Services />
+      <Process />
+      <About />
+      <Contact />
+      <Faq />
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

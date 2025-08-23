@@ -4,7 +4,7 @@ import { blogs } from "@/data/blog";
 
 const BlogPage = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24">
       <Blog posts={blogs} />
     </section>
   );

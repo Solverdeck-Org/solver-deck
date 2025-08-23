@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
           <p className="mb-4">
             SolverDeck ("we", "our", "us") is committed to protecting and respecting your privacy. 
             This Privacy Policy explains how we collect, use, and safeguard your personal data when 
-            you use our services, visit our website at https://www.solverdeck.com/, or otherwise interact with us.
+            you use our services, visit our website at <a href="https://www.solverdeck.com" className="underline text-white">solverdeck</a>, or otherwise interact with us.
           </p>
           <p className="mb-4">
             We are a data controller for the purposes of the UK General Data Protection Regulation
@@ -89,29 +89,29 @@ const PrivacyPolicy = () => {
 
           <h4 className="font-semibold mt-4 mb-2">3.1 Purposes for which we will use your personal data:</h4>
           <div className="mb-4 overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-300">
-              <thead>
+            <table className="min-w-full bg-neutral-900 border border-gray-700">
+              <thead className="bg-neutral-800">
                 <tr>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Purpose/Activity</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Type of data</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Lawful basis for processing</th>
+                  <th className="border border-gray-700 px-4 py-2 text-left">Purpose/Activity</th>
+                  <th className="border border-gray-700 px-4 py-2 text-left">Type of data</th>
+                  <th className="border border-gray-700 px-4 py-2 text-left">Lawful basis for processing</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-2">To register you as a new customer</td>
-                  <td className="border border-gray-300 px-4 py-2">Identity, Contact</td>
-                  <td className="border border-gray-300 px-4 py-2">Performance of a contract with you</td>
+                  <td className="border border-gray-700 px-4 py-2">To register you as a new customer</td>
+                  <td className="border border-gray-700 px-4 py-2">Identity, Contact</td>
+                  <td className="border border-gray-700 px-4 py-2">Performance of a contract with you</td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-2">To process and deliver your order including: (a) Manage payments, fees and charges (b) Collect and recover money owed to us</td>
-                  <td className="border border-gray-300 px-4 py-2">Identity, Contact, Financial, Transaction, Marketing and Communications</td>
-                  <td className="border border-gray-300 px-4 py-2">(a) Performance of a contract with you (b) Necessary for our legitimate interests (to recover debts due to us)</td>
+                  <td className="border border-gray-700 px-4 py-2">To process and deliver your order including: (a) Manage payments, fees and charges (b) Collect and recover money owed to us</td>
+                  <td className="border border-gray-700 px-4 py-2">Identity, Contact, Financial, Transaction, Marketing and Communications</td>
+                  <td className="border border-gray-700 px-4 py-2">(a) Performance of a contract with you (b) Necessary for our legitimate interests (to recover debts due to us)</td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-2">To manage our relationship with you including: (a) Notifying you about changes to our terms or privacy policy (b) Asking you to leave a review or take a survey</td>
-                  <td className="border border-gray-300 px-4 py-2">Identity, Contact, Profile, Marketing and Communications</td>
-                  <td className="border border-gray-300 px-4 py-2">(a) Performance of a contract with you (b) Necessary to comply with a legal obligation (c) Necessary for our legitimate interests</td>
+                  <td className="border border-gray-700 px-4 py-2">To manage our relationship with you including: (a) Notifying you about changes to our terms or privacy policy (b) Asking you to leave a review or take a survey</td>
+                  <td className="border border-gray-700 px-4 py-2">Identity, Contact, Profile, Marketing and Communications</td>
+                  <td className="border border-gray-700 px-4 py-2">(a) Performance of a contract with you (b) Necessary to comply with a legal obligation (c) Necessary for our legitimate interests</td>
                 </tr>
               </tbody>
             </table>
@@ -345,14 +345,14 @@ const PrivacyPolicy = () => {
             please contact us:
           </p>
           <ul className="list-none mb-4">
-            <li className="mb-1">• By email: <a href="mailto:info@solverdeck.com" className="text-blue-600 hover:underline">info@solverdeck.com</a></li>
+            <li className="mb-1">• By email: <a href="mailto:info@solverdeck.com" className="underline text-white">info@solverdeck.com</a></li>
             <li className="mb-1">• By phone: [PHONE NUMBER]</li>
             <li className="mb-1">• By post: [POSTAL ADDRESS]</li>
           </ul>
           <p className="mb-4">
             You have the right to make a complaint at any time to the Information
             Commissioner's Office (ICO), the UK supervisory authority for data protection issues
-            (<a href="https://www.ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.ico.org.uk</a>).
+            (<a href="https://www.ico.org.uk" target="_blank" rel="noopener noreferrer" className="underline text-white">www.ico.org.uk</a>).
             We would, however, appreciate the chance to deal with your concerns before you approach the ICO so please contact us in the first instance.
           </p>
         </div>
@@ -370,29 +370,29 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <div className="min-h-screen py-16 bg-gray-50">
+    <div className="min-h-screen py-16 bg-black text-white">
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
-      <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-800">SolverDeck</h1>
+        <div className="max-w-6xl mx-auto px-4 py-6">
+          <h1 className="text-3xl font-bold text-white">SolverDeck</h1>
           <div className="mt-2 flex items-center">
-            <div className="w-4 h-4 rounded-full bg-blue-600 mr-2"></div>
-            <h2 className="text-xl text-gray-600">Privacy Policy</h2>
+            <div className="w-4 h-4 rounded-full bg-white mr-2"></div>
+            <h2 className="text-xl text-white">Privacy Policy</h2>
           </div>
-          <p className="text-gray-500 mt-1">Last Updated: 1 May 2025</p>
+          <p className="text-white mt-1">Last Updated: 1 May 2025</p>
         </div>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Navigation Sidebar */}
           <aside className="md:w-1/4">
-            <div className="bg-white p-4 rounded-lg shadow-md sticky top-4">
-              <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">Table of Contents</h3>
+            <div className="bg-neutral-900 p-4 rounded-lg shadow-md sticky top-4">
+              <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-700">Table of Contents</h3>
               <nav>
                 <ul className="space-y-2">
                   {sections.map((section) => (
                     <li key={section.id}>
                       <a 
                         href={`#${section.id}`}
-                        className="block text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors"
+                        className="block text-white hover:text-white hover:bg-neutral-800 px-2 py-1 rounded transition-colors"
                         onClick={(e) => {
                           e.preventDefault();
                           const element = document.getElementById(section.id);
@@ -412,10 +412,10 @@ const PrivacyPolicy = () => {
 
           {/* Content Area */}
           <div className="md:w-3/4">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-neutral-900 p-6 rounded-lg shadow-md">
               {/* Introduction Note */}
-              <div className="mb-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-                <p className="text-blue-800">
+              <div className="mb-8 p-4 bg-neutral-800 rounded-lg border-l-4 border-gray-600">
+                <p className="text-white">
                   This Privacy Policy outlines how SolverDeck collects, uses, and protects your personal information.
                   Please read it carefully to understand our practices regarding your personal data and how we will treat it.
                 </p>
@@ -426,11 +426,11 @@ const PrivacyPolicy = () => {
                 {sections.map((section) => (
                   <section key={section.id} id={section.id} className="scroll-mt-4">
                     <div 
-                      className="flex justify-between items-center cursor-pointer py-3 border-b border-gray-300"
+                      className="flex justify-between items-center cursor-pointer py-3 border-b border-gray-700"
                       onClick={() => toggleSection(section.id)}
                     >
-                      <h3 className="text-xl font-bold text-gray-800">{section.title}</h3>
-                      <span className="text-gray-600">
+                      <h3 className="text-xl font-bold text-white">{section.title}</h3>
+                      <span className="text-white">
                         {activeSection === section.id ? (
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
@@ -442,7 +442,7 @@ const PrivacyPolicy = () => {
                         )}
                       </span>
                     </div>
-                    <div className={`mt-4 text-gray-700 leading-relaxed ${activeSection === section.id ? 'block' : 'hidden'}`}>
+                    <div className={`mt-4 leading-relaxed ${activeSection === section.id ? 'block' : 'hidden'}`}>
                       {section.content}
                     </div>
                   </section>

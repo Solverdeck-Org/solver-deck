@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { features } from "@/data/features";
-import StatsCard from "@/components/StatsCard";
+import StatsCard from "@/components/StatCard";
 
 const ValuePropositionSection = () => {
   return (

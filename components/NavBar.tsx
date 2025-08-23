@@ -1,137 +1,76 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "About Us", href: "/about" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  NavbarLogo,
+  NavbarButton,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+} from "@/components/ui/resizable-navbar";
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isActive = (path: string) => {
-    if (path === "/" && pathname === "/") return true;
-    if (path !== "/" && pathname.startsWith(path)) return true;
-    return false;
-  };
+  const navLinks = [
+    { name: "Services",  link: "/#services" },
+    { name: "Process",   link: "/#process" },
+    { name: "About Us",  link: "/#about" },
+    { name: "Contact",   link: "/#contact" },
+    { name: "FAQ",       link: "/#faq" },
+  ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.3 }}
-      className="nav-bar"
-    >
-      <div className="rounded-full bg-primary backdrop-blur-lg border border-border shadow-lg">
-        <div className="flex justify-between items-center h-16 px-6">
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="flex items-center gap-2"
-              >
-                <Image
-                  src="/sd.png"
-                  alt="SolverDeck Logo"
-                  width={100}
-                  height={50}
-                  priority
-                />
-                {/* <h3>SolverDeck</h3> */}
-              </motion.div>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            {navLinks.map((link, index) => (
-              <motion.div
-                key={link.name}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                <Link
-                  href={link.href}
-                  className={`transition-colors duration-300 font-medium ${
-                    isActive(link.href)
-                      ? "text-[#193cb8] relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[3px] after:bg-[#193cb8] after:rounded-full"
-                      : "text-gray-600 hover:text-[#193cb8]"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <Button className="bg-[#193cb8] text-white rounded-full hover:bg-[#193cb8]/90">
-                Book a Consultation
-              </Button>
-            </motion.div>
-          </div>
-
-          {/* Mobile Navigation Toggle */}
-          <div className="flex md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-[#193cb8] hover:text-[#193cb8]/90"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+    <Navbar>
+      {/* Desktop Navigation */}
+      <NavBody>
+      <NavbarLogo />
+        <NavItems items={navLinks} />
+        <div className="flex items-center gap-4">
+          <NavbarButton variant="primary">Book a consultation</NavbarButton>
         </div>
-      </div>
+      </NavBody>
 
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden mt-2 rounded-xl bg-[#193cb8] backdrop-blur-lg border border-border shadow-lg"
+      {/* Mobile Navigation */}
+      <MobileNav>
+        <MobileNavHeader>
+          <NavbarLogo />
+          <MobileNavToggle
+            isOpen={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          />
+        </MobileNavHeader>
+
+        <MobileNavMenu
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
         >
-          <div className="px-6 py-4 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`block py-2 transition-colors ${
-                  isActive(link.href)
-                    ? "text-primary font-medium"
-                    : "text-muted-foreground hover:text-primary"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Button className="w-full mt-4 bg-primary hover:bg-primary/90">
-              Book a Consultation
-            </Button>
+          {navLinks.map((item, idx) => (
+            <a
+              key={`mobile-link-${idx}`}
+              href={item.link}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative text-white dark:text-neutral-300"
+            >
+              <span className="block">{item.name}</span>
+            </a>
+          ))}
+          <div className="flex w-full flex-col gap-4">
+            <NavbarButton
+              onClick={() => setIsMobileMenuOpen(false)}
+              variant="primary"
+              className="w-full"
+            >
+              Book a consultation
+            </NavbarButton>
           </div>
-        </motion.div>
-      )}
-    </motion.nav>
+        </MobileNavMenu>
+      </MobileNav>
+    </Navbar>
   );
 };
 

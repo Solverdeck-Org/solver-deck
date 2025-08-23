@@ -10,7 +10,7 @@ const CaseStudy = ({isInView}: {isInView: any}) => {
   const ref = useRef(null);
 
   return (
-    <Card ref={ref} className="overflow-hidden p-0 bg-white border border-gray-200 shadow-lg">
+    <Card ref={ref} className="overflow-hidden p-0 bg-transparent border border-white/20 shadow-lg">
       <CardContent className="p-0">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <motion.div
@@ -39,11 +39,11 @@ const CaseStudy = ({isInView}: {isInView: any}) => {
             <div className="inline-block px-3 py-1 bg-[#193cb8]/20 text-[#193cb8] rounded-full text-sm font-medium mb-4">
               Retail Industry
             </div>
-            <h3 className="mb-4 text-[#193cb8] text-2xl font-bold">
+            <h3 className="mb-4 text-white text-2xl font-bold">
               How RetailPlus Increased Sales by 45% with AI-Powered Inventory
               Management
             </h3>
-            <p className="font-normal mb-6 text-black">
+            <p className="font-normal mb-6 text-white">
               RetailPlus, a growing chain of specialty stores, was struggling
               with inventory management and customer engagement. We implemented
               a custom AI solution that optimized their inventory and

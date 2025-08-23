@@ -1,171 +1,96 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { RiTwitterXLine } from "react-icons/ri";
+import { CiFacebook, CiLinkedin } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-[#193cb8]">SolverDeck</h3>
-            <p className="text-black mb-4">
-              Transforming businesses through intelligent technology
-              solutions.
-            </p>
-
-            {/* Newsletter */}
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-[#193cb8]">Newsletter</h3>
-              <p className="text-black mb-4">
-                Subscribe to our newsletter for the latest updates and insights.
-              </p>
-              <div className="flex flex-col space-y-2">
-                <Input
-                  type="email"
-                  placeholder="Your email"
-                  className="bg-white border-[#193cb8]"
-                />
-                <Button className="bg-[#193cb8] hover:bg-[#193cb8]/90 text-white">
-                  Subscribe
-                </Button>
-              </div>
+      <div className="flex flex-col md:flex-row md:justify-between space-y-4">
+        <div className="flex flex-col">
+          <Image src="/sd.png" alt="SolverDeck Logo" width={120} height={36} />
+          <p className="text-white/80 mt-2 mb-4">
+            Transforming businesses through <br /> intelligent technology
+            solutions.
+          </p>
+          <div className="flex flex-col space-y-2 mb-4">
+            <p className="text-lg font-medium">Join our newsletter</p>
+            <div className="relative w-78">
+              <Input
+                placeholder="Enter your email"
+                className="w-full h-12 pl-3 border-border/20 placeholder:text-white/90"
+              />
+              <Button className="absolute bg-purple-500 hover:bg-purple-600 right-2 top-1/2 -translate-y-1/2">
+                Subscribe
+              </Button>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-[#193cb8]">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/services"
-                  className="text-black hover:text-[#193cb8] transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-black hover:text-[#193cb8] transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/case-studies"
-                  className="text-black hover:text-[#193cb8] transition-colors"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-black hover:text-[#193cb8] transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-black hover:text-[#193cb8] transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-[#193cb8]">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <Mail className="mr-2 h-5 w-5 text-[#193cb8]" />
-                <span className="text-black">
-                  info@solverdeck.com
-                </span>
-              </li>
-              <li className="flex items-start">
-                <Phone className="mr-2 h-5 w-5 text-[#193cb8]" />
-                <span className="text-black">(123) 456-7890</span>
-              </li>
-              <li className="flex items-start">
-                <MapPin className="mr-2 h-5 w-5 text-[#193cb8]" />
-                <span className="text-black">
-                  123 Tech Avenue, Suite 100
-                  <br />
-                  Innovation City, IC 12345
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-[#193cb8]">Contact Us</h3>
-
-            <div className="flex flex-col space-y-4">
-              <Link
-                href="#"
-                className="flex text-black hover:text-[#193cb8] transition-colors"
-              >
-                <Facebook size={20} className="mr-2" />
-                <span>Facebook</span>
+          <div className="flex gap-3">
+            <div className="bg-white/20 rounded-sm size-7 flex items-center justify-center">
+              <Link href="https://x.com/Solverdeck">
+                <RiTwitterXLine className="size-5" />
               </Link>
-              <Link
-                href="#"
-                className="flex text-black hover:text-[#193cb8] transition-colors"
-              >
-                <Twitter size={20} className="mr-2" />
-                <span>Twitter</span>
+            </div>
+            <div className="bg-white/20 rounded-sm size-7 flex items-center justify-center">
+              <Link href="https://linkedin.com/company/solverdeck">
+                <CiLinkedin className="size-5" />
               </Link>
-              <Link
-                href="#"
-                className="flex text-black hover:text-[#193cb8] transition-colors"
-              >
-                <Linkedin size={20} className="mr-2" />
-                <span>Linkedin</span>
+            </div>
+            <div className="bg-white/20 rounded-sm size-7 flex items-center justify-center">
+              <Link href="https://instagram.com/solverdeck">
+                <FaInstagram className="size-5" />
               </Link>
-              <Link
-                href="#"
-                className="flex text-black hover:text-[#193cb8] transition-colors"
-              >
-                <Instagram size={20} className="mr-2" />
-                <span>Instagram</span>
+            </div>
+            <div className="bg-white/20 rounded-sm size-7 flex items-center justify-center">
+              <Link href="https://www.facebook.com/profile.php?id=61578877721977">
+                <CiFacebook className="size-5" />
               </Link>
             </div>
           </div>
         </div>
-
-        <div className="border-t border-[#193cb8] mt-12 pt-8 text-center">
-          <p className="text-black">© {new Date().getFullYear()} SolverDeck. All rights reserved.</p>
-          <div className="mt-2 space-x-4">
-            <Link
-              href="/privacy-policy"
-              className="text-black hover:text-[#193cb8] transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms-of-service"
-              className="text-black hover:text-[#193cb8] transition-colors"
-            >
-              Terms of Service
-            </Link>
+        <div className="flex gap-2">
+          <div className="mr-20">
+            <h3 className="mb-2 font-semibold">Sections</h3>
+            <ul className="text-white/80 flex flex-col gap-1 text-sm">
+              <li>
+                <Link href="/#services">Services</Link>
+              </li>
+              <li>
+                <Link href="/#process">Process</Link>
+              </li>
+              <li>
+                <Link href="/#about">About us</Link>
+              </li>
+              <li>
+                <Link href="/#contact">Contact</Link>
+              </li>
+              <li>
+                <Link href="/#faq">FAQ</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="mr-20">
+            <h3 className="mb-2 font-semibold">Pages</h3>
+            <ul className="text-white/80 flex flex-col gap-1 text-sm">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/case-studies">Case Studies</Link>
+              </li>
+              <li>
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service">Terms Of Service</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

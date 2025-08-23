@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Outfit } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const poppins = Poppins({
+const outfit = Outfit({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
   display: "swap",
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -41,18 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans bg-white`}
+        className={`${outfit.variable} relative w-full`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NavBar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <NavBar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
