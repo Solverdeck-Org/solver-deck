@@ -35,7 +35,7 @@ const Services = () => {
           imageSrc={"/sd.png"}
           title="Business Analysis & Automation"
           description="Gain valuable insights from your business data to make informed strategic decisions."
-          className="w-90"
+          className="w-70 md:w-90"
         />
       </div>
     </div>

@@ -64,7 +64,7 @@ const Contact = () => {
               <Label>Message</Label>
               <Textarea placeholder="message" className="placeholder:text-white/80" />
             </div>
-            <Button className="bg-purple-500 hover:bg-white hover:text-purple-500">Submit</Button>
+            <Button className="bg-[#350136] hover:bg-white hover:text-[#350136]">Submit</Button>
           </form>
         </div>
       </div>

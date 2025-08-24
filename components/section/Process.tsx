@@ -12,7 +12,7 @@ const Process = () => {
         measurable results.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 px-10">
         <GlowingStarsCard
           title="Discovery & Assessment"
           description="We begin by understanding your business, challenges, and goals through in-depth consultation and analysis of your current systems."
@@ -38,7 +38,7 @@ const Process = () => {
         title="Ongoing Support"
         description="We provide continuous support, maintenance, and updates to keep your technology running smoothly and adapting to new challenges."
         number="5"
-        className="mt-10 grid"
+        className="mt-10 grid px-10"
       />
     </div>
   );

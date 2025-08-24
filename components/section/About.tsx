@@ -89,7 +89,7 @@ const About = () => {
         commitment to results set us apart from the competition
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-10 px-10">
         <StatCard icon={<PiRocketLaunchFill />} title="Streamline Operations" description="Automate workflows and optimize your business processes." />
         <StatCard icon={<PiLightbulbFill />} title="Data-Driven Insights" description="Transform raw data into actionable business intelligence." />
         <StatCard icon={<MdAutoGraph />} title="Scalable Solutions" description="Future-proof systems that grow with your business." />
