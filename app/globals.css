@@ -3,50 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme {
-  --animate-marquee: marquee var(--duration, 40s) linear infinite;
-  --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear
-    infinite;
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-
-  @keyframes marquee-vertival {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(calc(-100% - var(--gap)));
-    }
-  }
-
-  @keyframes accordion-down {
-    from: {
-      height: 0;
-    }
-    to: {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-
-  @keyframes accordion-up {
-    from: {
-      height: var(--radix-accordion-content-height);
-    }
-    to: {
-      height: 0;
-    }
-  }
-}
-
 @theme inline {
   /* Theme variables remain unchanged */
   --color-background: var(--background);

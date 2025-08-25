@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react"; // ONLY using motion/react
+import { ArrowUpRight } from "lucide-react"; // (optional) not used but kept if you need it later
 import {
   Accordion,
   AccordionContent,
@@ -60,28 +63,69 @@ const content: FAQItem[] = [
 const FAQ = () => {
   return (
     <div className="section" id="faq">
-      <SectionButton>FAQs</SectionButton>
-      <h2 className="section-header">We’re here to help</h2>
-      <p className="section-desc">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0 }}
+      >
+        <SectionButton>FAQs</SectionButton>
+      </motion.div>
+
+      <motion.h2
+        className="section-header"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.05 }}
+      >
+        We’re here to help
+      </motion.h2>
+
+      <motion.p
+        className="section-desc"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.1 }}
+      >
         FAQs designed to provide the information you need.
-      </p>
-      <div className="not-prose mt-10 flex flex-col gap-4 md:mt-14">
-        {content.map((item, index) => (
-          <Accordion key={index} type="single" collapsible>
-            <AccordionItem
-              value={item.question}
-              className="w-[300px] md:w-[600px] rounded-2xl border border-white/5 bg-white/5 px-4 transition-all"
+      </motion.p>
+
+      <motion.div
+        className="not-prose mt-10 flex flex-col gap-4 md:mt-14"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.12 }}
+      >
+        {content.map((item, index) => {
+          const delay = 0.15 + index * 0.07; // stagger per item
+          return (
+            <motion.div
+              key={item.question}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ type: "spring", damping: 24, stiffness: 180, delay }}
             >
-              <AccordionTrigger className="text-left hover:no-underline">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-base md:w-3/4">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        ))}
-      </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem
+                  value={item.question}
+                  className="w-[300px] md:w-[600px] rounded-2xl border border-white/5 bg-white/5 px-4 transition-all"
+                >
+                  <AccordionTrigger className="text-left hover:no-underline">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-base md:w-3/4">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </motion.div>
+          );
+        })}
+      </motion.div>
     </div>
   );
 };
