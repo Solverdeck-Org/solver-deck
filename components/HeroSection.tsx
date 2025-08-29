@@ -22,7 +22,7 @@ const HeroSection = () => {
       >
         <div className="flex items-center gap-2 px-2 h-8 bg-neutral-950/20 ring ring-white/20 rounded-sm">
           <Image src="/sd.png" alt="Solverdeck" width={100} height={30} /> -
-          your software and AI solutions partner
+          software and AI solutions
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-outfit font-medium text-center text-white">
           Transforming Businesses With <br className="block md:hidden" />{" "}
@@ -31,8 +31,8 @@ const HeroSection = () => {
           Software Solutions
         </h1>
         <p className="text-white/90 text-lg text-center">
-          Experience the future of business <br /> with intelligent,
-          accessible AI solutions.
+          Experience the future of business <br /> with intelligent, accessible
+          AI solutions.
         </p>
         <div className="flex flex-col md:flex-row mt-10 items-center gap-2">
           <Link href="#services">
@@ -41,7 +41,9 @@ const HeroSection = () => {
             </Button>
           </Link>
           <Link href="">
-            <Button className="bg-transparent hover:bg-transparent border border-white/50 h-12">Get in Touch</Button>
+            <Button className="bg-transparent hover:bg-transparent border border-white/50 h-12">
+              Get in Touch
+            </Button>
           </Link>
         </div>
       </motion.div>
