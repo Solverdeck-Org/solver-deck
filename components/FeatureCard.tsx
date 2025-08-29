@@ -17,14 +17,14 @@ export default function FeatureCard() {
         className="absolute inset-0 z-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(53, 1, 54, 0.75), transparent 70%), #000000",
+            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(24,0,173,0.75), transparent 70%), #000000",
         }}
       />
 
       {/* Content */}
       <div className="relative">
         <h2 className="text-xl font-semibold mb-4">
-          Solver Deck AI Automation
+          Solverdeck AI Automation
         </h2>
         <ul className="space-y-3">
           {features.map((feature, idx) => (

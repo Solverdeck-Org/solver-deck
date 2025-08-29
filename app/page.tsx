@@ -1,3 +1,4 @@
+import CTA from "@/components/CTA";
 import HeroSection from "@/components/HeroSection";
 import About from "@/components/section/About";
 import Contact from "@/components/section/Contact";
@@ -14,6 +15,7 @@ const Home = () => {
       <About />
       <Contact />
       <Faq />
+      <CTA />
     </main>
   );
 };

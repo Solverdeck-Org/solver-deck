@@ -12,17 +12,16 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Solver Deck",
+  title: "Solverdeck",
   description:
     "Smart software applications to drive business growth with solutions",
   keywords: [
-    "SolverDeck",
-    "Solver Deck",
-    "Solver Deck IT Consultation",
+    "Solverdeck",
+    "Solverdeck IT Consultation",
     "SD IT Consultation",
-    "Solver Deck AI",
-    "Solver Deck Automation",
-    "Solver Deck Business Solutions",
+    "Solverdeck AI",
+    "Solverdeck Automation",
+    "Solverdeck Business Solutions",
   ],
 };
 

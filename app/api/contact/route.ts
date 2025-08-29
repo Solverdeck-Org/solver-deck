@@ -20,8 +20,8 @@ export async function POST(req: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { error } = await resend.emails.send({
-      from: "Solver Deck <contact@solverdeck.com>", // use a verified sender; or "onboarding@resend.dev" for tests
-      to: ["hr@solverdeck.com"],
+      from: "Solverdeck <contact@solverdeck.com>", // use a verified sender; or "onboarding@resend.dev" for tests
+      to: ["hello@solverdeck.com"],
       subject: `New contact form submission — ${name}`,
       // You can use either react: <ContactEmail .../> OR html: "..."
       react: ContactEmail({ name, email, phone, company, message }),

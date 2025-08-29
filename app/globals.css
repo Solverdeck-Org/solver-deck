@@ -157,7 +157,7 @@
   }
 
   .footer {
-    @apply border-t border-white/30 py-6 md:py-16 px-6;
+    @apply relative border-t border-white/30 pt-6 md:pt-16 px-12;
   }
 }
 

@@ -17,7 +17,7 @@ export function DotBackground({ children }: { children: React.ReactNode }) {
         className="absolute inset-0 z-2"
         style={{
           background:
-            "radial-gradient(125% 125% at 50% 10%, transparent 40%, #350136 100%)",
+            "radial-gradient(125% 125% at 50% 10%, transparent 40%, #1800AD 100%)",
         }}
       />
       {children}

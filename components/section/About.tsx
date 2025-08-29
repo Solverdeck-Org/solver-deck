@@ -73,7 +73,7 @@ const About = () => {
         viewport={{ once: false, amount: 0.2 }}
         transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.22 }}
       >
-        Solver Deck is a trusted IT consultancy dedicated to delivering smart,
+        Solverdeck is a trusted IT consultancy dedicated to delivering smart,
         scalable, and future-ready solutions.
         <br /> We help organisations harness technology to optimise workflows,
         improve efficiency, and achieve <br /> sustainable growth through
@@ -127,7 +127,7 @@ const About = () => {
         viewport={{ once: false, amount: 0.2 }}
         transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.17 }}
       >
-        The Values Behind Solver Deck
+        The Values Behind Solverdeck
       </motion.h2>
 
       <motion.p
@@ -137,12 +137,12 @@ const About = () => {
         viewport={{ once: false, amount: 0.2 }}
         transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.22 }}
       >
-        Our values shape everything we do at Solver Deck. From innovation to
+        Our values shape everything we do at Solverdeck. From innovation to
         integrity, <br /> we’re committed to building AI solutions that empower
         businesses and drive real impact.
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

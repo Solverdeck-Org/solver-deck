@@ -27,10 +27,18 @@ export default function Contact() {
 
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement)?.value.trim(),
-      email: (form.elements.namedItem("email") as HTMLInputElement)?.value.trim(),
-      phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value.trim(),
-      company: (form.elements.namedItem("company") as HTMLInputElement)?.value.trim(),
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement)?.value.trim(),
+      email: (
+        form.elements.namedItem("email") as HTMLInputElement
+      )?.value.trim(),
+      phone: (
+        form.elements.namedItem("phone") as HTMLInputElement
+      )?.value.trim(),
+      company: (
+        form.elements.namedItem("company") as HTMLInputElement
+      )?.value.trim(),
+      message: (
+        form.elements.namedItem("message") as HTMLTextAreaElement
+      )?.value.trim(),
       hp: (form.elements.namedItem("website") as HTMLInputElement)?.value, // honeypot
     };
 
@@ -66,7 +74,7 @@ export default function Contact() {
         <SectionButton>Contact</SectionButton>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left column */}
         <div>
           <motion.h2
@@ -74,7 +82,12 @@ export default function Contact() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.05 }}
+            transition={{
+              type: "spring",
+              damping: 24,
+              stiffness: 180,
+              delay: 0.05,
+            }}
           >
             Ask whatever you have in <br /> your mind
           </motion.h2>
@@ -84,7 +97,12 @@ export default function Contact() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.1 }}
+            transition={{
+              type: "spring",
+              damping: 24,
+              stiffness: 180,
+              delay: 0.1,
+            }}
           >
             Whether you have questions or are ready to discuss your business,{" "}
             <br /> we’re here to help. Reach out today.
@@ -96,11 +114,16 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.15 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.15,
+              }}
             >
               <AiOutlineMail className="size-6 text-white/60" />
-              <a href="mailto:hr@solverdeck.com" className="text-white/60">
-                hr@solverdeck.com
+              <a href="mailto:hello@solverdeck.com" className="text-white/60">
+                hello@solverdeck.com
               </a>
             </motion.div>
 
@@ -109,7 +132,12 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.22 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.22,
+              }}
             >
               <FiPhone className="size-6 text-white/60" />
               <a href="tel:+447836327475" className="text-white/60">
@@ -122,7 +150,12 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.29 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.29,
+              }}
             >
               <SlLocationPin className="size-6 text-white/60" />
               <p className="text-white/60">Hull, England</p>
@@ -138,7 +171,12 @@ export default function Contact() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.15 }}
+            transition={{
+              type: "spring",
+              damping: 24,
+              stiffness: 180,
+              delay: 0.15,
+            }}
           >
             {/* Honeypot field (hidden) */}
             <input
@@ -154,7 +192,12 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.2 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.2,
+              }}
             >
               <Label htmlFor="name">Name</Label>
               <Input
@@ -172,7 +215,12 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.27 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.27,
+              }}
             >
               <Label htmlFor="email">Email</Label>
               <Input
@@ -190,7 +238,12 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.34 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.34,
+              }}
             >
               <Label htmlFor="phone">Phone</Label>
               <Input
@@ -207,7 +260,12 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.41 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.41,
+              }}
             >
               <Label htmlFor="company">Company</Label>
               <Input
@@ -224,7 +282,12 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.48 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.48,
+              }}
             >
               <Label htmlFor="message">Message</Label>
               <Textarea
@@ -241,11 +304,16 @@ export default function Contact() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.55 }}
+              transition={{
+                type: "spring",
+                damping: 24,
+                stiffness: 180,
+                delay: 0.55,
+              }}
             >
               <Button
                 disabled={status === "loading"}
-                className="bg-[#350136] hover:bg-white hover:text-[#350136]"
+                className="bg-[#1800AD] w-full hover:bg-white hover:text-[#1800AD]"
               >
                 {status === "loading" ? "Sending..." : "Submit"}
               </Button>

@@ -23,7 +23,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="w-full h-12 pl-3 border-border/20 placeholder:text-white/90"
               />
-              <Button className="absolute bg-[#350136] hover:bg-[#350136]/80 right-2 top-1/2 -translate-y-1/2">
+              <Button className="absolute bg-[#1800AD] hover:bg-[#1800AD]/80 right-2 top-1/2 -translate-y-1/2">
                 Subscribe
               </Button>
             </div>
@@ -84,16 +84,32 @@ const Footer = () => {
               <li>
                 <Link href="/blog">Blog</Link>
               </li>
-              <li>
-                <Link href="/privacy-policy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href="/terms-of-service">Terms Of Service</Link>
-              </li>
             </ul>
           </div>
         </div>
       </div>
+      <div className="flex justify-between border-t border-white/30 py-5 mt-10">
+        <p className="text-sm">
+          Copyright © {new Date().getFullYear()} Solverdeck.
+        </p>
+
+        <ul className="flex gap-2 text-sm">
+          <li>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </li>
+          <li>
+            <Link href="/terms-of-service">Terms Of Service</Link>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(24,0,173,0.6) 0%, rgba(24,0,173,0.15) 20%, transparent 80%)",
+        }}
+      />
     </footer>
   );
 };
