@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between border-t border-white/30 py-5 mt-10">
+      <div className="flex flex-col md:flex-row md:justify-between border-t border-white/30 py-5 mt-10">
         <p className="text-sm">
           Copyright © {new Date().getFullYear()} Solverdeck.
         </p>
