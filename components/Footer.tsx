@@ -93,7 +93,7 @@ const Footer = () => {
           Copyright © {new Date().getFullYear()} Solverdeck.
         </p>
 
-        <ul className="flex gap-2 text-sm">
+        <ul className="flex gap-x-2 gap-y-4 text-sm">
           <li>
             <Link href="/privacy-policy">Privacy Policy</Link>
           </li>

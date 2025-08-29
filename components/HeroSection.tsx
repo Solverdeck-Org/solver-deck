@@ -22,7 +22,7 @@ const HeroSection = () => {
       >
         <div className="flex items-center gap-2 px-2 h-8 bg-neutral-950/20 ring ring-white/20 rounded-sm">
           <Image src="/sd.png" alt="Solverdeck" width={100} height={30} /> -
-          software and AI solutions
+          Software And AI Solutions
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-outfit font-medium text-center text-white">
           Transforming Businesses With <br className="block md:hidden" />{" "}
