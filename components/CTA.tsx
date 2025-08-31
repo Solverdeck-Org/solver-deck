@@ -15,8 +15,7 @@ const CTA = () => {
         Let’s talk about <br /> your next big move
       </h2>
       <p className="section-desc">
-        Let's talk about your next big move, and <br /> how our tailored
-        solutions can improve your operations.
+        And how our tailored solutions can <br /> improve your operations.
       </p>
       <Link href="">
         <Button className="bg-[#1800AD] mt-10 h-10 text-base items-center hover:bg-white hover:text-[#1800AD]">
