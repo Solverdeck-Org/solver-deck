@@ -12,26 +12,27 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
+import Link from "next/link";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Services",  link: "/#services" },
-    { name: "Process",   link: "/#process" },
-    { name: "About Us",  link: "/#about" },
-    { name: "Contact",   link: "/#contact" },
-    { name: "FAQ",       link: "/#faq" },
+    { name: "Services", link: "/#services" },
+    { name: "Process", link: "/#process" },
+    { name: "About Us", link: "/#about" },
+    { name: "Contact", link: "/#contact" },
+    { name: "FAQ", link: "/#faq" },
   ];
 
   return (
     <Navbar>
       {/* Desktop Navigation */}
       <NavBody>
-      <NavbarLogo />
+        <NavbarLogo />
         <NavItems items={navLinks} />
         <div className="flex items-center gap-4">
-          <NavbarButton variant="primary">Book a consultation</NavbarButton>
+          <NavbarButton variant="primary" href="https://cal.com/solverdeck">Book a consultation</NavbarButton>
         </div>
       </NavBody>
 
@@ -64,6 +65,7 @@ const NavBar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
               className="w-full"
+              href="https://cal.com/solverdeck"
             >
               Book a consultation
             </NavbarButton>

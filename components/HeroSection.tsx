@@ -40,7 +40,7 @@ const HeroSection = () => {
               Our Services <ArrowUpRight />
             </Button>
           </Link>
-          <Link href="">
+          <Link href="https://cal.com/solverdeck">
             <Button className="bg-transparent hover:bg-transparent border border-white/50 h-12">
               Get in Touch
             </Button>

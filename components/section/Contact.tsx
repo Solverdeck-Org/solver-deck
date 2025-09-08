@@ -11,6 +11,8 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -161,6 +163,47 @@ export default function Contact() {
               <p className="text-white/60">Hull, England</p>
             </motion.div>
           </div>
+
+          <motion.div
+            className="flex mt-10 gap-2"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              type: "spring",
+              damping: 24,
+              stiffness: 180,
+              delay: 0.29,
+            }}
+          >
+            <Link href="https://x.com/Solverdeck">
+              <Image src="/x.png" alt="X logo" width={30} height={30} />
+            </Link>
+            <Link href="https://linkedin.com/company/solverdeck">
+              <Image
+                src="/linkedin.png"
+                alt="Linkedin logo"
+                width={30}
+                height={30}
+              />
+            </Link>
+            <Link href="https://instagram.com/solverdeck">
+              <Image
+                src="/instagram.png"
+                alt=" Instagram logo"
+                width={30}
+                height={30}
+              />
+            </Link>
+            <Link href="https://www.facebook.com/profile.php?id=61578877721977">
+              <Image
+                src="/facebook.png"
+                alt="Facebook logo"
+                width={30}
+                height={30}
+              />
+            </Link>
+          </motion.div>
         </div>
 
         {/* Right column: form */}
@@ -204,7 +247,7 @@ export default function Contact() {
                 id="name"
                 name="name"
                 type="text"
-                placeholder="name"
+                placeholder="John Doe"
                 required
                 className="placeholder:text-white/80"
               />
@@ -227,7 +270,7 @@ export default function Contact() {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="email"
+                placeholder="johndoe@email.com"
                 required
                 className="placeholder:text-white/80"
               />
@@ -250,7 +293,7 @@ export default function Contact() {
                 id="phone"
                 name="phone"
                 type="tel"
-                placeholder="phone"
+                placeholder="+123 44 555 666"
                 className="placeholder:text-white/80"
               />
             </motion.div>
@@ -272,7 +315,7 @@ export default function Contact() {
                 id="company"
                 name="company"
                 type="text"
-                placeholder="company"
+                placeholder="Silicon inc"
                 className="placeholder:text-white/80"
               />
             </motion.div>
@@ -293,9 +336,9 @@ export default function Contact() {
               <Textarea
                 id="message"
                 name="message"
-                placeholder="message"
+                placeholder="Hello I am John Doe. I'd like to get a custom website for my shipping business. How can we start?"
                 required
-                className="placeholder:text-white/80"
+                className="placeholder:text-white/80 w-90 md:w-140"
               />
             </motion.div>
 

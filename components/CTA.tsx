@@ -17,7 +17,7 @@ const CTA = () => {
       <p className="section-desc">
         And how our tailored solutions can <br /> improve your operations.
       </p>
-      <Link href="">
+      <Link href="https://cal.com/solverdeck">
         <Button className="bg-[#1800AD] mt-10 h-10 text-base items-center hover:bg-white hover:text-[#1800AD]">
           Shedule a quick call <ArrowUpRight />
         </Button>
