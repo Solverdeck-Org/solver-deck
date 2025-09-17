@@ -90,7 +90,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col md:flex-row md:justify-between border-t border-white/30 py-5 mt-10">
         <p className="text-sm">
-          Copyright © {new Date().getFullYear()} Solverdeck.
+          Copyright © {new Date().getFullYear()} Solverdeck. | Registered with Company House No. 16597716
         </p>
 
         <ul className="flex gap-x-2 gap-y-4 text-sm">

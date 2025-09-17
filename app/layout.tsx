@@ -3,6 +3,7 @@ import { Inter, Poppins, Outfit } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import FloatingChat from "@/components/FloatingChat";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
+        <FloatingChat />
         <Footer />
       </body>
     </html>
