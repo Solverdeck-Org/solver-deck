@@ -85,7 +85,7 @@ export default function FloatingChat() {
       <Button
         onClick={() => setOpen(true)}
         aria-label="Open SolverDeck chat"
-        className="fixed bottom-5 right-5 z-50 size-14 rounded-full bg-black shadow-lg hover:bg-black"
+        className="fixed bottom-5 right-5 z-50 size-14 rounded-full bg-[#1800AD] shadow-lg hover:bg-[#1800AD]/90"
       >
         <AiFillMessage size={22} />
       </Button>
