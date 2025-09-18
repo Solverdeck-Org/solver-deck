@@ -193,7 +193,7 @@ async function ensureIndex(): Promise<void> {
     const chunks = await buildIndex();
     INDEX = { chunks, builtAt: Date.now() };
     console.log(
-      `SolverDeck index built: ${chunks.length} chunks at ${new Date().toISOString()}`
+      `Solverdeck index built: ${chunks.length} chunks at ${new Date().toISOString()}`
     );
   } catch (e) {
     console.error('ensureIndex error:', e);
@@ -264,15 +264,15 @@ function lastUserText(uiMessages: UIMessage[]): string {
 // ------------------------- Guardrails -------------------------
 
 const SYSTEM_PROMPT = `
-You are the SolverDeck assistant for solverdeck.com.
+You are the Solverdeck assistant for solverdeck.com.
 Rules:
-- Only answer questions specifically about SolverDeck: services, case studies,
+- Only answer questions specifically about Solverdeck: services, case studies,
   blog content, contact info, industries, technologies, team, FAQs, or other
   content on https://www.solverdeck.com.
 - If a request is unrelated, politely refuse and say you can only answer
-  about SolverDeck.
+  about Solverdeck.
 - Use only the provided context. If it doesn't contain the answer, say you
-  don't have enough information and suggest contacting SolverDeck via the
+  don't have enough information and suggest contacting Solverdeck via the
   website.
 - Be concise and professional.
 `;
@@ -316,7 +316,7 @@ export async function POST(req: NextRequest) {
         ? `\n\nContext from solverdeck.com:\n\n${contextText}`
         : `\n\nNo retrieved context available.`) +
       (!isRelevant
-        ? `\n\nThe last request appears unrelated to SolverDeck. Politely refuse and say you can only answer questions about SolverDeck.`
+        ? `\n\nThe last request appears unrelated to Solverdeck. Politely refuse and say you can only answer questions about Solverdeck.`
         : '');
 
     const result = streamText({

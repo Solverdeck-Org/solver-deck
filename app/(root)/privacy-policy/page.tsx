@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
       content: (
         <div>
           <p className="mb-4">
-            SolverDeck ("we", "our", "us") is committed to protecting and respecting your privacy. 
+            Solverdeck ("we", "our", "us") is committed to protecting and respecting your privacy. 
             This Privacy Policy explains how we collect, use, and safeguard your personal data when 
             you use our services, visit our website at <a href="https://www.solverdeck.com" className="underline text-white">solverdeck</a>, or otherwise interact with us.
           </p>
@@ -374,7 +374,7 @@ const PrivacyPolicy = () => {
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-white">SolverDeck</h1>
+          <h1 className="text-3xl font-bold text-white">Solverdeck</h1>
           <div className="mt-2 flex items-center">
             <div className="w-4 h-4 rounded-full bg-white mr-2"></div>
             <h2 className="text-xl text-white">Privacy Policy</h2>
@@ -416,7 +416,7 @@ const PrivacyPolicy = () => {
               {/* Introduction Note */}
               <div className="mb-8 p-4 bg-neutral-800 rounded-lg border-l-4 border-gray-600">
                 <p className="text-white">
-                  This Privacy Policy outlines how SolverDeck collects, uses, and protects your personal information.
+                  This Privacy Policy outlines how Solverdeck collects, uses, and protects your personal information.
                   Please read it carefully to understand our practices regarding your personal data and how we will treat it.
                 </p>
               </div>

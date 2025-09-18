@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="flex flex-col md:flex-row md:justify-between space-y-4">
         <div className="flex flex-col">
-          <Image src="/sd.png" alt="SolverDeck Logo" width={120} height={36} />
+          <Image src="/sd.png" alt="Solverdeck Logo" width={120} height={36} />
           <p className="text-white/80 mt-2 mb-4">
             Transforming businesses through <br /> intelligent technology
             solutions.

@@ -236,7 +236,7 @@ export const NavbarLogo = () => {
     <Link href="/" className="flex items-center gap-2 z-40">
       <Image
         src="/sd.png"
-        alt="SolverDeck Logo"
+        alt="Solverdeck Logo"
         width={120}
         height={36}
         priority

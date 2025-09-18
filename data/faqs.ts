@@ -1,31 +1,31 @@
 export const faqData = [
   {
     id: "solverdeck",
-    question: "What is SolverDeck?",
+    question: "What is Solverdeck?",
     answer:
-      "SolverDeck is a technology consulting firm specializing in AI integration, business automation, data analysis, and custom software development to help small businesses grow efficiently.",
+      "Solverdeck is a technology consulting firm specializing in AI integration, business automation, data analysis, and custom software development to help small businesses grow efficiently.",
   },
   {
     id: "benefits",
-    question: "Who can benefit from SolverDeck's services?",
+    question: "Who can benefit from Solverdeck's services?",
     answer:
       "Our solutions are tailored for small to medium-sized businesses seeking to streamline operations, leverage data insights, and implement scalable technology solutions.",
   },
   {
     id: "services",
-    question: "What services does SolverDeck offer?",
+    question: "What services does Solverdeck offer?",
     answer:
       "We provide AI integration, business automation, data analysis, and custom software development services.",
   },
   {
     id: "ai-approach",
-    question: "How does SolverDeck approach AI integration?",
+    question: "How does Solverdeck approach AI integration?",
     answer:
       "We implement AI solutions tailored to your business needs, from chatbots to predictive analytics.",
   },
   {
     id: "automation",
-    question: "Can SolverDeck help automate my business processes?",
+    question: "Can Solverdeck help automate my business processes?",
     answer: "Yes, we streamline operations and reduce manual tasks with custom automation workflows.",
   },
   {
@@ -36,7 +36,7 @@ export const faqData = [
   },
   {
     id: "getting-started",
-    question: "How do I get started with SolverDeck?",
+    question: "How do I get started with Solverdeck?",
     answer:
       "You can book a consultation through our website to discuss your business needs and how we can assist.",
   },
@@ -52,13 +52,13 @@ export const faqData = [
   },
   {
     id: "technologies",
-    question: "What technologies does SolverDeck specialize in?",
+    question: "What technologies does Solverdeck specialize in?",
     answer:
       "We specialize in AI technologies, automation tools, data analytics platforms, and custom software development frameworks.",
   },
   {
     id: "integration",
-    question: "Can SolverDeck integrate with my existing systems?",
+    question: "Can Solverdeck integrate with my existing systems?",
     answer: "Yes, we design solutions that seamlessly integrate with your current infrastructure.",
   },
   {

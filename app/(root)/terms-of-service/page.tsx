@@ -13,7 +13,7 @@ const TermsOfService = () => {
         <div>
           <p className="mb-4">
             These Terms of Service govern your access to and use of the services, including our website
-            <a href="https://www.solverdeck.com/" className="underline text-white ml-1">solverdeck</a>, features, content, applications, and products provided by SolverDeck Company.
+            <a href="https://www.solverdeck.com/" className="underline text-white ml-1">solverdeck</a>, features, content, applications, and products provided by Solverdeck Company.
           </p>
           <p className="mb-4">
             Please read these Terms carefully before you start to use the Services. By using the Services, you accept and agree to be bound and abide by these Terms and our Privacy Policy, incorporated herein by reference. If you do not agree to these Terms, you must not access or use the Services.
@@ -346,7 +346,7 @@ const TermsOfService = () => {
     <div className="min-h-screen py-16 bg-black text-white">
       <main className="max-w-6xl mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-white">SolverDeck</h1>
+          <h1 className="text-3xl font-bold text-white">Solverdeck</h1>
           <div className="mt-2 flex items-center">
             <div className="w-4 h-4 rounded-full bg-white mr-2"></div>
             <h2 className="text-xl text-white">Terms of Service</h2>
@@ -386,7 +386,7 @@ const TermsOfService = () => {
               {/* Intro Note */}
               <div className="mb-8 p-4 bg-neutral-800 rounded-lg border-l-4 border-gray-600">
                 <p className="text-white">
-                  These Terms of Service outline the rules and conditions for using SolverDeck's products and services. Please review them carefully.
+                  These Terms of Service outline the rules and conditions for using Solverdeck's products and services. Please review them carefully.
                 </p>
               </div>
 

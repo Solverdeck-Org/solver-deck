@@ -84,7 +84,7 @@ export default function FloatingChat() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        aria-label="Open SolverDeck chat"
+        aria-label="Open Solverdeck chat"
         className="fixed bottom-5 right-5 z-50 size-14 rounded-full bg-[#1800AD] shadow-lg hover:bg-[#1800AD]/90"
       >
         <AiFillMessage size={22} />
@@ -96,7 +96,7 @@ export default function FloatingChat() {
           className="flex h-full w-[380px] max-w-[92vw] flex-col bg-black p-0"
         >
           <SheetHeader className="border-b px-4 py-3">
-            <SheetTitle className="text-white">solverdeck assistant</SheetTitle>
+            <SheetTitle className="text-white">Solverdeck assistant</SheetTitle>
           </SheetHeader>
 
           {/* Scrollable messages */}
@@ -111,7 +111,7 @@ export default function FloatingChat() {
               {messages.length === 0 && (
                 <div className="flex w-full justify-start">
                   <div className="max-w-[80%] whitespace-pre-wrap rounded-lg bg-white px-3 py-2 text-sm text-[#1800AD]">
-                    Hi! I’m the SolverDeck assistant. Ask about our services,
+                    Hi! I’m the Solverdeck assistant. Ask about our services,
                     case studies, or how to contact us.
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function FloatingChat() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={onKeyDown}
-                placeholder="Ask about SolverDeck…"
+                placeholder="Ask about Solverdeck…"
                 rows={1}
                 className="min-h-[40px] resize-none bg-transparent text-white placeholder-white/50"
                 aria-label="Message"
@@ -185,7 +185,7 @@ export default function FloatingChat() {
                 type="button"
                 variant="secondary"
                 size="sm"
-                onClick={() => setInput('What services does SolverDeck provide?')}
+                onClick={() => setInput('What services does Solverdeck provide?')}
                 className="bg-white text-[#1800AD]"
               >
                 Services
@@ -194,7 +194,7 @@ export default function FloatingChat() {
                 type="button"
                 variant="secondary"
                 size="sm"
-                onClick={() => setInput('How can I contact SolverDeck?')}
+                onClick={() => setInput('How can I contact Solverdeck?')}
                 className="bg-white text-[#1800AD]"
               >
                 Contact
@@ -204,7 +204,7 @@ export default function FloatingChat() {
                 variant="secondary"
                 size="sm"
                 onClick={() =>
-                  setInput('Share recent case studies from SolverDeck.')
+                  setInput('Share recent case studies from Solverdeck.')
                 }
                 className="bg-white text-[#1800AD]"
               >

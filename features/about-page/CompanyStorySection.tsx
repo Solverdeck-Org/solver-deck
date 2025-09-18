@@ -23,7 +23,7 @@ const CompanyStorySection = () => {
 
             <div className="space-y-4 text-muted-foreground">
               <p>
-                SolverDeck was founded in 2018 by a group of technology
+                Solverdeck was founded in 2018 by a group of technology
                 experts who saw that small businesses were being left behind in
                 the AI and automation revolution. While enterprise companies had
                 the resources to implement cutting-edge technology, smaller
