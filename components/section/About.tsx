@@ -18,6 +18,7 @@ import FeatureCard from "../FeatureCard";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { Button } from "../ui/button";
 
 const About = () => {
   return (
@@ -355,6 +356,26 @@ const About = () => {
             </div>
           </motion.div>
         ))}
+
+        {/* Projects CTA section */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.3,
+          }}
+          className="my-12 flex justify-center"
+        >
+          <Link href="/case-studies">
+            <Button className="px-6 py-3 bg-[#193cb8] text-white text-lg rounded-lg shadow-md hover:bg-[#193cb8]/90 transition-colors">
+              View All Case Studies
+            </Button>
+          </Link>
+        </motion.div>
       </div>
 
       {/* Why Us */}
