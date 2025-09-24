@@ -3,7 +3,11 @@
 import React from "react";
 import { motion } from "motion/react"; // ONLY using motion/react
 import SectionButton from "../shared/SectionButton";
-import { MdOutlineWorkHistory, MdAutoGraph, MdOutlineWorkspacePremium } from "react-icons/md";
+import {
+  MdOutlineWorkHistory,
+  MdAutoGraph,
+  MdOutlineWorkspacePremium,
+} from "react-icons/md";
 import { PiLightbulbFill, PiRocketLaunchFill } from "react-icons/pi";
 import { FaRegHandshake } from "react-icons/fa6";
 import { BiSolidConversation } from "react-icons/bi";
@@ -11,6 +15,9 @@ import { HiUsers } from "react-icons/hi";
 import StatCard from "../StatCard";
 import InfoCard from "../InfoCard";
 import FeatureCard from "../FeatureCard";
+import Image from "next/image";
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 const About = () => {
   return (
@@ -30,7 +37,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.05 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.05,
+        }}
       >
         Helping Businesses Grow
       </motion.h2>
@@ -51,7 +63,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.12 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.12,
+        }}
       >
         <SectionButton>Who We Are</SectionButton>
       </motion.div>
@@ -61,7 +78,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.17 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.17,
+        }}
       >
         Who We Are
       </motion.h2>
@@ -71,7 +93,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.22 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.22,
+        }}
       >
         Solverdeck is a trusted IT consultancy dedicated to delivering smart,
         scalable, and future-ready solutions.
@@ -86,27 +113,54 @@ const About = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.27 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.27,
+          }}
         >
-          <StatCard icon={<MdOutlineWorkHistory />} title="25+" description="Active Projects" />
+          <StatCard
+            icon={<MdOutlineWorkHistory />}
+            title="25+"
+            description="Active Projects"
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.35 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.35,
+          }}
         >
-          <StatCard icon={<BiSolidConversation />} title="30+" description="Successful Conversions" />
+          <StatCard
+            icon={<BiSolidConversation />}
+            title="30+"
+            description="Successful Conversions"
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.43 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.43,
+          }}
         >
-          <StatCard icon={<HiUsers />} title="40+" description="Satisfied Clients" />
+          <StatCard
+            icon={<HiUsers />}
+            title="40+"
+            description="Satisfied Clients"
+          />
         </motion.div>
       </div>
 
@@ -115,7 +169,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.12 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.12,
+        }}
       >
         <SectionButton>Our Values</SectionButton>
       </motion.div>
@@ -125,7 +184,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.17 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.17,
+        }}
       >
         The Values Behind Solverdeck
       </motion.h2>
@@ -135,7 +199,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.22 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.22,
+        }}
       >
         Our values shape everything we do at Solverdeck. From innovation to
         integrity, <br /> we’re committed to building AI solutions that empower
@@ -147,7 +216,12 @@ const About = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.27 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.27,
+          }}
         >
           <InfoCard
             icon={<PiLightbulbFill />}
@@ -160,7 +234,12 @@ const About = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.35 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.35,
+          }}
         >
           <InfoCard
             icon={<FaRegHandshake />}
@@ -173,7 +252,12 @@ const About = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.43 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.43,
+          }}
         >
           <InfoCard
             icon={<PiRocketLaunchFill />}
@@ -186,7 +270,12 @@ const About = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.51 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.51,
+          }}
         >
           <InfoCard
             icon={<HiUsers />}
@@ -196,12 +285,89 @@ const About = () => {
         </motion.div>
       </div>
 
+      {/* Our Projects */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.12,
+        }}
+      >
+        <SectionButton>Our Projects</SectionButton>
+      </motion.div>
+
+      <motion.h2
+        className="section-header !font-normal"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.17,
+        }}
+      >
+        Our Recent Projects
+      </motion.h2>
+
+      <div className="container mx-auto px-4 lg:px-12">
+        {projects.slice(0, 3).map((project) => (
+          <motion.div
+            key={project.name}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              type: "spring",
+              damping: 24,
+              stiffness: 180,
+              delay: 0.27,
+            }}
+            className="my-16"
+          >
+            <div className="flex flex-col items-center text-center">
+              {/* Image with border + inner space */}
+              <div className="p-4 border-1 border-white/20 rounded-xl">
+                <Image
+                  src={project.img}
+                  alt={project.name}
+                  width={1200}
+                  height={500}
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+
+              {/* Text block */}
+              <div className="mt-6 max-w-2xl">
+                <Link
+                  href={project.link}
+                  className="text-2xl font-bold text-blue-600 hover:underline"
+                >
+                  {project.name}
+                </Link>
+                <p className="mt-3 text-white">{project.descp}</p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
       {/* Why Us */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.12 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.12,
+        }}
       >
         <SectionButton>Why us</SectionButton>
       </motion.div>
@@ -211,7 +377,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.17 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.17,
+        }}
       >
         What makes us stand <br /> out in the industry
       </motion.h2>
@@ -221,7 +392,12 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.22 }}
+        transition={{
+          type: "spring",
+          damping: 24,
+          stiffness: 180,
+          delay: 0.22,
+        }}
       >
         Discover how our innovative strategies, data-driven approach, and <br />
         commitment to results set us apart from the competition
@@ -232,36 +408,72 @@ const About = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.27 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.27,
+          }}
         >
-          <StatCard icon={<PiRocketLaunchFill />} title="Streamline Operations" description="Automate workflows and optimize your business processes." />
+          <StatCard
+            icon={<PiRocketLaunchFill />}
+            title="Streamline Operations"
+            description="Automate workflows and optimize your business processes."
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.35 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.35,
+          }}
         >
-          <StatCard icon={<PiLightbulbFill />} title="Data-Driven Insights" description="Transform raw data into actionable business intelligence." />
+          <StatCard
+            icon={<PiLightbulbFill />}
+            title="Data-Driven Insights"
+            description="Transform raw data into actionable business intelligence."
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.43 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.43,
+          }}
         >
-          <StatCard icon={<MdAutoGraph />} title="Scalable Solutions" description="Future-proof systems that grow with your business." />
+          <StatCard
+            icon={<MdAutoGraph />}
+            title="Scalable Solutions"
+            description="Future-proof systems that grow with your business."
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0.51 }}
+          transition={{
+            type: "spring",
+            damping: 24,
+            stiffness: 180,
+            delay: 0.51,
+          }}
         >
-          <StatCard icon={<MdOutlineWorkspacePremium />} title="Enterprise Value" description="Premium solutions at competitive price points." />
+          <StatCard
+            icon={<MdOutlineWorkspacePremium />}
+            title="Enterprise Value"
+            description="Premium solutions at competitive price points."
+          />
         </motion.div>
       </div>
 
