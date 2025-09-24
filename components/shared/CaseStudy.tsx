@@ -21,7 +21,7 @@ const CaseStudy = ({ project, isInView }: { project: Project; isInView: boolean 
           {/* LEFT: Project Image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative h-64 lg:h-auto"
           >
@@ -40,7 +40,7 @@ const CaseStudy = ({ project, isInView }: { project: Project; isInView: boolean 
           {/* RIGHT: Project Content */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="p-8 lg:p-12 text-left"
           >
