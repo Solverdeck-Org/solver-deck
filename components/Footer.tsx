@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer relative overflow-hidden">
       <div className="flex flex-col md:flex-row md:justify-between space-y-4">
         <div className="flex flex-col">
           <Image src="/sd.png" alt="Solverdeck Logo" width={120} height={36} />
@@ -18,12 +18,12 @@ const Footer = () => {
           </p>
           <div className="flex flex-col space-y-2 mb-4">
             <p className="text-lg font-medium">Join our newsletter</p>
-            <div className="relative w-78">
+            <div className="relative w-full sm:max-w-sm">
               <Input
                 placeholder="Enter your email"
-                className="w-full h-12 pl-3 border-border/20 placeholder:text-white/90"
+                className="w-full h-12 pl-3 pr-28 border-border/20 placeholder:text-white/90"
               />
-              <Button className="absolute bg-[#1800AD] hover:bg-[#1800AD]/80 right-2 top-1/2 -translate-y-1/2">
+              <Button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#1800AD] hover:bg-[#1800AD]/80 h-9 px-3 text-sm">
                 Subscribe
               </Button>
             </div>
@@ -51,8 +51,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-2">
-          <div className="mr-20">
+        <div className="flex flex-wrap gap-x-10 gap-y-6">
+          <div>
             <h3 className="mb-2 font-semibold">Sections</h3>
             <ul className="text-white/80 flex flex-col gap-1 text-sm">
               <li>
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="mr-20">
+          <div>
             <h3 className="mb-2 font-semibold">Pages</h3>
             <ul className="text-white/80 flex flex-col gap-1 text-sm">
               <li>
@@ -88,12 +88,20 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between border-t border-white/30 py-5 mt-10">
-        <p className="text-sm">
-          Copyright © {new Date().getFullYear()} Solverdeck. | Registered with Company House No. 16597716
+      <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 border-t border-white/30 py-5 mt-10">
+        <p className="text-sm text-pretty">
+          Copyright © {new Date().getFullYear()} Solverdeck. | Registered with Company House No. 16597716 | Registered with the Information Commissioner's Office (ICO):{" "}
+          <Link
+            href="https://ico.org.uk/ESDWebPages/Entry/ZC000982"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:no-underline"
+          >
+            ZC000982
+          </Link>
         </p>
 
-        <ul className="flex gap-x-2 gap-y-4 text-sm">
+        <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm mt-3 md:mt-0">
           <li>
             <Link href="/privacy-policy">Privacy Policy</Link>
           </li>

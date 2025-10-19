@@ -343,7 +343,7 @@ export default function Contact() {
             </motion.div>
 
             <motion.div
-              className="flex items-center gap-3"
+              className="flex flex-col items-center gap-3"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
