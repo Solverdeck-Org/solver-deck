@@ -142,8 +142,8 @@ export default function Contact() {
               }}
             >
               <FiPhone className="size-6 text-white/60" />
-              <a href="tel:+447836327475" className="text-white/60">
-                +44 7836327475
+              <a href="tel:+4402038363442" className="text-white/60">
+              (+44) 020 3836 3442
               </a>
             </motion.div>
 
