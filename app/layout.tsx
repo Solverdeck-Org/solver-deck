@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import FloatingChat from "@/components/FloatingChat";
+import { ConsentManager } from "./consent-manager";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -33,13 +34,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${outfit.variable} relative w-full`}
-      >
-        <NavBar />
-        {children}
-        <FloatingChat />
-        <Footer />
+      <body className={`${outfit.variable} relative w-full`}>
+        <ConsentManager>
+          <NavBar />
+          {children}
+          <FloatingChat />
+          <Footer />
+        </ConsentManager>
       </body>
     </html>
   );
