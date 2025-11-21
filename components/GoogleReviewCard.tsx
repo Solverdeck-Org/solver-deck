@@ -25,22 +25,24 @@ const GoogleReviewCard = ({ rating = 0, totalReviews = 0 }: GoogleReviewCardProp
   if (!rating) return null; // Don't show if no data
 
   return (
-    <div className="flex items-center gap-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl w-fit min-w-[300px]">
-      <div className="bg-white p-3 rounded-full shrink-0">
-        <FcGoogle className="text-3xl" />
-      </div>
-      
-      <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-2">
-          <span className="text-white font-bold text-2xl">{rating.toFixed(1)}</span>
-          <div className="flex gap-1">
-            {renderStars(rating)}
-          </div>
+    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl w-full max-w-[300px] sm:max-w-none sm:w-fit">
+      <div className="flex items-center gap-4 sm:gap-6 w-full sm:w-auto justify-center sm:justify-start">
+        <div className="bg-white p-3 rounded-full shrink-0">
+          <FcGoogle className="text-2xl sm:text-3xl" />
         </div>
-        <p className="text-white/70 text-xs">Based on {totalReviews} reviews</p>
+        
+        <div className="flex flex-col gap-1 items-center sm:items-start">
+          <div className="flex items-center gap-2">
+            <span className="text-white font-bold text-xl sm:text-2xl">{rating.toFixed(1)}</span>
+            <div className="flex gap-1">
+              {renderStars(rating)}
+            </div>
+          </div>
+          <p className="text-white/70 text-xs">Based on {totalReviews} reviews</p>
+        </div>
       </div>
 
-      <div className="h-10 w-[1px] bg-white/20 mx-2"></div>
+      <div className="h-[1px] w-full sm:h-10 sm:w-[1px] bg-white/20 mx-0 sm:mx-2"></div>
 
       <Link 
         href={`https://search.google.com/local/writereview?placeid=${process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID}`}
