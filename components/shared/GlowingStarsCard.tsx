@@ -25,8 +25,8 @@ const GlowingStarsCard: React.FC<GlowingStarsCardProps> = ({
     >
       <GlowingStarsBackgroundCard>
         <div className="flex mb-2">
-          <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center mr-2">
-            {number}
+          <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center mr-4 shrink-0">
+            <span className="text-[#1800AD] font-bold text-xl">{number}</span>
           </div>
           <GlowingStarsTitle>{title}</GlowingStarsTitle>
         </div>

@@ -19,7 +19,7 @@ const Home = async () => {
         rating={placeDetails?.rating} 
         totalReviews={placeDetails?.userRatingCount} 
       />
-      <GoogleReviewsMarquee reviews={placeDetails?.reviews} />
+      {/* <GoogleReviewsMarquee reviews={placeDetails?.reviews} /> */}
       <Services />
       <Process />
       <About />
