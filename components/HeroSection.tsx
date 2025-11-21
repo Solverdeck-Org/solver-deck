@@ -7,12 +7,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-const HeroSection = () => {
+import GoogleReviewCard from "@/components/GoogleReviewCard";
+
+interface HeroSectionProps {
+  rating?: number;
+  totalReviews?: number;
+}
+
+const HeroSection = ({ rating, totalReviews }: HeroSectionProps) => {
   return (
     <DotBackground>
       <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3,
           duration: 0.8,
@@ -34,7 +41,8 @@ const HeroSection = () => {
           Experience the future of business <br /> with intelligent, accessible
           AI solutions.
         </p>
-        <div className="flex flex-col md:flex-row mt-10 items-center gap-2">
+        
+        <div className="flex flex-col md:flex-row mt-6 items-center gap-2">
           <Link href="#services">
             <Button className="bg-[#1800AD] h-12 text-lg items-center hover:bg-white hover:text-[#1800AD]">
               Our Services <ArrowUpRight />
@@ -45,6 +53,13 @@ const HeroSection = () => {
               Get in Touch
             </Button>
           </Link>
+        </div>
+
+        <div className="mt-8">
+            <GoogleReviewCard 
+              rating={rating} 
+              totalReviews={totalReviews} 
+            />
         </div>
       </motion.div>
     </DotBackground>
