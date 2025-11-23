@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: BlogPageParams) {
 
   return (
     <article className="min-h-screen bg-[#050816] text-white">
-      <div className="relative h-[50vh] w-full">
+      <div className="relative h-[65vh] w-full md:h-[50vh]">
         <Image
           src={heroImage}
           alt={blog.title}
@@ -150,21 +150,23 @@ export default async function BlogPostPage({ params }: BlogPageParams) {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/50 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-4xl px-6 pb-10">
-          <p className="text-sm uppercase tracking-[0.4em] text-white/70 mt-5">
+          <p className="mt-5 text-sm uppercase tracking-[0.4em] text-white/70">
             {formatDate(blog._createdAt)}
           </p>
-          <h1 className="mt-4 text-3xl font-bold leading-tight md:text-5xl">
+          <h1 className="mt-4 text-2xl font-bold leading-tight md:text-4xl lg:text-5xl">
             {blog.title}
           </h1>
           {blog.description && (
-            <p className="mt-4 text-lg text-white/80">{blog.description}</p>
+            <p className="mt-4 text-base text-white/80 md:text-lg">
+              {blog.description}
+            </p>
           )}
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-3xl px-6 py-16">
+      <div className="mx-auto w-full max-w-3xl px-6 py-12 md:py-16">
         <PortableText
           value={blog.body ?? []}
           components={portableTextComponents}
