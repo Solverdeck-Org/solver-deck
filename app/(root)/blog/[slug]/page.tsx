@@ -5,7 +5,6 @@ import { PortableText, type PortableTextComponents } from "@portabletext/react";
 
 import { getBlogBySlug, getBlogs } from "@/sanity/lib/getBlog";
 import { urlFor } from "@/sanity/lib/image";
-import BackButton from "@/components/BackButton";
 
 const FALLBACK_IMAGE = "/data3.jpg";
 
@@ -152,7 +151,6 @@ export default async function BlogPostPage({ params }: BlogPageParams) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
-        <BackButton className="absolute left-4 top-3 cursor-pointer z-999" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-4xl px-6 pb-10">
           <p className="text-sm uppercase tracking-[0.4em] text-white/70">
             {formatDate(blog._createdAt)}
