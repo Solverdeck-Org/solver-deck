@@ -124,7 +124,7 @@ const About = () => {
         >
           <StatCard
             icon={<MdOutlineWorkHistory />}
-            title="25+"
+            title="5+"
             description="Active Projects"
           />
         </motion.div>
@@ -142,7 +142,7 @@ const About = () => {
         >
           <StatCard
             icon={<BiSolidConversation />}
-            title="30+"
+            title="15+"
             description="Successful Conversions"
           />
         </motion.div>
@@ -160,7 +160,7 @@ const About = () => {
         >
           <StatCard
             icon={<HiUsers />}
-            title="40+"
+            title="12+"
             description="Satisfied Clients"
           />
         </motion.div>
