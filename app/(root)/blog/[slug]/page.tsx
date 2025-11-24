@@ -152,9 +152,9 @@ export default async function BlogPostPage({ params }: BlogPageParams) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-[#050816]/50 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-4xl px-6 pb-10">
-          <p className="mt-5 text-sm uppercase tracking-[0.4em] text-white/70">
+          {/* <p className="mt-5 text-sm uppercase tracking-[0.4em] text-white/70">
             {formatDate(blog._createdAt)}
-          </p>
+          </p> */}
           <h1 className="mt-4 text-2xl font-bold leading-tight md:text-4xl lg:text-5xl">
             {blog.title}
           </h1>
