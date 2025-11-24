@@ -4,13 +4,13 @@ import React from "react";
 export function DotBackground({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative flex h-screen w-full items-center justify-center bg-black">
-      <div
+      {/* <div
         className={cn(
           "absolute inset-0 z-1",
           "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_.5px)]",
+          "[background-image:radial-gradient(#d4d4d4_1px,transparent_.5px)]"
         )}
-      />
+      /> */}
       {/* Radial gradient for the container to give a faded look */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-2 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
       <div

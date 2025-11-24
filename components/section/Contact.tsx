@@ -65,20 +65,21 @@ export default function Contact() {
   }
 
   return (
-    <div className="section" id="contact">
-      {/* Section heading */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0 }}
-      >
-        <SectionButton>Contact</SectionButton>
-      </motion.div>
+    <section className="section" id="contact">
+      <div className="container mx-auto px-4 md:px-6">
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0 }}
+        >
+          <SectionButton>Contact</SectionButton>
+        </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Left column */}
-        <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+          {/* Left column */}
+          <div>
           <motion.h2
             className="section-header"
             initial={{ opacity: 0, y: 24 }}
@@ -338,7 +339,7 @@ export default function Contact() {
                 name="message"
                 placeholder="Hello I am John Doe. I'd like to get a custom website for my shipping business. How can we start?"
                 required
-                className="placeholder:text-white/80 w-90 md:w-140"
+                className="placeholder:text-white/80 w-full"
               />
             </motion.div>
 
@@ -371,6 +372,7 @@ export default function Contact() {
           </motion.form>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 }

@@ -45,7 +45,7 @@ const Services = () => {
 
       {/* Cards */}
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 gap-6 pt-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 pt-10 md:grid-cols-2 lg:grid-cols-3">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,14 +59,13 @@ const Services = () => {
             className="h-full"
           >
             <ServiceCard
-              imageSrc={"/software-dev.jpg"}
+              imageSrc={"/software-dev.png"}
               title="Software Development"
               description="Build tailored software solutions designed specifically for your business requirements."
               features={[
-                "Web Development",
-                "Frontend Engineering",
-                "Backend Systems",
-                "SaaS Platforms",
+                "Custom Website Design",
+                "System & API Integration",
+                "Web & App Development",
               ]}
             />
           </motion.div>
@@ -84,14 +83,13 @@ const Services = () => {
             className="h-full"
           >
             <ServiceCard
-              imageSrc={"/business-chatbot.jpg"}
-              title="Business Chatbot"
+              imageSrc={"/chatbot.png"}
+              title="Chatbots"
               description="Streamline operations and reduce manual tasks with custom automation workflows."
               features={[
-                "Customer Support AI",
-                "Lead Generation",
-                "24/7 Availability",
-                "Custom Workflows",
+                "Customer Support Chatbots",
+                "Internal Team Assistants",
+                "Social media Chatbots",
               ]}
             />
           </motion.div>
@@ -106,42 +104,16 @@ const Services = () => {
               stiffness: 180,
               delay: 0.35,
             }}
-            className="h-full"
+            className="h-full md:col-span-2 md:w-[calc(50%-0.75rem)] md:mx-auto lg:col-span-1 lg:w-full lg:mx-0"
           >
             <ServiceCard
-              imageSrc={"/ai-int.jpg"}
-              title="AI Integration"
+              imageSrc={"/ai-automation.jpg"}
+              title="AI and Automation"
               description="Implement AI solutions tailored to your business needs."
               features={[
-                "Predictive Analytics",
-                "NLP Solutions",
-                "Process Optimization",
-                "Data Insights",
-              ]}
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{
-              type: "spring",
-              damping: 24,
-              stiffness: 180,
-              delay: 0.45,
-            }}
-            className="h-full"
-          >
-            <ServiceCard
-              imageSrc={"/business-analysis.jpg"}
-              title="Business Automation"
-              description="Gain valuable insights from your business data to make informed strategic decisions."
-              features={[
-                "Workflow Streamlining",
-                "Task Scheduling",
-                "CRM Integration",
-                "Operational Efficiency",
+                "AI Integration",
+                "Workflow Automation",
+                "Business Process Automation",
               ]}
             />
           </motion.div>

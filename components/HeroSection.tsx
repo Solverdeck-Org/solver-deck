@@ -41,7 +41,7 @@ const HeroSection = ({ rating, totalReviews }: HeroSectionProps) => {
           Experience the future of business <br /> with intelligent, accessible
           AI solutions.
         </p>
-        
+
         <div className="flex flex-col md:flex-row mt-6 items-center gap-2">
           <Link href="#services">
             <Button className="bg-[#1800AD] h-12 text-lg items-center hover:bg-white hover:text-[#1800AD]">
@@ -56,10 +56,7 @@ const HeroSection = ({ rating, totalReviews }: HeroSectionProps) => {
         </div>
 
         <div className="mt-8">
-            <GoogleReviewCard 
-              rating={rating} 
-              totalReviews={totalReviews} 
-            />
+          <GoogleReviewCard rating={rating} totalReviews={totalReviews} />
         </div>
       </motion.div>
     </DotBackground>
