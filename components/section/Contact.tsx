@@ -66,54 +66,20 @@ export default function Contact() {
 
   return (
     <section className="section" id="contact">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0 }}
+      >
+        <SectionButton>Contact</SectionButton>
+      </motion.div>
       <div className="container mx-auto px-4 md:px-6">
-        {/* Section heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ type: "spring", damping: 24, stiffness: 180, delay: 0 }}
-        >
-          <SectionButton>Contact</SectionButton>
-        </motion.div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
           {/* Left column */}
           <div>
-          <motion.h2
-            className="section-header"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{
-              type: "spring",
-              damping: 24,
-              stiffness: 180,
-              delay: 0.05,
-            }}
-          >
-            Ask whatever you have in <br /> your mind
-          </motion.h2>
-
-          <motion.p
-            className="section-desc !text-left"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{
-              type: "spring",
-              damping: 24,
-              stiffness: 180,
-              delay: 0.1,
-            }}
-          >
-            Whether you have questions or are ready to discuss your business,{" "}
-            <br /> we’re here to help. Reach out today.
-          </motion.p>
-
-          <div className="flex flex-col gap-4 mt-10">
-            <motion.div
-              className="flex gap-4 items-center"
+            <motion.h2
+              className="section-header"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
@@ -121,17 +87,14 @@ export default function Contact() {
                 type: "spring",
                 damping: 24,
                 stiffness: 180,
-                delay: 0.15,
+                delay: 0.05,
               }}
             >
-              <AiOutlineMail className="size-6 text-white/60" />
-              <a href="mailto:hello@solverdeck.com" className="text-white/60">
-                hello@solverdeck.com
-              </a>
-            </motion.div>
+              Ask whatever you have in <br /> your mind
+            </motion.h2>
 
-            <motion.div
-              className="flex gap-4 items-center"
+            <motion.p
+              className="section-desc !text-left"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
@@ -139,17 +102,69 @@ export default function Contact() {
                 type: "spring",
                 damping: 24,
                 stiffness: 180,
-                delay: 0.22,
+                delay: 0.1,
               }}
             >
-              <FiPhone className="size-6 text-white/60" />
-              <a href="tel:+4402038363442" className="text-white/60">
-              (+44) 020 3836 3442
-              </a>
-            </motion.div>
+              Whether you have questions or are ready to discuss your business,{" "}
+              <br /> we’re here to help. Reach out today.
+            </motion.p>
+
+            <div className="flex flex-col gap-4 mt-10">
+              <motion.div
+                className="flex gap-4 items-center"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.15,
+                }}
+              >
+                <AiOutlineMail className="size-6 text-white/60" />
+                <a href="mailto:hello@solverdeck.com" className="text-white/60">
+                  hello@solverdeck.com
+                </a>
+              </motion.div>
+
+              <motion.div
+                className="flex gap-4 items-center"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.22,
+                }}
+              >
+                <FiPhone className="size-6 text-white/60" />
+                <a href="tel:+4402038363442" className="text-white/60">
+                  (+44) 020 3836 3442
+                </a>
+              </motion.div>
+
+              <motion.div
+                className="flex gap-4 items-center"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.29,
+                }}
+              >
+                <SlLocationPin className="size-6 text-white/60" />
+                <p className="text-white/60">Hull, England</p>
+              </motion.div>
+            </div>
 
             <motion.div
-              className="flex gap-4 items-center"
+              className="flex mt-10 gap-2"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
@@ -160,79 +175,41 @@ export default function Contact() {
                 delay: 0.29,
               }}
             >
-              <SlLocationPin className="size-6 text-white/60" />
-              <p className="text-white/60">Hull, England</p>
+              <Link href="https://x.com/Solverdeck">
+                <Image src="/x.png" alt="X logo" width={30} height={30} />
+              </Link>
+              <Link href="https://linkedin.com/company/solverdeck">
+                <Image
+                  src="/linkedin.png"
+                  alt="Linkedin logo"
+                  width={30}
+                  height={30}
+                />
+              </Link>
+              <Link href="https://instagram.com/solverdeck">
+                <Image
+                  src="/instagram.png"
+                  alt=" Instagram logo"
+                  width={30}
+                  height={30}
+                />
+              </Link>
+              <Link href="https://www.facebook.com/profile.php?id=61578877721977">
+                <Image
+                  src="/facebook.png"
+                  alt="Facebook logo"
+                  width={30}
+                  height={30}
+                />
+              </Link>
             </motion.div>
           </div>
 
-          <motion.div
-            className="flex mt-10 gap-2"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{
-              type: "spring",
-              damping: 24,
-              stiffness: 180,
-              delay: 0.29,
-            }}
-          >
-            <Link href="https://x.com/Solverdeck">
-              <Image src="/x.png" alt="X logo" width={30} height={30} />
-            </Link>
-            <Link href="https://linkedin.com/company/solverdeck">
-              <Image
-                src="/linkedin.png"
-                alt="Linkedin logo"
-                width={30}
-                height={30}
-              />
-            </Link>
-            <Link href="https://instagram.com/solverdeck">
-              <Image
-                src="/instagram.png"
-                alt=" Instagram logo"
-                width={30}
-                height={30}
-              />
-            </Link>
-            <Link href="https://www.facebook.com/profile.php?id=61578877721977">
-              <Image
-                src="/facebook.png"
-                alt="Facebook logo"
-                width={30}
-                height={30}
-              />
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Right column: form */}
-        <div className="mt-10">
-          <motion.form
-            className="flex flex-col gap-4"
-            onSubmit={onSubmit}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{
-              type: "spring",
-              damping: 24,
-              stiffness: 180,
-              delay: 0.15,
-            }}
-          >
-            {/* Honeypot field (hidden) */}
-            <input
-              type="text"
-              name="website"
-              tabIndex={-1}
-              autoComplete="off"
-              className="hidden"
-            />
-
-            <motion.div
-              className="flex flex-col gap-2"
+          {/* Right column: form */}
+          <div className="mt-10">
+            <motion.form
+              className="flex flex-col gap-4"
+              onSubmit={onSubmit}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
@@ -240,138 +217,160 @@ export default function Contact() {
                 type: "spring",
                 damping: 24,
                 stiffness: 180,
-                delay: 0.2,
+                delay: 0.15,
               }}
             >
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                name="name"
+              {/* Honeypot field (hidden) */}
+              <input
                 type="text"
-                placeholder="John Doe"
-                required
-                className="placeholder:text-white/80"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
               />
-            </motion.div>
 
-            <motion.div
-              className="flex flex-col gap-2"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                type: "spring",
-                damping: 24,
-                stiffness: 180,
-                delay: 0.27,
-              }}
-            >
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="johndoe@email.com"
-                required
-                className="placeholder:text-white/80"
-              />
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col gap-2"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                type: "spring",
-                damping: 24,
-                stiffness: 180,
-                delay: 0.34,
-              }}
-            >
-              <Label htmlFor="phone">Phone</Label>
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="+123 44 555 666"
-                className="placeholder:text-white/80"
-              />
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col gap-2"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                type: "spring",
-                damping: 24,
-                stiffness: 180,
-                delay: 0.41,
-              }}
-            >
-              <Label htmlFor="company">Company</Label>
-              <Input
-                id="company"
-                name="company"
-                type="text"
-                placeholder="Silicon inc"
-                className="placeholder:text-white/80"
-              />
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col gap-2"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                type: "spring",
-                damping: 24,
-                stiffness: 180,
-                delay: 0.48,
-              }}
-            >
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                name="message"
-                placeholder="Hello I am John Doe. I'd like to get a custom website for my shipping business. How can we start?"
-                required
-                className="placeholder:text-white/80 w-full"
-              />
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col items-center gap-3"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{
-                type: "spring",
-                damping: 24,
-                stiffness: 180,
-                delay: 0.55,
-              }}
-            >
-              <Button
-                disabled={status === "loading"}
-                className="bg-[#1800AD] w-full hover:bg-white hover:text-[#1800AD]"
+              <motion.div
+                className="flex flex-col gap-2"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.2,
+                }}
               >
-                {status === "loading" ? "Sending..." : "Submit"}
-              </Button>
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                  className="placeholder:text-white/80"
+                />
+              </motion.div>
 
-              <span aria-live="polite" className="text-sm">
-                {status === "success" && "Thanks! We’ll get back to you soon."}
-                {status === "error" && (
-                  <span className="text-red-400">{error}</span>
-                )}
-              </span>
-            </motion.div>
-          </motion.form>
+              <motion.div
+                className="flex flex-col gap-2"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.27,
+                }}
+              >
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="johndoe@email.com"
+                  required
+                  className="placeholder:text-white/80"
+                />
+              </motion.div>
+
+              <motion.div
+                className="flex flex-col gap-2"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.34,
+                }}
+              >
+                <Label htmlFor="phone">Phone</Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+123 44 555 666"
+                  className="placeholder:text-white/80"
+                />
+              </motion.div>
+
+              <motion.div
+                className="flex flex-col gap-2"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.41,
+                }}
+              >
+                <Label htmlFor="company">Company</Label>
+                <Input
+                  id="company"
+                  name="company"
+                  type="text"
+                  placeholder="Silicon inc"
+                  className="placeholder:text-white/80"
+                />
+              </motion.div>
+
+              <motion.div
+                className="flex flex-col gap-2"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.48,
+                }}
+              >
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Hello I am John Doe. I'd like to get a custom website for my shipping business. How can we start?"
+                  required
+                  className="placeholder:text-white/80 w-full"
+                />
+              </motion.div>
+
+              <motion.div
+                className="flex flex-col items-center gap-3"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  type: "spring",
+                  damping: 24,
+                  stiffness: 180,
+                  delay: 0.55,
+                }}
+              >
+                <Button
+                  disabled={status === "loading"}
+                  className="bg-[#1800AD] w-full hover:bg-white hover:text-[#1800AD]"
+                >
+                  {status === "loading" ? "Sending..." : "Submit"}
+                </Button>
+
+                <span aria-live="polite" className="text-sm">
+                  {status === "success" &&
+                    "Thanks! We’ll get back to you soon."}
+                  {status === "error" && (
+                    <span className="text-red-400">{error}</span>
+                  )}
+                </span>
+              </motion.div>
+            </motion.form>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );
