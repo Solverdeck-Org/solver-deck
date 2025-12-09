@@ -67,9 +67,9 @@ const portableTextComponents: PortableTextComponents = {
 };
 
 type BlogPageParams = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export const revalidate = 60;
@@ -82,7 +82,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: BlogPageParams): Promise<Metadata> {
-  const post = await getBlogBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getBlogBySlug(slug);
 
   if (!post) {
     return {
@@ -129,7 +130,8 @@ const formatDate = (dateString: string) =>
   }).format(new Date(dateString));
 
 export default async function BlogPostPage({ params }: BlogPageParams) {
-  const blog = await getBlogBySlug(params.slug);
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
 
   if (!blog) {
     notFound();
