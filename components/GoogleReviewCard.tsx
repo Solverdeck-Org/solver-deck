@@ -38,7 +38,7 @@ const GoogleReviewCard = ({ rating = 0, totalReviews = 0 }: GoogleReviewCardProp
               {renderStars(rating)}
             </div>
           </div>
-          <p className="text-white/70 text-xs">Based on {totalReviews} reviews</p>
+          {/* <p className="text-white/70 text-xs">Based on {totalReviews} reviews</p> */}
         </div>
       </div>
 
