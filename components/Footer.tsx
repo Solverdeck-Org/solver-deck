@@ -5,6 +5,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { CiFacebook, CiLinkedin } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import Image from "next/image";
+import NewsletterForm from "./NewsletterForm";
 
 const Footer = () => {
   return (
@@ -16,18 +17,7 @@ const Footer = () => {
             Transforming businesses through <br /> intelligent technology
             solutions.
           </p>
-          <div className="flex flex-col space-y-2 mb-4">
-            <p className="text-lg font-medium">Join our newsletter</p>
-            <div className="relative w-full sm:max-w-sm">
-              <Input
-                placeholder="Enter your email"
-                className="w-full h-12 pl-3 pr-28 border-border/20 placeholder:text-white/90"
-              />
-              <Button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#1800AD] hover:bg-[#1800AD]/80 h-9 px-3 text-sm">
-                Subscribe
-              </Button>
-            </div>
-          </div>
+          <NewsletterForm />
           <div className="flex gap-3">
             <div className="bg-white/20 rounded-sm size-7 flex items-center justify-center">
               <Link href="https://x.com/Solverdeck">
@@ -90,7 +80,9 @@ const Footer = () => {
       </div>
       <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4 border-t border-white/30 py-5 mt-10">
         <p className="text-sm text-pretty">
-          Copyright © {new Date().getFullYear()} Solverdeck. | Registered with Company House No. 16597716 | Registered with the Information Commissioner's Office (ICO):{" "}
+          Copyright © {new Date().getFullYear()} Solverdeck. | Registered with
+          Company House No. 16597716 | Registered with the Information
+          Commissioner's Office (ICO):{" "}
           <Link
             href="https://ico.org.uk/ESDWebPages/Entry/ZC000982"
             target="_blank"
