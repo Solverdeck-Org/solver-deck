@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import FloatingChat from "@/components/FloatingChat";
 import { ConsentManager } from "./consent-manager";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
           <Footer />
         </ConsentManager>
       </body>
+      <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID || ""} />
     </html>
   );
 }
