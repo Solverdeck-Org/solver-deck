@@ -3,14 +3,22 @@ export const projects = [
     name: "Zenith Up",
     img: "/zenithup.png",
     link: "https://zenithup.vercel.app/",
-    descp: "Africa's Intelligent Financial OS One platform. Infinite possibilities. Transform how Africa banks, lends, and grows with AI-powered financial intelligence.",
+    descp:
+      "Africa's Intelligent Financial OS One platform. Infinite possibilities. Transform how Africa banks, lends, and grows with AI-powered financial intelligence.",
   },
   {
-    name: "MISDE Database",
-    img: "/misde-db.png",
-    link: "https://misde-db.vercel.app/",
+    name: "Luxe",
+    img: "/luxe.png",
+    link: "https://shop-complete-journey.lovable.app/",
     descp:
-      "A Government Digital Ecosystem. A platform transforming government data into accessible digital knowledge, powering research, innovation, and informed policy-making. Features include Digital Archive, AI-Powered Search, Smart Analytics, and Public Access.",
+      "Discover our curated collection of exceptional pieces, crafted for those who appreciate the finest things in life.",
+  },
+  {
+    name: "Keeola Store",
+    img: "/keeola.png",
+    link: "https://keeola-store.vercel.app/",
+    descp:
+      "FASHION THAT STANDS THE TEST OF TIME. We bring fashion that transcends time, a blend of classic aesthetics with modern materials.",
   },
   {
     name: "Fizzi",
@@ -23,13 +31,15 @@ export const projects = [
     name: "Cristalise",
     img: "/cristalise.png",
     link: "https://www.cristalise.co.uk",
-    descp: "Bespoke Designs That Wear Your Story We create standout visuals and digital experiences for brands ready to make an impact. From concept sketches to finished outfits, every piece is crafted to fit your style and your culture perfectly. Let’s bring your vision to life together.",
+    descp:
+      "Bespoke Designs That Wear Your Story We create standout visuals and digital experiences for brands ready to make an impact. From concept sketches to finished outfits, every piece is crafted to fit your style and your culture perfectly. Let’s bring your vision to life together.",
   },
   {
     name: "C Tech Learn",
     img: "/ctechlearn.png",
     link: "https://c-tech-learn.vercel.app",
-    descp: "Your Gateway to Modern Web Development Build your tech journey with hands-on skills in Frontend, Backend, and Fullstack Development.",
+    descp:
+      "Your Gateway to Modern Web Development Build your tech journey with hands-on skills in Frontend, Backend, and Fullstack Development.",
   },
   {
     name: "Directsports24",
@@ -38,20 +48,7 @@ export const projects = [
     descp:
       "A sports news and live score platform, providing updates and other sporting events. Features include news articles, real-time live scores, and video highlights",
   },
-  {
-    name: "Modadauta",
-    img: "/modadauta.png",
-    link: "https://www.modadauta.com/",
-    descp:
-      "A Fashion Brand. They offer premium African prints and modern designs for boys, girls, and women, celebrating culture with style and elegance. Features include custom tailoring and family matching sets.",
-  },
-  {
-    name: "EIS",
-    img: "/eis.png",
-    link: "https://ek-innovation-summit-pitch.vercel.app/",
-    descp:
-      "An innovation summit pitch presentation that frames the challenge, outlines the solution and value proposition, and communicates market impact, milestones, and next steps with a focused narrative.",
-  },
+
   {
     name: "See Moviesss",
     img: "/sm.png",
@@ -63,6 +60,7 @@ export const projects = [
     name: "Pickas Media",
     img: "/pickasmedia.png",
     link: "https://pickasmedia.com",
-    descp: "At Pickasmedia, We Combine AI, Technology, Marketing, And Creativity To Help Brands Grow, Innovate, And Stand Out In A Competitive World. We Are A Team Of Strategists, Designers, And Technologists Passionate About Transforming Ideas Into Measurable Results.",
+    descp:
+      "At Pickasmedia, We Combine AI, Technology, Marketing, And Creativity To Help Brands Grow, Innovate, And Stand Out In A Competitive World. We Are A Team Of Strategists, Designers, And Technologists Passionate About Transforming Ideas Into Measurable Results.",
   },
 ];

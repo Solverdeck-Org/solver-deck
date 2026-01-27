@@ -591,7 +591,7 @@ const PrivacyPolicy = () => {
             <div className="w-4 h-4 rounded-full bg-white mr-2"></div>
             <h2 className="text-xl text-white">Privacy Policy</h2>
           </div>
-          <p className="text-white mt-1">Last Updated: 1 May 2025</p>
+          <p className="text-white mt-1">Last Updated: 27 January 2026</p>
         </div>
         <div className="flex flex-col md:flex-row gap-8">
           {/* Navigation Sidebar */}
