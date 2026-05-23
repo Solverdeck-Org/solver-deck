@@ -59,5 +59,12 @@ export const caseStudy = defineType({
       description: "Toggle this on to feature this case study on the homepage.",
       initialValue: false,
     }),
+    defineField({
+      name: "showInNavbar",
+      title: "Show in Navbar",
+      type: "boolean",
+      description: "Toggle this on to feature this case study in the navigation menu.",
+      initialValue: false,
+    }),
   ],
 });

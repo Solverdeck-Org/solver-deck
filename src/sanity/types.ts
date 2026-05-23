@@ -15,6 +15,179 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type Pricing = {
+  _id: string;
+  _type: "pricing";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  sectionTitle?: string;
+  order?: number;
+  rows?: Array<{
+    label?: string;
+    note?: string;
+    starter?: {
+      oneOff?: string;
+      monthly?: string;
+    };
+    growth?: {
+      oneOff?: string;
+      monthly?: string;
+    };
+    enterprise?: {
+      oneOff?: string;
+      monthly?: string;
+    };
+    _type: "pricingRow";
+    _key: string;
+  }>;
+};
+
+export type SanityImageAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+};
+
+export type CategoryReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "category";
+};
+
+export type BlogPost = {
+  _id: string;
+  _type: "blogPost";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+  image?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  categories?: Array<
+    {
+      _key: string;
+    } & CategoryReference
+  >;
+  content?: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?: "normal" | "h2" | "h3" | "h4" | "blockquote";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          blank?: boolean;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        caption?: string;
+        _type: "image";
+        _key: string;
+      }
+    | ({
+        _key: string;
+      } & Table)
+  >;
+};
+
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
+
+export type Slug = {
+  _type: "slug";
+  current?: string;
+  source?: string;
+};
+
+export type LegalPage = {
+  _id: string;
+  _type: "legalPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  pageType?: "privacy-policy" | "terms-of-service";
+  title?: string;
+  slug?: Slug;
+  intro?: string;
+  sections?: Array<{
+    title?: string;
+    body?: Array<
+      | {
+          children?: Array<{
+            marks?: Array<string>;
+            text?: string;
+            _type: "span";
+            _key: string;
+          }>;
+          style?: "normal" | "h3" | "h4";
+          listItem?: "bullet" | "number";
+          markDefs?: Array<{
+            href?: string;
+            blank?: boolean;
+            _type: "link";
+            _key: string;
+          }>;
+          level?: number;
+          _type: "block";
+          _key: string;
+        }
+      | ({
+          _key: string;
+        } & Table)
+    >;
+    _type: "section";
+    _key: string;
+  }>;
+};
+
+export type Faq = {
+  _id: string;
+  _type: "faq";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  question?: string;
+  answer?: string;
+  order?: number;
+};
+
 export type Role = {
   _id: string;
   _type: "role";
@@ -23,12 +196,6 @@ export type Role = {
   _rev: string;
   title?: string;
   slug?: Slug;
-};
-
-export type Slug = {
-  _type: "slug";
-  current?: string;
-  source?: string;
 };
 
 export type Category = {
@@ -47,13 +214,6 @@ export type RoleReference = {
   _type: "reference";
   _weak?: boolean;
   [internalGroqTypeReferenceTo]?: "role";
-};
-
-export type SanityImageAssetReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
 };
 
 export type Testimony = {
@@ -81,29 +241,6 @@ export type Testimony = {
   showOnHomepage?: boolean;
 };
 
-export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
-};
-
-export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
-};
-
-export type CategoryReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "category";
-};
-
 export type CaseStudy = {
   _id: string;
   _type: "caseStudy";
@@ -127,6 +264,21 @@ export type CaseStudy = {
     } & CategoryReference
   >;
   showOnHomepage?: boolean;
+  showInNavbar?: boolean;
+};
+
+export type Table = {
+  _type: "table";
+  rows?: Array<
+    {
+      _key: string;
+    } & TableRow
+  >;
+};
+
+export type TableRow = {
+  _type: "tableRow";
+  cells?: Array<string>;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -227,16 +379,22 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
-  | Role
-  | Slug
-  | Category
-  | RoleReference
+  | Pricing
   | SanityImageAssetReference
-  | Testimony
+  | CategoryReference
+  | BlogPost
   | SanityImageCrop
   | SanityImageHotspot
-  | CategoryReference
+  | Slug
+  | LegalPage
+  | Faq
+  | Role
+  | Category
+  | RoleReference
+  | Testimony
   | CaseStudy
+  | Table
+  | TableRow
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
@@ -245,6 +403,40 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageAsset
   | Geopoint;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: getPricingSectionsQuery
+// Query: *[_type == "pricing"] | order(order asc) {    _id,    sectionTitle,    rows[] {      _key,      label,      note,      starter { oneOff, monthly },      growth { oneOff, monthly },      enterprise { oneOff, monthly }    }  }
+export type GetPricingSectionsQueryResult = Array<{
+  _id: string;
+  sectionTitle: string | null;
+  rows: Array<{
+    _key: string;
+    label: string | null;
+    note: string | null;
+    starter: {
+      oneOff: string | null;
+      monthly: string | null;
+    } | null;
+    growth: {
+      oneOff: string | null;
+      monthly: string | null;
+    } | null;
+    enterprise: {
+      oneOff: string | null;
+      monthly: string | null;
+    } | null;
+  }> | null;
+}>;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: getNavbarCaseStudiesQuery
+// Query: *[_type == "caseStudy" && showInNavbar == true] | order(_createdAt desc) {    _id,    name,    link  }
+export type GetNavbarCaseStudiesQueryResult = Array<{
+  _id: string;
+  name: string | null;
+  link: string | null;
+}>;
 
 // Source: src/sanity/lib/queries.ts
 // Variable: getAllCaseStudiesQuery
@@ -288,11 +480,12 @@ export type GetHomepageCaseStudiesQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: getAllTestimoniesQuery
-// Query: *[_type == "testimony"] | order(_createdAt asc) {    _id,    testimony,    name,    "slug": slug.current,    "roles": roles[]->title,    company,    "imageUrl": image.asset->url,    image  }
+// Query: *[_type == "testimony"] | order(_createdAt asc) {    _id,    testimony,    name,    jobTitle,    "slug": slug.current,    "roles": roles[]->title,    company,    "imageUrl": image.asset->url,    image  }
 export type GetAllTestimoniesQueryResult = Array<{
   _id: string;
   testimony: string | null;
   name: string | null;
+  jobTitle: string | null;
   slug: string | null;
   roles: Array<string | null> | null;
   company: string | null;
@@ -304,6 +497,126 @@ export type GetAllTestimoniesQueryResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   } | null;
+}>;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: getAllFaqsQuery
+// Query: *[_type == "faq"] | order(order asc, _createdAt asc) {    _id,    question,    answer  }
+export type GetAllFaqsQueryResult = Array<{
+  _id: string;
+  question: string | null;
+  answer: string | null;
+}>;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: getLegalPageQuery
+// Query: *[_type == "legalPage" && slug.current == $slug][0] {    title,    intro,    sections[] {      _key,      title,      body    },    _updatedAt  }
+export type GetLegalPageQueryResult = {
+  title: string | null;
+  intro: string | null;
+  sections: Array<{
+    _key: string;
+    title: string | null;
+    body: Array<
+      | ({
+          _key: string;
+        } & Table)
+      | {
+          children?: Array<{
+            marks?: Array<string>;
+            text?: string;
+            _type: "span";
+            _key: string;
+          }>;
+          style?: "h3" | "h4" | "normal";
+          listItem?: "bullet" | "number";
+          markDefs?: Array<{
+            href?: string;
+            blank?: boolean;
+            _type: "link";
+            _key: string;
+          }>;
+          level?: number;
+          _type: "block";
+          _key: string;
+        }
+    > | null;
+  }> | null;
+  _updatedAt: string;
+} | null;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: getBlogPostQuery
+// Query: *[_type == "blogPost" && slug.current == $slug][0] {    _id,    title,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    _createdAt,    "categories": categories[]->title,    content  }
+export type GetBlogPostQueryResult = {
+  _id: string;
+  title: string | null;
+  slug: string | null;
+  description: string | null;
+  imageUrl: string | null;
+  image: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  _createdAt: string;
+  categories: Array<string | null> | null;
+  content: Array<
+    | ({
+        _key: string;
+      } & Table)
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?: "blockquote" | "h2" | "h3" | "h4" | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          blank?: boolean;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        caption?: string;
+        _type: "image";
+        _key: string;
+      }
+  > | null;
+} | null;
+
+// Source: src/sanity/lib/queries.ts
+// Variable: getAllBlogPostsQuery
+// Query: *[_type == "blogPost"] | order(_createdAt desc) {    _id,    title,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    _createdAt,    "categories": categories[]->title  }
+export type GetAllBlogPostsQueryResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: string | null;
+  description: string | null;
+  imageUrl: string | null;
+  image: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  _createdAt: string;
+  categories: Array<string | null> | null;
 }>;
 
 // Source: src/sanity/lib/queries.ts
@@ -330,9 +643,15 @@ export type GetHomepageTestimoniesQueryResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
+    '\n  *[_type == "pricing"] | order(order asc) {\n    _id,\n    sectionTitle,\n    rows[] {\n      _key,\n      label,\n      note,\n      starter { oneOff, monthly },\n      growth { oneOff, monthly },\n      enterprise { oneOff, monthly }\n    }\n  }\n': GetPricingSectionsQueryResult;
+    '\n  *[_type == "caseStudy" && showInNavbar == true] | order(_createdAt desc) {\n    _id,\n    name,\n    link\n  }\n': GetNavbarCaseStudiesQueryResult;
     '\n  *[_type == "caseStudy"] | order(_createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    "categories": categories[]->title\n  }\n': GetAllCaseStudiesQueryResult;
     '\n  *[_type == "caseStudy" && showOnHomepage == true] | order(_createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    "categories": categories[]->title\n  }\n': GetHomepageCaseStudiesQueryResult;
-    '\n  *[_type == "testimony"] | order(_createdAt asc) {\n    _id,\n    testimony,\n    name,\n    "slug": slug.current,\n    "roles": roles[]->title,\n    company,\n    "imageUrl": image.asset->url,\n    image\n  }\n': GetAllTestimoniesQueryResult;
+    '\n  *[_type == "testimony"] | order(_createdAt asc) {\n    _id,\n    testimony,\n    name,\n    jobTitle,\n    "slug": slug.current,\n    "roles": roles[]->title,\n    company,\n    "imageUrl": image.asset->url,\n    image\n  }\n': GetAllTestimoniesQueryResult;
+    '\n  *[_type == "faq"] | order(order asc, _createdAt asc) {\n    _id,\n    question,\n    answer\n  }\n': GetAllFaqsQueryResult;
+    '\n  *[_type == "legalPage" && slug.current == $slug][0] {\n    title,\n    intro,\n    sections[] {\n      _key,\n      title,\n      body\n    },\n    _updatedAt\n  }\n': GetLegalPageQueryResult;
+    '\n  *[_type == "blogPost" && slug.current == $slug][0] {\n    _id,\n    title,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    _createdAt,\n    "categories": categories[]->title,\n    content\n  }\n': GetBlogPostQueryResult;
+    '\n  *[_type == "blogPost"] | order(_createdAt desc) {\n    _id,\n    title,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    _createdAt,\n    "categories": categories[]->title\n  }\n': GetAllBlogPostsQueryResult;
     '\n  *[_type == "testimony" && showOnHomepage == true] | order(_createdAt asc)[0...3] {\n    _id,\n    testimony,\n    name,\n    "slug": slug.current,\n    "roles": roles[]->title,\n    company,\n    "imageUrl": image.asset->url,\n    image\n  }\n': GetHomepageTestimoniesQueryResult;
   }
 }

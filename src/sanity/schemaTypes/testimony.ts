@@ -31,12 +31,17 @@ export const testimony = defineType({
       description: "Generated from name for the URL (Optional)",
     }),
     defineField({
+      name: "jobTitle",
+      title: "Job Title",
+      type: "string",
+      description: "Their job title or position, e.g. CEO, Marketing Director (Optional)",
+    }),
+    defineField({
       name: "roles",
       title: "Roles / Positions",
       type: "array",
       of: [{ type: "reference", to: { type: "role" } }],
-      description:
-        "Select one or more roles for the person giving the testimonial (Optional)",
+      description: "Select one or more roles for the person giving the testimonial (Optional)",
     }),
     defineField({
       name: "company",
@@ -48,17 +53,14 @@ export const testimony = defineType({
       name: "image",
       title: "Avatar / Photo",
       type: "image",
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
       description: "Optional photo of the person",
     }),
     defineField({
       name: "showOnHomepage",
       title: "Show on Homepage",
       type: "boolean",
-      description:
-        "Toggle this on to feature this testimonial on the homepage.",
+      description: "Toggle this on to feature this testimonial on the homepage.",
       initialValue: false,
     }),
   ],
