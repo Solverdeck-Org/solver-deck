@@ -24,7 +24,7 @@ export const getNavbarCaseStudiesQuery = defineQuery(`
 `);
 
 export const getAllCaseStudiesQuery = defineQuery(`
-  *[_type == "caseStudy"] | order(_createdAt desc) {
+  *[_type == "caseStudy"] | order(order asc, _createdAt desc) {
     _id,
     name,
     "slug": slug.current,
@@ -32,12 +32,13 @@ export const getAllCaseStudiesQuery = defineQuery(`
     "imageUrl": image.asset->url,
     image,
     link,
+    order,
     "categories": categories[]->title
   }
 `);
 
 export const getHomepageCaseStudiesQuery = defineQuery(`
-  *[_type == "caseStudy" && showOnHomepage == true] | order(_createdAt desc) {
+  *[_type == "caseStudy" && showOnHomepage == true] | order(order asc, _createdAt desc) {
     _id,
     name,
     "slug": slug.current,
@@ -45,6 +46,7 @@ export const getHomepageCaseStudiesQuery = defineQuery(`
     "imageUrl": image.asset->url,
     image,
     link,
+    order,
     "categories": categories[]->title
   }
 `);

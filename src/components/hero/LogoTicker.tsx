@@ -9,7 +9,7 @@ export function LogoTicker() {
           <div key={tool.id} className="shrink-0 h-[18px] relative">
             <Image
               src={tool.src}
-              alt="Tool logo"
+              alt={tool.id}
               width={100}
               height={100}
               style={{ height: "18px", width: "auto" }}
