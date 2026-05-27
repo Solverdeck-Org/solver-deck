@@ -1286,6 +1286,13 @@
         },
         "optional": true
       },
+      "jobTitle": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "roles": {
         "type": "objectAttribute",
         "value": {
@@ -1501,6 +1508,13 @@
               "name": "category.reference"
             }
           }
+        },
+        "optional": true
+      },
+      "order": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
         },
         "optional": true
       },

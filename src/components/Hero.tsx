@@ -27,9 +27,9 @@ export function Hero() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white">
             Website Design & AI Automation <br /> for UK Businesses and Trades
           </h1>
-          <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white max-w-5xl font-outfit font-medium leading-normal">
+          {/* <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white max-w-5xl font-outfit font-medium leading-normal">
             We build websites and AI tools, so you spend less time on admin and more on growth.
-          </p>
+          </p> */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <Link
               href="#services"

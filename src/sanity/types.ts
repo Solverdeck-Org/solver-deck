@@ -225,6 +225,7 @@ export type Testimony = {
   testimony?: string;
   name?: string;
   slug?: Slug;
+  jobTitle?: string;
   roles?: Array<
     {
       _key: string;
@@ -263,6 +264,7 @@ export type CaseStudy = {
       _key: string;
     } & CategoryReference
   >;
+  order?: number;
   showOnHomepage?: boolean;
   showInNavbar?: boolean;
 };
@@ -440,7 +442,7 @@ export type GetNavbarCaseStudiesQueryResult = Array<{
 
 // Source: src/sanity/lib/queries.ts
 // Variable: getAllCaseStudiesQuery
-// Query: *[_type == "caseStudy"] | order(_createdAt desc) {    _id,    name,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    link,    "categories": categories[]->title  }
+// Query: *[_type == "caseStudy"] | order(order asc, _createdAt desc) {    _id,    name,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    link,    order,    "categories": categories[]->title  }
 export type GetAllCaseStudiesQueryResult = Array<{
   _id: string;
   name: string | null;
@@ -455,12 +457,13 @@ export type GetAllCaseStudiesQueryResult = Array<{
     _type: "image";
   } | null;
   link: string | null;
+  order: number | null;
   categories: Array<string | null> | null;
 }>;
 
 // Source: src/sanity/lib/queries.ts
 // Variable: getHomepageCaseStudiesQuery
-// Query: *[_type == "caseStudy" && showOnHomepage == true] | order(_createdAt desc) {    _id,    name,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    link,    "categories": categories[]->title  }
+// Query: *[_type == "caseStudy" && showOnHomepage == true] | order(order asc, _createdAt desc) {    _id,    name,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    link,    order,    "categories": categories[]->title  }
 export type GetHomepageCaseStudiesQueryResult = Array<{
   _id: string;
   name: string | null;
@@ -475,6 +478,7 @@ export type GetHomepageCaseStudiesQueryResult = Array<{
     _type: "image";
   } | null;
   link: string | null;
+  order: number | null;
   categories: Array<string | null> | null;
 }>;
 
@@ -645,8 +649,8 @@ declare module "@sanity/client" {
   interface SanityQueries {
     '\n  *[_type == "pricing"] | order(order asc) {\n    _id,\n    sectionTitle,\n    rows[] {\n      _key,\n      label,\n      note,\n      starter { oneOff, monthly },\n      growth { oneOff, monthly },\n      enterprise { oneOff, monthly }\n    }\n  }\n': GetPricingSectionsQueryResult;
     '\n  *[_type == "caseStudy" && showInNavbar == true] | order(_createdAt desc) {\n    _id,\n    name,\n    link\n  }\n': GetNavbarCaseStudiesQueryResult;
-    '\n  *[_type == "caseStudy"] | order(_createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    "categories": categories[]->title\n  }\n': GetAllCaseStudiesQueryResult;
-    '\n  *[_type == "caseStudy" && showOnHomepage == true] | order(_createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    "categories": categories[]->title\n  }\n': GetHomepageCaseStudiesQueryResult;
+    '\n  *[_type == "caseStudy"] | order(order asc, _createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    order,\n    "categories": categories[]->title\n  }\n': GetAllCaseStudiesQueryResult;
+    '\n  *[_type == "caseStudy" && showOnHomepage == true] | order(order asc, _createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    order,\n    "categories": categories[]->title\n  }\n': GetHomepageCaseStudiesQueryResult;
     '\n  *[_type == "testimony"] | order(_createdAt asc) {\n    _id,\n    testimony,\n    name,\n    jobTitle,\n    "slug": slug.current,\n    "roles": roles[]->title,\n    company,\n    "imageUrl": image.asset->url,\n    image\n  }\n': GetAllTestimoniesQueryResult;
     '\n  *[_type == "faq"] | order(order asc, _createdAt asc) {\n    _id,\n    question,\n    answer\n  }\n': GetAllFaqsQueryResult;
     '\n  *[_type == "legalPage" && slug.current == $slug][0] {\n    title,\n    intro,\n    sections[] {\n      _key,\n      title,\n      body\n    },\n    _updatedAt\n  }\n': GetLegalPageQueryResult;

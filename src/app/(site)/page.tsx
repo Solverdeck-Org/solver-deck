@@ -5,6 +5,7 @@ import { Cta } from "@/components/Cta";
 import { Process } from "@/components/Process";
 import { Solutions } from "@/components/Solution";
 import { Testimonials } from "@/components/Testimonials";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { processSchema } from "@/lib/process-schema";
 import { sanityFetch } from "@/sanity/lib/live";
 import { getHomepageCaseStudiesQuery, getHomepageTestimoniesQuery } from "@/sanity/lib/queries";
@@ -35,6 +36,7 @@ export default async function Home() {
       <Hero />
       <Solutions />
       <CaseStudies studies={homepageCaseStudies} />
+      <WhyChooseUs />
       <Process />
       <Testimonials testimonials={homepageTestimonials} />
       <Cta />
