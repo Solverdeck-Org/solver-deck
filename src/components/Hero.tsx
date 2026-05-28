@@ -11,13 +11,33 @@ export function Hero() {
 
   useEffect(() => {
     if (!textRef.current) return;
-    gsap.fromTo(textRef.current.children, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2 });
+    gsap.fromTo(
+      textRef.current.children,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        delay: 0.2,
+      },
+    );
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen min-h-[700px] md:min-h-[800px] flex flex-col justify-center overflow-hidden bg-black text-white">
+    <section
+      ref={containerRef}
+      className="relative w-full h-screen min-h-[700px] md:min-h-[800px] flex flex-col justify-center overflow-hidden bg-black text-white"
+    >
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
       </div>
@@ -48,7 +68,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <LogoTicker />
+      {/* <LogoTicker /> */}
     </section>
   );
 }

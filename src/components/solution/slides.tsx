@@ -1,15 +1,10 @@
-import { AiAutomationCards } from "@/components/AiAutomationCards";
-import { ChatbotCards } from "@/components/ChatbotCards";
-import { SoftwareDevelopmentCards } from "@/components/SoftwareDevelopmentCards";
-
 export interface Slide {
   id: "software" | "ai" | "chatbots";
   tabTitle: string;
   heading: React.ReactNode;
   subheading: string;
   description: React.ReactNode;
-  highlights: string[];
-  Cards: React.ComponentType;
+  services: { title: string; description: string }[];
 }
 
 export const slides: Slide[] = [
@@ -26,8 +21,13 @@ export const slides: Slide[] = [
         operational needs.
       </>
     ),
-    highlights: ["Web, Mobile & Desktop Applications", "Custom SaaS Architecture", "E-Commerce Engineering"],
-    Cards: SoftwareDevelopmentCards,
+    services: [
+      { title: "Web", description: "Custom websites that look great and load fast." },
+      { title: "Mobile", description: "Apps for iOS and Android that your customers will love." },
+      { title: "Desktop", description: "Powerful computer programs for your specific business needs." },
+      { title: "E-Commerce", description: "Online stores designed to sell your products easily." },
+      { title: "SaaS", description: "Cloud software platforms you can offer to your own clients." }
+    ]
   },
   {
     id: "ai",
@@ -41,8 +41,11 @@ export const slides: Slide[] = [
         workflows 24/7 without friction.
       </>
     ),
-    highlights: ["AI Integration & LLMs", "Workflow Automation", "Business Process Automation"],
-    Cards: AiAutomationCards,
+    services: [
+      { title: "Automated Tasks", description: "Let AI handle the repetitive work for you, saving time and money." },
+      { title: "Smart Insights", description: "Understand your business data better to make informed decisions." },
+      { title: "Content Generation", description: "Automatically create emails, reports, or social media posts instantly." }
+    ]
   },
   {
     id: "chatbots",
@@ -56,7 +59,10 @@ export const slides: Slide[] = [
         and assist teams in real-time.
       </>
     ),
-    highlights: ["Customer Support Chatbots", "Internal Team Assistants", "Social Media Lead Bots"],
-    Cards: ChatbotCards,
+    services: [
+      { title: "Customer Support", description: "Answer customer questions automatically 24/7 without staff." },
+      { title: "Lead Generation", description: "Capture new customer information directly from website chats." },
+      { title: "Internal Assistants", description: "Help your team find company information and documents quickly." }
+    ]
   },
 ];

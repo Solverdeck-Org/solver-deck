@@ -46,7 +46,7 @@ export function Solutions() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="relative min-h-[120vh] bg-black text-white pt-20 sm:pt-40 pb-16 sm:pb-32 overflow-hidden flex flex-col justify-center border-t border-white/5">
+    <section ref={sectionRef} id="services" className="relative bg-black text-white pt-16 sm:pt-24 pb-16 sm:pb-24 overflow-hidden border-t border-white/5">
       <div className="absolute top-0 left-0 w-full h-[60vh] md:h-[80vh] pointer-events-none overflow-hidden select-none z-0 opacity-30">
         <Image src="https://res.cloudinary.com/dqovfvo29/image/upload/q_auto/f_auto/v1779195441/fb674d02-1583-4f13-b0a0-fde8963717ac_n75te3.jpg" alt="Solutions background backdrop" fill priority className="object-cover object-top" />
         <div className="absolute inset-0 bg-linear-to-b from-black/0 via-black/40 to-black" />
