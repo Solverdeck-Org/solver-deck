@@ -44,7 +44,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent z-10" />
       <div className="relative z-20 px-5 sm:px-8 flex flex-col items-start justify-center flex-1 pt-24 pb-32">
         <div ref={textRef} className="flex flex-col max-w-8xl gap-8 md:gap-16">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white">
             Website Design & AI Automation <br /> for UK Businesses and Trades
           </h1>
           {/* <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white max-w-5xl font-outfit font-medium leading-normal">
