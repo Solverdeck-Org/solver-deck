@@ -6,9 +6,13 @@ import { Process } from "@/components/Process";
 import { Solutions } from "@/components/Solution";
 import { Testimonials } from "@/components/Testimonials";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { JsonLd } from "@/components/JsonLd";
 import { processSchema } from "@/lib/process-schema";
 import { sanityFetch } from "@/sanity/lib/live";
-import { getHomepageCaseStudiesQuery, getHomepageTestimoniesQuery } from "@/sanity/lib/queries";
+import {
+  getHomepageCaseStudiesQuery,
+  getHomepageTestimoniesQuery,
+} from "@/sanity/lib/queries";
 
 export const metadata: Metadata = {
   title: "Solverdeck — Web Design, AI Automation & Software Development UK",
@@ -24,21 +28,21 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [{ data: homepageCaseStudies }, { data: homepageTestimonials }] = await Promise.all([
-    sanityFetch({ query: getHomepageCaseStudiesQuery }),
-    sanityFetch({ query: getHomepageTestimoniesQuery }),
-  ]);
+  const [{ data: homepageCaseStudies }, { data: homepageTestimonials }] =
+    await Promise.all([
+      sanityFetch({ query: getHomepageCaseStudiesQuery }),
+      sanityFetch({ query: getHomepageTestimoniesQuery }),
+    ]);
 
   return (
     <main className="flex flex-col min-h-screen bg-black">
-      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Static JSON-LD requires raw injection and is safe from XSS */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(processSchema) }} />
+      <JsonLd data={processSchema} />
       <Hero />
-      <Solutions />
-      <CaseStudies studies={homepageCaseStudies} />
       <WhyChooseUs />
-      <Process />
+      <CaseStudies studies={homepageCaseStudies} />
+      <Solutions />
       <Testimonials testimonials={homepageTestimonials} />
+      <Process />
       <Cta />
     </main>
   );
