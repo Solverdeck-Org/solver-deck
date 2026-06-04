@@ -19,6 +19,14 @@ const tierField = (name: "starter" | "growth" | "enterprise", title: string) =>
         type: "string",
         description: 'e.g. "£299/mo" or leave blank if not applicable',
       }),
+      defineField({
+        name: "details",
+        title: "What's included",
+        type: "array",
+        of: [{ type: "string" }],
+        description:
+          "Bullet points shown when the visitor expands “Show details” for this service & tier",
+      }),
     ],
   });
 

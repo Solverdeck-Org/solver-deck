@@ -87,6 +87,16 @@
                         "type": "string"
                       },
                       "optional": true
+                    },
+                    "details": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "array",
+                        "of": {
+                          "type": "string"
+                        }
+                      },
+                      "optional": true
                     }
                   }
                 },
@@ -110,6 +120,16 @@
                         "type": "string"
                       },
                       "optional": true
+                    },
+                    "details": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "array",
+                        "of": {
+                          "type": "string"
+                        }
+                      },
+                      "optional": true
                     }
                   }
                 },
@@ -131,6 +151,16 @@
                       "type": "objectAttribute",
                       "value": {
                         "type": "string"
+                      },
+                      "optional": true
+                    },
+                    "details": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "array",
+                        "of": {
+                          "type": "string"
+                        }
                       },
                       "optional": true
                     }

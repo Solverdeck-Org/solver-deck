@@ -29,14 +29,17 @@ export type Pricing = {
     starter?: {
       oneOff?: string;
       monthly?: string;
+      details?: Array<string>;
     };
     growth?: {
       oneOff?: string;
       monthly?: string;
+      details?: Array<string>;
     };
     enterprise?: {
       oneOff?: string;
       monthly?: string;
+      details?: Array<string>;
     };
     _type: "pricingRow";
     _key: string;
@@ -408,7 +411,7 @@ export type AllSanitySchemaTypes =
 
 // Source: src/sanity/lib/queries.ts
 // Variable: getPricingSectionsQuery
-// Query: *[_type == "pricing"] | order(order asc) {    _id,    sectionTitle,    rows[] {      _key,      label,      note,      starter { oneOff, monthly },      growth { oneOff, monthly },      enterprise { oneOff, monthly }    }  }
+// Query: *[_type == "pricing"] | order(order asc) {    _id,    sectionTitle,    rows[] {      _key,      label,      note,      starter { oneOff, monthly, details },      growth { oneOff, monthly, details },      enterprise { oneOff, monthly, details }    }  }
 export type GetPricingSectionsQueryResult = Array<{
   _id: string;
   sectionTitle: string | null;
@@ -419,14 +422,17 @@ export type GetPricingSectionsQueryResult = Array<{
     starter: {
       oneOff: string | null;
       monthly: string | null;
+      details: Array<string> | null;
     } | null;
     growth: {
       oneOff: string | null;
       monthly: string | null;
+      details: Array<string> | null;
     } | null;
     enterprise: {
       oneOff: string | null;
       monthly: string | null;
+      details: Array<string> | null;
     } | null;
   }> | null;
 }>;
@@ -647,7 +653,7 @@ export type GetHomepageTestimoniesQueryResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '\n  *[_type == "pricing"] | order(order asc) {\n    _id,\n    sectionTitle,\n    rows[] {\n      _key,\n      label,\n      note,\n      starter { oneOff, monthly },\n      growth { oneOff, monthly },\n      enterprise { oneOff, monthly }\n    }\n  }\n': GetPricingSectionsQueryResult;
+    '\n  *[_type == "pricing"] | order(order asc) {\n    _id,\n    sectionTitle,\n    rows[] {\n      _key,\n      label,\n      note,\n      starter { oneOff, monthly, details },\n      growth { oneOff, monthly, details },\n      enterprise { oneOff, monthly, details }\n    }\n  }\n': GetPricingSectionsQueryResult;
     '\n  *[_type == "caseStudy" && showInNavbar == true] | order(_createdAt desc) {\n    _id,\n    name,\n    link\n  }\n': GetNavbarCaseStudiesQueryResult;
     '\n  *[_type == "caseStudy"] | order(order asc, _createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    order,\n    "categories": categories[]->title\n  }\n': GetAllCaseStudiesQueryResult;
     '\n  *[_type == "caseStudy" && showOnHomepage == true] | order(order asc, _createdAt desc) {\n    _id,\n    name,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    link,\n    order,\n    "categories": categories[]->title\n  }\n': GetHomepageCaseStudiesQueryResult;

@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+
+import { ChevronDown } from "lucide-react";
+import React, { useState } from "react";
 
 interface TierPrice {
   oneOff?: string | null;
   monthly?: string | null;
+  details?: (string | null)[] | null;
 }
 
 interface PricingRow {
@@ -30,6 +34,12 @@ const TIER_SUBTITLES = {
   Enterprise: "For complex, high-volume needs",
 } as const;
 
+function hasDetails(row: PricingRow) {
+  return [row.starter, row.growth, row.enterprise].some(
+    (t) => (t?.details?.filter(Boolean).length ?? 0) > 0,
+  );
+}
+
 function Cell({ value }: { value: string | null | undefined }) {
   return (
     <td className="px-4 py-4 text-center">
@@ -38,49 +48,95 @@ function Cell({ value }: { value: string | null | undefined }) {
   );
 }
 
-function SectionHeader({ title }: { title: string }) {
+function DetailsColumn({ tier, price }: { tier: string; price?: TierPrice | null }) {
+  const items = price?.details?.filter((d): d is string => Boolean(d)) ?? [];
   return (
-    <tr>
-      <td
-        colSpan={7}
-        className="px-6 pt-10 pb-3 text-[10px] font-mono font-semibold tracking-[0.15em] uppercase text-white border-b border-white/10"
-      >
-        {title}
-      </td>
-    </tr>
+    <div className="flex flex-col gap-2">
+      <span className="text-white font-outfit text-sm font-semibold">{tier}</span>
+      {items.length ? (
+        <ul className="flex flex-col gap-1.5">
+          {items.map((item) => (
+            <li key={item} className="text-white/70 font-outfit text-xs leading-relaxed flex gap-2">
+              <span aria-hidden className="text-white/40">—</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <span className="text-white/40 font-outfit text-xs">Not included</span>
+      )}
+    </div>
+  );
+}
+
+function ServiceRow({ row }: { row: PricingRow }) {
+  const [open, setOpen] = useState(false);
+  const canExpand = hasDetails(row);
+
+  return (
+    <>
+      <tr className="border-b border-white/5 transition-colors duration-150 hover:bg-white/2">
+        <td className="px-6 py-4">
+          <span className="text-white font-outfit text-sm font-medium">{row.label}</span>
+          {row.note && (
+            <span className="block text-white text-[11px] font-outfit mt-0.5">{row.note}</span>
+          )}
+          {canExpand && (
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              className="mt-2 inline-flex items-center gap-1 text-white/60 hover:text-white text-[11px] font-outfit transition-colors cursor-pointer"
+            >
+              {open ? "Hide details" : "Show details"}
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+              />
+            </button>
+          )}
+        </td>
+        <Cell value={row.starter?.oneOff} />
+        <td className="px-4 py-4 text-center border-r border-white/5">
+          <span className="text-white font-outfit text-sm">{row.starter?.monthly || "—"}</span>
+        </td>
+        <Cell value={row.growth?.oneOff} />
+        <td className="px-4 py-4 text-center border-r border-white/5">
+          <span className="text-white font-outfit text-sm">{row.growth?.monthly || "—"}</span>
+        </td>
+        <Cell value={row.enterprise?.oneOff} />
+        <td className="px-4 py-4 text-center">
+          <span className="text-white font-outfit text-sm">{row.enterprise?.monthly || "—"}</span>
+        </td>
+      </tr>
+
+      {canExpand && open && (
+        <tr className="border-b border-white/5 bg-white/2">
+          <td colSpan={7} className="px-6 py-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <DetailsColumn tier="Starter" price={row.starter} />
+              <DetailsColumn tier="Growth" price={row.growth} />
+              <DetailsColumn tier="Enterprise" price={row.enterprise} />
+            </div>
+          </td>
+        </tr>
+      )}
+    </>
   );
 }
 
 function SectionRows({ section }: { section: PricingSection }) {
   return (
     <>
-      <SectionHeader title={section.sectionTitle ?? ""} />
-      {section.rows?.map((row: PricingRow, i: number) => (
-        <tr
-          key={row._key}
-          className={`border-b border-white/5 transition-colors duration-150 hover:bg-white/2 ${
-            i % 2 === 0 ? "bg-transparent" : "bg-white/1"
-          }`}
+      <tr>
+        <td
+          colSpan={7}
+          className="px-6 pt-10 pb-3 text-[10px] font-outfit font-semibold tracking-[0.15em] uppercase text-white border-b border-white/10"
         >
-          <td className="px-6 py-4">
-            <span className="text-white font-outfit text-sm font-medium">{row.label}</span>
-            {row.note && (
-              <span className="block text-white text-[11px] font-mono mt-0.5">{row.note}</span>
-            )}
-          </td>
-          <Cell value={row.starter?.oneOff} />
-          <td className="px-4 py-4 text-center border-r border-white/5">
-            <span className="text-white font-outfit text-sm">{row.starter?.monthly || "—"}</span>
-          </td>
-          <Cell value={row.growth?.oneOff} />
-          <td className="px-4 py-4 text-center border-r border-white/5">
-            <span className="text-white font-outfit text-sm">{row.growth?.monthly || "—"}</span>
-          </td>
-          <Cell value={row.enterprise?.oneOff} />
-          <td className="px-4 py-4 text-center">
-            <span className="text-white font-outfit text-sm">{row.enterprise?.monthly || "—"}</span>
-          </td>
-        </tr>
+          {section.sectionTitle ?? ""}
+        </td>
+      </tr>
+      {section.rows?.map((row) => (
+        <ServiceRow key={row._key} row={row} />
       ))}
     </>
   );
@@ -98,7 +154,7 @@ export function PricingTable({ sections }: { sections: PricingSections }) {
               <th key={tier} colSpan={2} className="px-6 py-6 text-center border-l border-white/10">
                 <div className="flex flex-col items-center gap-1">
                   <span className="text-white font-outfit font-semibold text-lg tracking-tight">{tier}</span>
-                  <span className="text-white text-[11px] font-mono font-normal leading-tight max-w-[180px]">
+                  <span className="text-white text-[11px] font-outfit font-normal leading-tight max-w-[180px]">
                     {TIER_SUBTITLES[tier]}
                   </span>
                 </div>
@@ -107,15 +163,15 @@ export function PricingTable({ sections }: { sections: PricingSections }) {
           </tr>
           <tr className="border-b border-white/10 bg-black">
             <th className="px-6 py-3 text-left">
-              <span className="text-white text-[10px] font-mono uppercase tracking-widest">Service</span>
+              <span className="text-white text-[10px] font-outfit uppercase tracking-widest">Service</span>
             </th>
             {TIERS.map((tier) => (
               <React.Fragment key={tier}>
                 <th className="px-4 py-3 text-center border-l border-white/10 w-[12%]">
-                  <span className="text-white text-[10px] font-mono uppercase tracking-widest">One-off</span>
+                  <span className="text-white text-[10px] font-outfit uppercase tracking-widest">One-off</span>
                 </th>
                 <th className="px-4 py-3 text-center w-[12%]">
-                  <span className="text-white text-[10px] font-mono uppercase tracking-widest">Monthly</span>
+                  <span className="text-white text-[10px] font-outfit uppercase tracking-widest">Monthly</span>
                 </th>
               </React.Fragment>
             ))}
@@ -123,7 +179,7 @@ export function PricingTable({ sections }: { sections: PricingSections }) {
         </thead>
 
         <tbody>
-          {sections.map((section: PricingSection) => (
+          {sections.map((section) => (
             <SectionRows key={section._id} section={section} />
           ))}
         </tbody>

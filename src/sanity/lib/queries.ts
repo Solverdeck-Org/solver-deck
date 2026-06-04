@@ -8,9 +8,9 @@ export const getPricingSectionsQuery = defineQuery(`
       _key,
       label,
       note,
-      starter { oneOff, monthly },
-      growth { oneOff, monthly },
-      enterprise { oneOff, monthly }
+      starter { oneOff, monthly, details },
+      growth { oneOff, monthly, details },
+      enterprise { oneOff, monthly, details }
     }
   }
 `);
