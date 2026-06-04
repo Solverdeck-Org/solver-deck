@@ -16,7 +16,7 @@ export const slides: Slide[] = [
     description: (
       <>
         From high-performance web, native mobile, and robust desktop applications to complex SaaS
-        platforms and conversion-optimized <span className="whitespace-nowrap">e-commerce</span>{" "}
+        platforms and conversion-optimised <span className="whitespace-nowrap">e-commerce</span>{" "}
         sites. We build scalable, secure, and beautiful software tailored to your specific
         operational needs.
       </>

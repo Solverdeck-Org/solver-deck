@@ -18,8 +18,8 @@ export function NewsletterForm() {
   }
 
   return (
-    <div className="flex flex-col gap-2 max-w-md">
-      <form action={action} className="flex gap-2">
+    <div className="flex flex-col gap-2 w-full">
+      <form action={action} className="flex flex-col sm:flex-row gap-3">
         <input
           name="email"
           type="email"
@@ -27,12 +27,12 @@ export function NewsletterForm() {
           placeholder="you@company.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={`flex-1 bg-white/5 border ${state.error ? "border-red-400/60" : "border-white/10"} rounded-full px-5 py-3 text-sm text-white placeholder:text-white/30 focus:outline-hidden focus:border-white/30 transition`}
+          className={`flex-1 bg-white/5 border ${state.error ? "border-red-400/60" : "border-white/10"} rounded-full px-7 py-4 text-base sm:text-lg text-white placeholder:text-white/30 focus:outline-hidden focus:border-white/30 transition`}
         />
         <button
           type="submit"
           disabled={isPending}
-          className="px-6 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-white/90 transition disabled:opacity-50 shrink-0"
+          className="px-8 py-4 rounded-full bg-white text-black text-base sm:text-lg font-semibold hover:bg-white/90 transition disabled:opacity-50 shrink-0"
         >
           {isPending ? "…" : "Subscribe"}
         </button>

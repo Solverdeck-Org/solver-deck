@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Outfit } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SanityLive } from "@/sanity/lib/live";
 import { ConsentManager } from "../components/consent-manager";
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  variable: "--font-mono",
-});
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -95,9 +89,9 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
   },
-  alternates: {
-    canonical: SITE_URL,
-  },
+  // NOTE: no `alternates.canonical` here on purpose — a root canonical is
+  // inherited by every route that doesn't set its own, which made all pages
+  // (e.g. blog posts) declare the homepage as canonical. Each page sets its own.
 };
 
 export default function RootLayout({
@@ -106,12 +100,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        "h-full dark",
-        "antialiased",
-        ibmPlexMono.variable,
-        outfit.variable,
-      )}
+      className={cn("h-full dark", "antialiased", outfit.variable)}
     >
       <body className="min-h-full flex flex-col bg-black">
         <ConsentManager>

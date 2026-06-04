@@ -11,21 +11,21 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     Icon: Globe,
-    title: "High-Performance Websites",
+    title: "High-Perfoming Websites",
     description:
-      "We craft fast, beautiful websites and web apps using Next.js and Sanity — built to convert visitors and scale effortlessly.",
+      "We build fast websites for small businesses and trades for your brand and voice. Every site loads in under 2 seconds, ranks properly on Google, and is designed to turn visitors into clients.",
   },
   {
     Icon: Bot,
-    title: "Custom AI & Automation",
+    title: "AI systems for Trades & Local Businesses",
     description:
-      "From intelligent chatbots to end-to-end AI pipelines, we automate the repetitive and amplify the exceptional.",
+      "We build AI agents that handle customer enquiries, bookings, and follow-ups automatically. Your business keeps responding 24 hours a day while you focus on your work.",
   },
   {
     Icon: ShieldCheck,
     title: "Ongoing Partnership",
     description:
-      "We don't just ship and disappear. We monitor, optimise, and evolve your technology as your business grows.",
+      "Every web design includes hosting and maintenance. Every AI system gets monitored and updated as your business grows. A member of our team will be assigned to you.",
   },
 ];
 
@@ -37,8 +37,8 @@ export function Cta() {
           Ready to Build Something Remarkable?
         </h2>
         <p className="mt-4 sm:mt-6 text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed">
-          From high-performance websites to intelligent AI tools — we help ambitious teams build
-          technology that drives real results.
+          From high-performance websites to intelligent AI tools — we help
+          ambitious teams build technology that drives real results.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-20">
           {FEATURES.map(({ Icon, title, description }) => (
@@ -49,8 +49,12 @@ export function Cta() {
               <span className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
                 <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </span>
-              <h3 className="text-white font-semibold text-base sm:text-lg">{title}</h3>
-              <p className="text-white text-sm leading-relaxed">{description}</p>
+              <h3 className="text-white font-semibold text-base sm:text-lg">
+                {title}
+              </h3>
+              <p className="text-white text-sm leading-relaxed">
+                {description}
+              </p>
             </div>
           ))}
         </div>

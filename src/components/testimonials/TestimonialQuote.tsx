@@ -3,39 +3,31 @@ import type { GetHomepageTestimoniesQueryResult } from "@/sanity/types";
 type Testimonial = NonNullable<GetHomepageTestimoniesQueryResult>[number];
 
 interface TestimonialQuoteProps {
-  testimonials: Testimonial[];
-  activeIndex: number;
+  testimonial: Testimonial;
 }
 
 function byline(t: Testimonial) {
-  return [t.roles?.filter(Boolean).join(" & "), t.company].filter(Boolean).join(", ");
+  return [t.roles?.filter(Boolean).join(" & "), t.company]
+    .filter(Boolean)
+    .join(", ");
 }
 
-export function TestimonialQuote({ testimonials, activeIndex }: TestimonialQuoteProps) {
+export function TestimonialQuote({ testimonial: t }: TestimonialQuoteProps) {
   return (
-    <div className="max-w-lg relative">
-      {testimonials.map((t, idx) => (
-        <div
-          key={t._id}
-          className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            idx === activeIndex
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4 absolute inset-0 pointer-events-none"
-          }`}
-        >
-          <div className="border-l-2 border-white/30 pl-6">
-            <p className="text-white/90 text-base md:text-lg leading-relaxed font-outfit">
-              &ldquo;{t.testimony}&rdquo;
-            </p>
-            {(t.name || t.roles || t.company) && (
-              <div className="mt-4 font-outfit">
-                {t.name && <div className="text-white font-medium text-sm">{t.name}</div>}
-                {byline(t) && <div className="text-white/50 text-xs mt-0.5">{byline(t)}</div>}
-              </div>
-            )}
-          </div>
+    <div className="flex flex-col h-full p-6 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+      <p className="text-white/90 text-sm md:text-base leading-relaxed font-outfit flex-1">
+        &ldquo;{t.testimony}&rdquo;
+      </p>
+      {(t.name || t.roles || t.company) && (
+        <div className="mt-5 pt-5 border-t border-white/10 font-outfit">
+          {t.name && (
+            <div className="text-white font-medium text-sm">{t.name}</div>
+          )}
+          {byline(t) && (
+            <div className="text-white/50 text-xs mt-0.5">{byline(t)}</div>
+          )}
         </div>
-      ))}
+      )}
     </div>
   );
 }

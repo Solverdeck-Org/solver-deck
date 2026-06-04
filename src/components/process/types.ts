@@ -2,10 +2,7 @@ export interface Phase {
   id: string;
   num: string;
   title: string;
-  subtitle: string;
   content: string;
-  highlight: string;
-  visualType: "audit" | "strategy" | "implementation" | "testing" | "support";
 }
 
 export const phases: Phase[] = [
@@ -13,50 +10,35 @@ export const phases: Phase[] = [
     id: "phase-01",
     num: "01",
     title: "DISCOVERY",
-    subtitle: "Discovery & Assessment",
     content:
-      "We start with a deep dive into your business. Through workshops, stakeholder interviews, and technical audits, we map your current systems, uncover hidden challenges, and define clear success metrics aligned with your growth goals.",
-    highlight: "System & Infrastructure Audit",
-    visualType: "audit",
+      "To understand your business, we ask the right questions about your customers, your current setup, and what's costing you time or money. Whether you need a new website, an AI automation system, or both, this is where we figure out exactly what will make the biggest difference for your business.",
   },
   {
     id: "phase-02",
     num: "02",
     title: "STRATEGY",
-    subtitle: "Strategy & Roadmap",
     content:
-      "Using insights from discovery, we craft a tailored technology strategy and phased roadmap. We prioritize quick wins, scalability, and ROI while ensuring every recommendation fits your budget, timeline, and long-term vision.",
-    highlight: "Tailored Scalability Roadmap",
-    visualType: "strategy",
+      "We take everything we've learned and put together a clear plan. Just a practical roadmap that shows you what we'll build, what it will cost, and what results you can expect. Most of our clients see a return within the first 30 days.",
   },
   {
     id: "phase-03",
     num: "03",
-    title: "IMPLEMENTATION",
-    subtitle: "Implementation & Execution",
+    title: "BUILD",
     content:
-      "We execute the plan with precision. Our agile development process includes regular progress updates, transparent communication, and rigorous testing at every stage to ensure smooth delivery with minimal operational disruption.",
-    highlight: "Agile Sprints & Clean Code",
-    visualType: "implementation",
+      "We build your website or AI solution using modern technology that performs. Every website we deliver is mobile-friendly and optimised for Google from day one. Every AI agent is trained on your specific business so it answers like someone who actually works for you.",
   },
   {
     id: "phase-04",
     num: "04",
     title: "TESTING",
-    subtitle: "Testing & Optimization",
     content:
-      "We don’t just launch — we validate. Through comprehensive testing (functional, performance, security, and user acceptance), we identify improvements and optimize every solution before full rollout. This phase ensures maximum reliability and performance from day one.",
-    highlight: "Full-Scale Security & Load Tests",
-    visualType: "testing",
+      "Before anything goes live, we test it properly. Your website gets checked across every device and browser. Your AI agent gets tested with real customer questions until every answer is accurate. We don't hand over something that isn't ready.",
   },
   {
     id: "phase-05",
     num: "05",
     title: "SUPPORT",
-    subtitle: "Ongoing Support & Evolution",
     content:
-      "Technology doesn’t stand still, and neither do we. We provide proactive maintenance, continuous monitoring, regular optimization, and strategic guidance so your systems stay secure, efficient, and aligned with evolving business needs.",
-    highlight: "24/7 SLA & Proactive Support",
-    visualType: "support",
+      "We don't disappear after launch. Every website we build includes ongoing maintenance and hosting. Every AI system we deploy gets monitored and updated as your business changes. You get a local team you can actually reach when something needs attention.",
   },
 ];
