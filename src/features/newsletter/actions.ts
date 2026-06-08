@@ -14,6 +14,10 @@ const schema = z.object({
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const NEWSLETTER_TEMPLATE_ID =
+  process.env.RESEND_NEWSLETTER_TEMPLATE_ID ??
+  "87e67b14-b178-41d9-ace5-2cddc7fd977d";
+
 export async function subscribeToNewsletter(
   _prev: NewsletterState,
   formData: FormData,
@@ -27,8 +31,19 @@ export async function subscribeToNewsletter(
   const { error } = await resend.emails.send({
     from: "Solverdeck <hello@solverdeck.com>",
     to: [parsed.data.email],
-    subject: "Welcome to Solverdeck updates!",
-    html: "<p>Hi there!</p><p>Thanks for subscribing. We'll keep you in the loop on our latest projects, insights, and news.</p><p>— The Solverdeck Team</p>",
+    // Uses the Resend-hosted template. `subject` is defined in the template.
+    // `date` fills the template's date variable, e.g. "Mon, 8 June 2026".
+    template: {
+      id: NEWSLETTER_TEMPLATE_ID,
+      variables: {
+        date: new Intl.DateTimeFormat("en-GB", {
+          weekday: "short",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }).format(new Date()),
+      },
+    },
   });
 
   if (error) return { success: false, error: "Something went wrong. Please try again." };
