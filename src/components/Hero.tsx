@@ -38,7 +38,10 @@ export function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/hero.mp4" type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/dqovfvo29/video/upload/q_auto/f_auto/v1781092995/solverdeck-background-hero_ta2r0c.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent z-10" />
