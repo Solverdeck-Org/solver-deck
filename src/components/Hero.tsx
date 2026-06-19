@@ -1,18 +1,19 @@
 "use client";
 
 import gsap from "gsap";
+import { X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { LogoTicker } from "./hero/LogoTicker";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const [showAuditBanner, setShowAuditBanner] = useState(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!textRef.current) return;
     gsap.fromTo(
-      textRef.current.children,
+      textRef.current.querySelectorAll("[data-hero-reveal]"),
       { y: 50, opacity: 0 },
       {
         y: 0,
@@ -32,6 +33,7 @@ export function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <video
+          aria-label="Abstract Solverdeck hero background video"
           autoPlay
           loop
           muted
@@ -47,13 +49,42 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent z-10" />
       <div className="relative z-20 px-5 sm:px-8 flex flex-col items-start justify-center flex-1 pt-24 pb-32">
         <div ref={textRef} className="flex flex-col max-w-8xl gap-8 md:gap-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white">
+          {showAuditBanner ? (
+            <div
+              data-hero-reveal
+              className="flex w-full max-w-xl items-center justify-between gap-3 rounded-full border border-white/15 bg-black/45 px-3 py-2 text-white opacity-0 shadow-2xl shadow-black/30 backdrop-blur-md sm:px-4"
+            >
+              <Link
+                href="https://cal.com/solverdeck"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-10 flex-1 items-center rounded-full px-3 font-outfit text-sm font-medium transition-colors hover:bg-white/10 sm:text-base"
+              >
+                Free Website audit
+              </Link>
+              <button
+                type="button"
+                aria-label="Dismiss free website audit banner"
+                onClick={() => setShowAuditBanner(false)}
+                className="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <X aria-hidden="true" className="size-4" />
+              </button>
+            </div>
+          ) : null}
+          <h1
+            data-hero-reveal
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white opacity-0"
+          >
             Website Design & AI Automation <br /> for UK Businesses and Trades
           </h1>
           {/* <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white max-w-5xl font-outfit font-medium leading-normal">
             We build websites and AI tools, so you spend less time on admin and more on growth.
           </p> */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div
+            data-hero-reveal
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 opacity-0"
+          >
             <Link
               href="#services"
               className="bg-primary text-white hover:bg-white hover:text-primary text-lg sm:text-2xl md:text-3xl rounded-full px-8 md:px-12 py-3 md:py-4 h-14 sm:h-16 md:h-20 font-outfit font-medium transition-colors inline-flex items-center justify-center"

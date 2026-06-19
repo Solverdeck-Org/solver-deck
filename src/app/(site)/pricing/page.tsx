@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Cta } from "@/components/Cta";
-import { PerformanceModels } from "@/features/pricing/PerformanceModels";
 import { PricingTable } from "@/features/pricing/PricingTable";
 import { sanityFetch } from "@/sanity/lib/live";
 import { getPricingSectionsQuery } from "@/sanity/lib/queries";
@@ -29,7 +28,7 @@ export default async function PricingPage() {
 
         <div className="relative max-w-6xl mx-auto flex flex-col gap-16">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-outfit font-semibold tracking-tight text-white leading-[1.05] text-center">
-            Solverdeck Packages
+            Our Packages
           </h1>
 
           <PricingTable sections={sections ?? []} />
@@ -37,10 +36,6 @@ export default async function PricingPage() {
           <p className="text-white text-xs font-mono text-center">
             * All prices are estimates. Final pricing is confirmed after a discovery call based on scope, timeline, and complexity.
           </p>
-
-          <div className="border-t border-white/10 pt-16">
-            <PerformanceModels />
-          </div>
         </div>
       </section>
 
