@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import type { GetNavbarCaseStudiesQueryResult } from "@/sanity/types";
 import { MegaMenu } from "./header/MegaMenu";
 import { MobileMenu } from "./header/MobileMenu";
@@ -88,24 +88,25 @@ export function Header({ navCaseStudies = [] }: HeaderProps) {
           >
             Contact
           </Link>
-          <Button
-            className="uppercase bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full h-11 px-6 font-bold text-xs tracking-widest"
+          <Link
+            href="tel:+442038363442"
+            className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full h-11 px-6 font-bold text-xs tracking-widest transition-colors inline-flex items-center justify-center gap-2"
             onMouseEnter={() => setActiveMenu(null)}
           >
-            Book a consultation
-          </Button>
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            <span>020 3836 3442</span>
+          </Link>
         </div>
 
         {/* Mobile buttons — visible on mobile only */}
         <div className="flex lg:hidden items-center gap-3">
           {!mobileOpen && (
             <Link
-              href="https://cal.com/solverdeck"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="uppercase bg-primary text-white rounded-full h-10 px-5 text-[11px] tracking-widest transition-colors inline-flex items-center justify-center font-semibold"
+              href="tel:+442038363442"
+              className="bg-primary text-white rounded-full h-10 px-4 text-[11px] tracking-widest transition-colors inline-flex items-center justify-center gap-2 font-semibold"
             >
-              Book a Call
+              <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+              <span>020 3836 3442</span>
             </Link>
           )}
           <button

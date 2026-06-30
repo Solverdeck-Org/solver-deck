@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Phone } from "lucide-react";
 import { useState } from "react";
 import { type MenuData, menus } from "./menus";
 
@@ -18,15 +19,19 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Products", menuKey: "products" },
-  { label: "Services", href: "#services" },
-  { label: "Case Studies", menuKey: "caseStudies" },
+  { label: "Services", href: "/#services" },
+  { label: "Case Studies", href: "/work" },
   { label: "Resources", menuKey: "resources" },
   { label: "About", href: "/about" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
-export function MobileMenu({ open, onClose, caseStudiesMenu }: MobileMenuProps) {
+export function MobileMenu({
+  open,
+  onClose,
+  caseStudiesMenu,
+}: MobileMenuProps) {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   const getMenuData = (key: string): MenuData | null => {
@@ -36,7 +41,7 @@ export function MobileMenu({ open, onClose, caseStudiesMenu }: MobileMenuProps) 
 
   const submenuData = activeSubmenu ? getMenuData(activeSubmenu) : null;
   const submenuLabel = activeSubmenu
-    ? NAV_ITEMS.find((item) => item.menuKey === activeSubmenu)?.label ?? ""
+    ? (NAV_ITEMS.find((item) => item.menuKey === activeSubmenu)?.label ?? "")
     : "";
 
   if (!open) return null;
@@ -52,8 +57,19 @@ export function MobileMenu({ open, onClose, caseStudiesMenu }: MobileMenuProps) 
             className="flex items-center gap-2 text-white"
             aria-label="Back"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
           <span className="text-white text-[11px] font-mono uppercase tracking-widest">
@@ -76,7 +92,10 @@ export function MobileMenu({ open, onClose, caseStudiesMenu }: MobileMenuProps) 
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        onClick={() => { setActiveSubmenu(null); onClose(); }}
+                        onClick={() => {
+                          setActiveSubmenu(null);
+                          onClose();
+                        }}
                         className="text-2xl font-outfit font-medium text-white hover:text-white/70 transition"
                       >
                         {item.name}
@@ -98,14 +117,28 @@ export function MobileMenu({ open, onClose, caseStudiesMenu }: MobileMenuProps) 
                     className="w-full flex items-center justify-between py-3 text-2xl font-outfit font-medium text-white"
                   >
                     {item.label}
-                    <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    <svg
+                      className="w-5 h-5 text-white/40"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
                     </svg>
                   </button>
                 ) : (
                   <Link
                     href={item.href!}
-                    onClick={() => { setActiveSubmenu(null); onClose(); }}
+                    onClick={() => {
+                      setActiveSubmenu(null);
+                      onClose();
+                    }}
                     className="block py-3 text-2xl font-outfit font-medium text-white"
                   >
                     {item.label}
@@ -120,13 +153,12 @@ export function MobileMenu({ open, onClose, caseStudiesMenu }: MobileMenuProps) 
       {/* Bottom buttons */}
       <div className="px-6 pb-8 pt-4 flex gap-3 border-t border-white/10">
         <Link
-          href="https://cal.com/solverdeck"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="tel:+442038363442"
           onClick={onClose}
-          className="flex-1 bg-primary text-white text-sm font-semibold uppercase tracking-widest text-center py-4 rounded-full transition hover:bg-primary/90"
+          className="flex-1 bg-primary text-white text-sm font-semibold tracking-widest text-center py-4 rounded-full transition hover:bg-primary/90 inline-flex items-center justify-center gap-2"
         >
-          Book a Call
+          <Phone className="h-4 w-4" aria-hidden="true" />
+          <span>020 3836 3442</span>
         </Link>
         <Link
           href="/contact"

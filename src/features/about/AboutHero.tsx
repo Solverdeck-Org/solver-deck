@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const STATS = [
   { value: "25+", label: "Projects delivered" },
-  { value: "100%", label: "Client satisfaction" },
+  { value: "98%", label: "Client satisfaction" },
   { value: "24h", label: "Proposal turnaround" },
   { value: "3×", label: "Average ROI growth" },
 ];

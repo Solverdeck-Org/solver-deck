@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { type MenuData } from "./menus";
+import type { MenuData } from "./menus";
 
 interface MegaMenuProps {
   activeMenu: string;
@@ -20,15 +20,22 @@ export function MegaMenu({ menuData, onMouseEnter }: MegaMenuProps) {
           {menuData.columns.map((col) => (
             <div key={col.title} className="flex flex-col gap-5">
               {col.title && (
-                <h3 className="text-[11px] text-[#8a8a8a] tracking-widest font-medium uppercase">{col.title}</h3>
+                <h3 className="text-[11px] text-[#8a8a8a] tracking-widest font-medium uppercase">
+                  {col.title}
+                </h3>
               )}
               <ul className="flex flex-col gap-4">
                 {col.items.map((item) => (
                   <li key={item.name}>
-                    <Link href={item.href} className="text-3xl font-outfit font-normal text-white hover:text-white/70 transition-colors flex items-center gap-3">
+                    <Link
+                      href={item.href}
+                      className="text-3xl font-outfit font-normal text-white hover:text-white/70 transition-colors flex items-center gap-3"
+                    >
                       {item.name}
                       {item.name.includes("Agent") && (
-                        <span className="text-[10px] bg-white text-black px-1.5 py-0.5 rounded-full font-bold uppercase tracking-tighter">NEW</span>
+                        <span className="text-[10px] bg-white text-black px-1.5 py-0.5 rounded-full font-bold uppercase tracking-tighter">
+                          NEW
+                        </span>
                       )}
                     </Link>
                   </li>
@@ -39,7 +46,9 @@ export function MegaMenu({ menuData, onMouseEnter }: MegaMenuProps) {
         </div>
         <div className="w-[500px] aspect-video bg-[#0a0a0a] p-10 relative overflow-hidden group cursor-pointer border border-white/5 flex flex-col justify-between">
           <h2 className="text-3xl font-outfit mb-3 text-white relative z-10 leading-tight font-medium">
-            The only AI operating system<br />your business needs
+            The only AI operating system
+            <br />
+            your business needs
           </h2>
           <div className="relative z-10">
             <Button className="bg-white text-black hover:bg-white/90 rounded-full font-bold text-xs px-6 py-5">
