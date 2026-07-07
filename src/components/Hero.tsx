@@ -2,6 +2,7 @@
 
 import gsap from "gsap";
 import { X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 
@@ -102,7 +103,27 @@ export function Hero() {
           </div>
         </div>
       </div>
-      {/* <LogoTicker /> */}
+      <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-30 flex flex-col items-center gap-4 sm:gap-6">
+        <p className="text-white/50 text-xs sm:text-sm font-outfit uppercase tracking-widest text-center">
+          Partnered With
+        </p>
+        <div className="flex items-center justify-center gap-8 sm:gap-12">
+          <Image
+            src="/shopify-partners.svg"
+            alt="Shopify Partners"
+            width={180}
+            height={60}
+            className="h-8 sm:h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+          />
+          <Image
+            src="/google-cloud.svg"
+            alt="Google Cloud"
+            width={180}
+            height={60}
+            className="h-8 sm:h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
+      </div>
     </section>
   );
 }

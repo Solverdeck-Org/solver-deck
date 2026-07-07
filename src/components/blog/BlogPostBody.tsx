@@ -5,24 +5,40 @@ import { PortableText } from "@portabletext/react";
 import type { PortableTextComponents } from "@portabletext/react";
 import type { SanityImageSource } from "@sanity/image-url";
 import { urlFor } from "@/sanity/lib/image";
+import { slugify } from "@/lib/slugify";
 import type { GetBlogPostQueryResult } from "@/sanity/types";
 
 type Content = NonNullable<NonNullable<GetBlogPostQueryResult>["content"]>;
+
+/** Minimal shape for block value — only what we need for slug ID generation */
+type BlockProps = {
+  children?: React.ReactNode;
+  value?: { children?: { text?: string }[] };
+};
 
 const components = {
   block: {
     normal: ({ children }: { children?: React.ReactNode }) => (
       <p className="text-white/80 leading-relaxed text-base font-outfit mb-5">{children}</p>
     ),
-    h2: ({ children }: { children?: React.ReactNode }) => (
-      <h2 className="text-white text-2xl md:text-3xl font-semibold font-outfit tracking-tight mt-12 mb-5">{children}</h2>
-    ),
-    h3: ({ children }: { children?: React.ReactNode }) => (
-      <h3 className="text-white text-xl font-semibold font-outfit tracking-tight mt-10 mb-4">{children}</h3>
-    ),
-    h4: ({ children }: { children?: React.ReactNode }) => (
-      <h4 className="text-white text-lg font-semibold font-outfit tracking-tight mt-8 mb-3">{children}</h4>
-    ),
+    h2: ({ children, value }: BlockProps) => {
+      const text = value?.children?.map((c) => c.text).join("") || "";
+      return (
+        <h2 id={slugify(text)} className="text-white text-2xl md:text-3xl font-semibold font-outfit tracking-tight mt-12 mb-5">{children}</h2>
+      );
+    },
+    h3: ({ children, value }: BlockProps) => {
+      const text = value?.children?.map((c) => c.text).join("") || "";
+      return (
+        <h3 id={slugify(text)} className="text-white text-xl font-semibold font-outfit tracking-tight mt-10 mb-4">{children}</h3>
+      );
+    },
+    h4: ({ children, value }: BlockProps) => {
+      const text = value?.children?.map((c) => c.text).join("") || "";
+      return (
+        <h4 id={slugify(text)} className="text-white text-lg font-semibold font-outfit tracking-tight mt-8 mb-3">{children}</h4>
+      );
+    },
     blockquote: ({ children }: { children?: React.ReactNode }) => (
       <blockquote className="border-l-2 border-white/30 pl-6 my-8 text-white/60 italic text-lg font-outfit leading-relaxed">{children}</blockquote>
     ),

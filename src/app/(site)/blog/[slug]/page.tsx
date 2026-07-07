@@ -3,8 +3,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Cta } from "@/components/Cta";
 import { BlogPostBody } from "@/components/blog/BlogPostBody";
+import { slugify } from "@/lib/slugify";
 import { sanityFetch } from "@/sanity/lib/live";
-import { getBlogPostQuery } from "@/sanity/lib/queries";
+import { getBlogPostQuery, getAllBlogPostsQuery } from "@/sanity/lib/queries";
+import { BlogCard } from "@/components/blog/BlogCard";
+import { TableOfContents } from "@/components/blog/TableOfContents";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -26,6 +29,29 @@ export default async function BlogPostPage({ params }: Props) {
   const { data: post } = await sanityFetch({ query: getBlogPostQuery, params: { slug } });
 
   if (!post) notFound();
+
+  // Extract headings for Table of Contents
+  const headings: { id: string; text: string; level: "h2" | "h3" }[] = [];
+  if (post.content) {
+    post.content.forEach((block: any) => {
+      if (block._type === "block" && (block.style === "h2" || block.style === "h3")) {
+        const text = block.children?.map((c: any) => c.text).join("") || "";
+        if (text) {
+          headings.push({
+            id: slugify(text),
+            text,
+            level: block.style,
+          });
+        }
+      }
+    });
+  }
+
+  console.log("[BlogPost] Content blocks:", post.content?.length, "| Headings found:", headings.length, headings);
+
+  // Fetch related posts
+  const { data: allPosts } = await sanityFetch({ query: getAllBlogPostsQuery });
+  const relatedPosts = allPosts?.filter((p) => p.slug !== slug).slice(0, 3) || [];
 
   const date = post._createdAt
     ? new Date(post._createdAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
@@ -73,15 +99,37 @@ export default async function BlogPostPage({ params }: Props) {
         )}
       </div>
 
-      {/* Body */}
-      <article className="px-5 sm:px-6 md:px-12 py-10 sm:py-14 max-w-4xl mx-auto w-full">
-        {post.description && (
-          <p className="text-white/60 text-lg font-outfit leading-relaxed mb-12 border-b border-white/8 pb-10">
-            {post.description}
-          </p>
-        )}
-        {post.content && <BlogPostBody content={post.content} />}
-      </article>
+      {/* Content Layout */}
+      <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-10 sm:py-14 w-full relative items-start">
+        {/* Body */}
+        <article className="flex-1 w-full max-w-4xl mx-auto lg:mx-0">
+          {post.description && (
+            <p className="text-white/60 text-lg font-outfit leading-relaxed mb-12 border-b border-white/8 pb-10">
+              {post.description}
+            </p>
+          )}
+          {post.content && <BlogPostBody content={post.content} />}
+        </article>
+
+        {/* Sidebar */}
+        <aside className="w-full lg:w-72 shrink-0 relative hidden lg:block">
+          <div className="sticky top-32">
+            <TableOfContents headings={headings} />
+          </div>
+        </aside>
+      </div>
+
+      {/* Read More */}
+      {relatedPosts.length > 0 && (
+        <section className="border-t border-white/10 px-5 sm:px-6 md:px-12 py-16 sm:py-24 max-w-7xl mx-auto w-full">
+          <h2 className="text-3xl md:text-4xl font-semibold font-outfit tracking-tight text-white mb-10">Read more blogs</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {relatedPosts.map((relatedPost) => (
+              <BlogCard key={relatedPost._id} post={relatedPost as any} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <Cta />
     </main>
