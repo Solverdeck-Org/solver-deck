@@ -95,6 +95,7 @@ export const getBlogPostQuery = defineQuery(`
     "imageUrl": image.asset->url,
     image,
     _createdAt,
+    _updatedAt,
     "categories": categories[]->title,
     content
   }

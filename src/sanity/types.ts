@@ -557,7 +557,7 @@ export type GetLegalPageQueryResult = {
 
 // Source: src/sanity/lib/queries.ts
 // Variable: getBlogPostQuery
-// Query: *[_type == "blogPost" && slug.current == $slug][0] {    _id,    title,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    _createdAt,    "categories": categories[]->title,    content  }
+// Query: *[_type == "blogPost" && slug.current == $slug][0] {    _id,    title,    "slug": slug.current,    description,    "imageUrl": image.asset->url,    image,    _createdAt,    _updatedAt,    "categories": categories[]->title,    content  }
 export type GetBlogPostQueryResult = {
   _id: string;
   title: string | null;
@@ -572,6 +572,7 @@ export type GetBlogPostQueryResult = {
     _type: "image";
   } | null;
   _createdAt: string;
+  _updatedAt: string;
   categories: Array<string | null> | null;
   content: Array<
     | ({
@@ -660,7 +661,7 @@ declare module "@sanity/client" {
     '\n  *[_type == "testimony"] | order(_createdAt asc) {\n    _id,\n    testimony,\n    name,\n    jobTitle,\n    "slug": slug.current,\n    "roles": roles[]->title,\n    company,\n    "imageUrl": image.asset->url,\n    image\n  }\n': GetAllTestimoniesQueryResult;
     '\n  *[_type == "faq"] | order(order asc, _createdAt asc) {\n    _id,\n    question,\n    answer\n  }\n': GetAllFaqsQueryResult;
     '\n  *[_type == "legalPage" && slug.current == $slug][0] {\n    title,\n    intro,\n    sections[] {\n      _key,\n      title,\n      body\n    },\n    _updatedAt\n  }\n': GetLegalPageQueryResult;
-    '\n  *[_type == "blogPost" && slug.current == $slug][0] {\n    _id,\n    title,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    _createdAt,\n    "categories": categories[]->title,\n    content\n  }\n': GetBlogPostQueryResult;
+    '\n  *[_type == "blogPost" && slug.current == $slug][0] {\n    _id,\n    title,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    _createdAt,\n    _updatedAt,\n    "categories": categories[]->title,\n    content\n  }\n': GetBlogPostQueryResult;
     '\n  *[_type == "blogPost"] | order(_createdAt desc) {\n    _id,\n    title,\n    "slug": slug.current,\n    description,\n    "imageUrl": image.asset->url,\n    image,\n    _createdAt,\n    "categories": categories[]->title\n  }\n': GetAllBlogPostsQueryResult;
     '\n  *[_type == "testimony" && showOnHomepage == true] | order(_createdAt asc)[0...3] {\n    _id,\n    testimony,\n    name,\n    "slug": slug.current,\n    "roles": roles[]->title,\n    company,\n    "imageUrl": image.asset->url,\n    image\n  }\n': GetHomepageTestimoniesQueryResult;
   }
