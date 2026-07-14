@@ -1,62 +1,75 @@
 "use client";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { SolutionContent } from "./solution/SolutionContent";
-import { SolutionTabs } from "./solution/SolutionTabs";
-import { slides } from "./solution/slides";
-import { useAutoProgress } from "./solution/useAutoProgress";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function Solutions() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const onTransition = useCallback((nextIndex: number) => {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        gsap.set([contentRef.current, cardsContainerRef.current], { y: 25, opacity: 0 });
-        gsap.timeline()
-          .to(contentRef.current, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" })
-          .to(cardsContainerRef.current, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.4")
-          .fromTo(".feature-card", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.08, ease: "expo.out" }, "-=0.5");
-      },
-    });
-    tl.to([contentRef.current, cardsContainerRef.current], { y: -15, opacity: 0, duration: 0.3, ease: "power2.inOut", stagger: 0.03 });
-    void nextIndex;
-  }, []);
-
-  const { selectedIndex, progress, goTo } = useAutoProgress({ count: slides.length, isPaused, onTransition });
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ scrollTrigger: { trigger: sectionRef.current, start: "top 70%" } });
-      tl.from(headlineRef.current, { y: 80, opacity: 0, duration: 1, ease: "power4.out" })
-        .from(".solution-tab", { y: 20, opacity: 0, duration: 0.7, stagger: 0.08, ease: "power3.out" }, "-=0.5")
-        .from(contentRef.current, { y: 30, opacity: 0, duration: 0.7, ease: "power3.out" }, "-=0.4")
-        .from(cardsContainerRef.current, { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
-        .fromTo(".feature-card", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.08, ease: "expo.out" }, "-=0.6");
-    }, sectionRef);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} id="services" className="relative bg-black text-white pt-16 sm:pt-24 pb-16 sm:pb-24 overflow-hidden border-t border-white/5">
+    <section id="services" className="relative bg-black text-white pt-24 pb-24 overflow-hidden border-t border-white/5">
+      {/* Background */}
       <div className="absolute top-0 left-0 w-full h-[60vh] md:h-[80vh] pointer-events-none overflow-hidden select-none z-0 opacity-30">
         <Image src="https://res.cloudinary.com/dqovfvo29/image/upload/q_auto/f_auto/v1779195441/fb674d02-1583-4f13-b0a0-fde8963717ac_n75te3.jpg" alt="Solutions background backdrop" fill priority className="object-cover object-top" />
         <div className="absolute inset-0 bg-linear-to-b from-black/0 via-black/40 to-black" />
       </div>
-      <div className="px-5 sm:px-8 w-full relative z-10 flex flex-col gap-10 md:gap-24">
-        <SolutionTabs slides={slides} selectedIndex={selectedIndex} progress={progress} onTabClick={goTo} />
-        {/* biome-ignore lint/a11y/noStaticElementInteractions: Mouse events pause background slider for reading */}
-        <div className="flex flex-col gap-16 md:gap-20" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
-          <SolutionContent slide={slides[selectedIndex]} contentRef={contentRef} cardsContainerRef={cardsContainerRef} />
+
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10 flex flex-col gap-16 md:gap-24 mt-10">
+        
+        {/* Service 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl">
+            <Image 
+              src="/strategy2.jpg" 
+              alt="For Local Businesses & Trades" 
+              fill 
+              className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" 
+            />
+          </div>
+          <div className="flex flex-col gap-6 items-start">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-outfit font-medium tracking-tight">
+              For Local Businesses & Trades
+            </h2>
+            <p className="text-white/60 text-lg sm:text-xl leading-relaxed max-w-xl">
+              Websites, Local SEO, and simple AI agents.
+            </p>
+            <Link 
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white hover:text-black border border-white/20 hover:border-white text-white font-medium text-sm sm:text-base px-6 py-3 rounded-full transition-all duration-300 mt-2"
+            >
+              Discover More <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
+
+        {/* Separator */}
+        <div className="w-full h-px bg-white/10" />
+
+        {/* Service 2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl">
+            <Image 
+              src="/implementation.jpg" 
+              alt="For Startups & Enterprises" 
+              fill 
+              className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-500" 
+            />
+          </div>
+          <div className="flex flex-col gap-6 items-start">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-outfit font-medium tracking-tight">
+              For Startups & Enterprises
+            </h2>
+            <p className="text-white/60 text-lg sm:text-xl leading-relaxed max-w-xl">
+              Custom SaaS, APIs, and Native App development.
+            </p>
+            <Link 
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white hover:text-black border border-white/20 hover:border-white text-white font-medium text-sm sm:text-base px-6 py-3 rounded-full transition-all duration-300 mt-2"
+            >
+              Discover More <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
       </div>
     </section>
   );

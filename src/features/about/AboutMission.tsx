@@ -21,8 +21,8 @@ export function AboutMission() {
           {[
             { label: "Founded", value: "2025" },
             { label: "Based in", value: "Hull, England" },
-            { label: "Clients served", value: "500+" },
-            { label: "Industries", value: "300+" },
+            { label: "Clients served", value: "15" },
+            { label: "Industries", value: "12" },
           ].map(({ label, value }) => (
             <div key={label} className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 sm:p-8 hover:bg-white/[0.06] transition">
               <p className="text-white text-xs font-mono uppercase tracking-widest mb-3">{label}</p>

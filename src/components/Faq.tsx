@@ -1,6 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { getAllFaqsQuery } from "@/sanity/lib/queries";
 import { FaqItem } from "@/components/faq/FaqItem";
+import { JsonLd } from "@/components/JsonLd";
 
 export async function Faq() {
   const { data: faqs } = await sanityFetch({ query: getAllFaqsQuery });
@@ -12,8 +13,22 @@ export async function Faq() {
 
   if (!validFaqs.length) return null;
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: validFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section className="px-5 sm:px-8 py-16 sm:py-32">
+      <JsonLd data={faqSchema} />
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-32 items-start">
           <div className="lg:sticky lg:top-32">

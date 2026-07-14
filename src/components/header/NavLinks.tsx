@@ -18,32 +18,26 @@ export function NavLinks({ activeMenu, onMenuEnter }: NavLinksProps) {
     <nav className="flex items-center gap-1">
       <button
         type="button"
-        className={navItemClass("products", activeMenu)}
-        onMouseEnter={() => onMenuEnter("products")}
-      >
-        Products
-      </button>
-      <Link
-        href="/#services"
         className={navItemClass("services", activeMenu)}
-        onMouseEnter={() => onMenuEnter(null)}
+        onMouseEnter={() => onMenuEnter("services")}
       >
         Services
-      </Link>
+      </button>
+
       <Link
         href="/work"
         className={navItemClass("work", activeMenu)}
         onMouseEnter={() => onMenuEnter(null)}
       >
-        Case Studies
+        Our Work
       </Link>
-      <button
-        type="button"
-        className={navItemClass("resources", activeMenu)}
-        onMouseEnter={() => onMenuEnter("resources")}
+      <Link
+        href="/blog"
+        className={navItemClass("insight", activeMenu)}
+        onMouseEnter={() => onMenuEnter(null)}
       >
-        Resources
-      </button>
+        Insight
+      </Link>
       <Link
         href="/about"
         className={navItemClass("about", activeMenu)}

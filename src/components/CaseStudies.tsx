@@ -52,11 +52,11 @@ export function CaseStudies({ studies = [] }: { studies?: SanityCaseStudy[] }) {
         <div className="absolute top-1/3 left-1/4 w-[60vw] h-[60vw] bg-linear-to-br from-emerald-500/5 to-transparent blur-[180px] rounded-full mix-blend-screen opacity-50" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 font-outfit mb-12 md:mb-16">
           <div className="flex flex-col gap-3 max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.1]">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.1]">
               Engineering digital case studies{" "}
               <br className="hidden md:block" />
               that define performance

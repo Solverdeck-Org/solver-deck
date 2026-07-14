@@ -11,7 +11,7 @@ const NAV_COLS = [
     ],
   },
   {
-    title: "Resources",
+    title: "Insight",
     links: [
       { label: "Services", href: "/#services" },
       { label: "Blog", href: "/blog" },

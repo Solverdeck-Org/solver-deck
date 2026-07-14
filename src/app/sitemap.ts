@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { sanityFetch } from "@/sanity/lib/live";
+import { getAllBlogPostsQuery } from "@/sanity/lib/queries";
 
 const BASE = "https://solverdeck.com";
 
@@ -12,13 +14,27 @@ const STATIC_ROUTES: { url: string; priority: number; changeFrequency: MetadataR
   { url: `${BASE}/faq`,      priority: 0.6, changeFrequency: "monthly" },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
-  return STATIC_ROUTES.map(({ url, priority, changeFrequency }) => ({
+  const routes = STATIC_ROUTES.map(({ url, priority, changeFrequency }) => ({
     url,
     lastModified,
     changeFrequency,
     priority,
   }));
+
+  try {
+    const { data: posts } = await sanityFetch({ query: getAllBlogPostsQuery });
+    const postRoutes = (posts || []).map((post: any) => ({
+      url: `${BASE}/blog/${post.slug}`,
+      lastModified: post._updatedAt ? new Date(post._updatedAt) : lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
+    return [...routes, ...postRoutes];
+  } catch (error) {
+    console.error("Error fetching blog posts for sitemap:", error);
+    return routes;
+  }
 }

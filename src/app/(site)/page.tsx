@@ -5,9 +5,9 @@ import { Cta } from "@/components/Cta";
 import { Process } from "@/components/Process";
 import { Solutions } from "@/components/Solution";
 import { Testimonials } from "@/components/Testimonials";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { JsonLd } from "@/components/JsonLd";
 import { processSchema } from "@/lib/process-schema";
+import { organizationSchema, localBusinessSchema } from "@/lib/seo-schema";
 import { sanityFetch } from "@/sanity/lib/live";
 import {
   getHomepageCaseStudiesQuery,
@@ -37,8 +37,9 @@ export default async function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-black">
       <JsonLd data={processSchema} />
+      <JsonLd data={organizationSchema} />
+      <JsonLd data={localBusinessSchema} />
       <Hero />
-      <WhyChooseUs />
       <CaseStudies studies={homepageCaseStudies} />
       <Solutions />
       <Testimonials testimonials={homepageTestimonials} />

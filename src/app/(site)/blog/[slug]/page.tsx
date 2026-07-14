@@ -8,6 +8,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { getBlogPostQuery, getAllBlogPostsQuery } from "@/sanity/lib/queries";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { TableOfContents } from "@/components/blog/TableOfContents";
+import { JsonLd } from "@/components/JsonLd";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -57,8 +58,24 @@ export default async function BlogPostPage({ params }: Props) {
     ? new Date(post._createdAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
     : null;
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: post.imageUrl ? [post.imageUrl] : [],
+    datePublished: post._createdAt,
+    dateModified: post._updatedAt || post._createdAt,
+    author: [{
+      "@type": "Organization",
+      name: "Solverdeck",
+      url: "https://solverdeck.com"
+    }]
+  };
+
   return (
     <main className="min-h-screen bg-black text-white selection:bg-primary selection:text-white">
+      <JsonLd data={articleSchema} />
       {/* Hero */}
       <div className="relative w-full h-[55vh] min-h-[400px] overflow-hidden">
         {post.imageUrl ? (

@@ -121,7 +121,7 @@ export function TestimonialsGrid({ testimonials }: Props) {
         <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
           <div>
             <h2 className="font-outfit text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-medium leading-[1.1] tracking-tight text-white">
-              Trusted by 500+ businesses
+              Trusted by our clients
             </h2>
             <h2 className="font-outfit text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-medium leading-[1.1] tracking-tight text-white mt-2">
               Loved by ambitious teams worldwide

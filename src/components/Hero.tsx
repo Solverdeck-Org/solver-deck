@@ -77,7 +77,7 @@ export function Hero() {
             data-hero-reveal
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white opacity-0"
           >
-            Website Design & AI Automation <br /> for UK Businesses and Trades
+            Modern Websites & AI Automation <br /> Built for Growing Businesses & Trades.
           </h1>
           {/* <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white max-w-5xl font-outfit font-medium leading-normal">
             We build websites and AI tools, so you spend less time on admin and more on growth.
@@ -109,8 +109,8 @@ export function Hero() {
         </p>
         <div className="flex items-center justify-center gap-8 sm:gap-12">
           <Image
-            src="/shopify-partners.svg"
-            alt="Shopify Partners"
+            src="/shopify.svg"
+            alt="Shopify"
             width={180}
             height={60}
             className="h-8 sm:h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"

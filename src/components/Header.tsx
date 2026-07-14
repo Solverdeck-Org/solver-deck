@@ -82,11 +82,13 @@ export function Header({ navCaseStudies = [] }: HeaderProps) {
         {/* Desktop buttons — hidden on mobile */}
         <div className="hidden lg:flex flex-1 items-center justify-end gap-4">
           <Link
-            href="/contact"
+            href="https://cal.com/solverdeck"
+            target="_blank"
+            rel="noopener noreferrer"
             className="uppercase border border-white text-white hover:bg-white hover:text-black rounded-full h-11 px-6 text-xs tracking-widest transition-colors inline-flex items-center justify-center font-medium"
             onMouseEnter={() => setActiveMenu(null)}
           >
-            Contact
+            Book an Audit
           </Link>
           <Link
             href="tel:+442038363442"

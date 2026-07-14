@@ -13,10 +13,10 @@ export interface MenuData {
 }
 
 export const menus: Record<string, MenuData> = {
-  products: {
+  services: {
     columns: [
       {
-        title: "SOLVERDECK PRODUCTS",
+        title: "SOLVERDECK SERVICES",
         items: [
           { name: "Kontinue AI", href: "https://kontinueai.com/" },
           { name: "Present", href: "https://present.c-technology-inc.com/" },
@@ -35,19 +35,5 @@ export const menus: Record<string, MenuData> = {
       },
     ],
   },
-  resources: {
-    columns: [
-      {
-        title: "LEARN",
-        items: [{ name: "Blog", href: "/blog" }],
-      },
-      {
-        title: "SOCIAL PROOF",
-        items: [
-          { name: "Testimonials", href: "/testimonials" },
-          { name: "FAQ", href: "/faq" },
-        ],
-      },
-    ],
-  },
+
 };
