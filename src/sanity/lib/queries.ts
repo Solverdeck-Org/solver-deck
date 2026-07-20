@@ -33,6 +33,7 @@ export const getAllCaseStudiesQuery = defineQuery(`
     image,
     link,
     order,
+    body,
     "categories": categories[]->title
   }
 `);
@@ -47,6 +48,7 @@ export const getHomepageCaseStudiesQuery = defineQuery(`
     image,
     link,
     order,
+    body,
     "categories": categories[]->title
   }
 `);

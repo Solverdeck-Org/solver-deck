@@ -40,6 +40,13 @@ export const caseStudy = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "body",
+      title: "Body Content",
+      type: "array",
+      of: [{ type: "block" }],
+      description: "Detailed case study content (how we helped, issues faced, solution).",
+    }),
+    defineField({
       name: "link",
       title: "Link",
       type: "url",

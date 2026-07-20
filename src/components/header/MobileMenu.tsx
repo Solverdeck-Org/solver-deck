@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import { useState } from "react";
 import { type MenuData, menus } from "./menus";
+import { usePathname } from "next/navigation";
 
 interface MobileMenuProps {
   open: boolean;
@@ -18,7 +19,7 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Services", menuKey: "services" },
+  { label: "Services", href: "/#services" },
   { label: "Our Work", href: "/work" },
   { label: "Insight", menuKey: "insight" },
   { label: "About", href: "/about" },
@@ -32,6 +33,7 @@ export function MobileMenu({
   caseStudiesMenu,
 }: MobileMenuProps) {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const pathname = usePathname();
 
   const getMenuData = (key: string): MenuData | null => {
     if (key === "caseStudies") return caseStudiesMenu;
@@ -107,7 +109,10 @@ export function MobileMenu({
           </div>
         ) : (
           <ul className="flex flex-col gap-2">
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map((item) => {
+              const isCurrentPage = item.href ? (pathname === item.href || (item.href !== "/" && !item.href.startsWith("/#") && pathname.startsWith(item.href))) : false;
+              
+              return (
               <li key={item.label}>
                 {item.menuKey ? (
                   <button
@@ -138,13 +143,14 @@ export function MobileMenu({
                       setActiveSubmenu(null);
                       onClose();
                     }}
-                    className="block py-3 text-2xl font-outfit font-medium text-white"
+                    className={`block py-3 text-2xl font-outfit font-medium transition-colors ${isCurrentPage ? "text-primary" : "text-white"}`}
                   >
                     {item.label}
                   </Link>
                 )}
               </li>
-            ))}
+              );
+            })}
           </ul>
         )}
       </nav>

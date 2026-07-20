@@ -48,7 +48,7 @@ export function Hero() {
         </video>
       </div>
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent z-10" />
-      <div className="relative z-20 px-5 sm:px-8 flex flex-col items-start justify-center flex-1 pt-24 pb-32">
+      <div className="relative z-20 px-5 sm:px-8 md:px-16 lg:px-20 flex flex-col items-start justify-center flex-1 pt-24 pb-32">
         <div ref={textRef} className="flex flex-col max-w-8xl gap-8 md:gap-16">
           {showAuditBanner ? (
             <div

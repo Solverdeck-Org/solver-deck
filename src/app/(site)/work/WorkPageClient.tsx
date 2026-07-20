@@ -29,14 +29,14 @@ export function WorkPageClient({ allCaseStudies }: { allCaseStudies: SanityCaseS
     <div className="w-full relative z-10 flex flex-col gap-12 md:gap-16">
       <div className="flex flex-col gap-6 max-w-4xl font-outfit">
         <h1 className="text-4xl md:text-7xl font-medium tracking-tight leading-[1.05] text-white">
-          Strategic partnerships, <br className="hidden md:block" /> engineered to perform.
+          Our work speaks for itself. <br className="hidden md:block" /> See what we've built.
         </h1>
         <p className="text-lg md:text-xl text-white leading-relaxed font-light max-w-2xl">
-          An archive of enterprise-grade software systems, robust integrations, and premium digital products built for industry leaders.
+          A collection of websites, apps, and tools we've built for businesses across the UK and beyond.
         </p>
       </div>
       <div className="flex flex-col gap-4 border-y border-white/5 py-6">
-        <span className="font-mono text-[9px] uppercase tracking-widest text-white font-semibold px-2">Filter by engineering domain:</span>
+        <span className="font-mono text-[9px] uppercase tracking-widest text-white font-semibold px-2">Filter by type:</span>
         <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 md:mx-0 md:px-0">
           {categories.map((cat) => (
             <button key={cat} type="button" onClick={() => setSelectedCategory(cat)} className={`font-mono text-[10px] tracking-widest uppercase px-4 py-2.5 rounded-full border transition-all duration-300 shrink-0 cursor-pointer ${selectedCategory === cat ? "bg-primary text-white border-primary font-bold shadow-[0_0_20px_rgba(16,185,129,0.25)]" : "bg-white/3 border-white/10 text-white hover:border-white/20"}`}>
