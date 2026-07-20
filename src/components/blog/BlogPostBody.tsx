@@ -16,25 +16,25 @@ type BlockProps = {
   value?: { children?: { text?: string }[] };
 };
 
-const components = {
+export const portableTextComponents: PortableTextComponents = {
   block: {
     normal: ({ children }: { children?: React.ReactNode }) => (
       <p className="text-white/80 leading-relaxed text-base font-outfit mb-5">{children}</p>
     ),
-    h2: ({ children, value }: BlockProps) => {
-      const text = value?.children?.map((c) => c.text).join("") || "";
+    h2: ({ children, value }: any) => {
+      const text = (value?.children as Array<{ text?: string }> | undefined)?.map((c) => c.text).join("") || "";
       return (
         <h2 id={slugify(text)} className="text-white text-2xl md:text-3xl font-semibold font-outfit tracking-tight mt-12 mb-5">{children}</h2>
       );
     },
-    h3: ({ children, value }: BlockProps) => {
-      const text = value?.children?.map((c) => c.text).join("") || "";
+    h3: ({ children, value }: any) => {
+      const text = (value?.children as Array<{ text?: string }> | undefined)?.map((c) => c.text).join("") || "";
       return (
         <h3 id={slugify(text)} className="text-white text-xl font-semibold font-outfit tracking-tight mt-10 mb-4">{children}</h3>
       );
     },
-    h4: ({ children, value }: BlockProps) => {
-      const text = value?.children?.map((c) => c.text).join("") || "";
+    h4: ({ children, value }: any) => {
+      const text = (value?.children as Array<{ text?: string }> | undefined)?.map((c) => c.text).join("") || "";
       return (
         <h4 id={slugify(text)} className="text-white text-lg font-semibold font-outfit tracking-tight mt-8 mb-3">{children}</h4>
       );
@@ -87,7 +87,7 @@ const components = {
     ),
   },
   types: {
-    image: ({ value }: { value: SanityImageSource & { alt?: string; caption?: string } }) => {
+    image: ({ value }: any) => {
       if (!value) return null;
       const url = urlFor(value).width(1200).url();
       return (
@@ -107,7 +107,7 @@ const components = {
 export function BlogPostBody({ content }: { content: Content }) {
   return (
     <div className="w-full">
-      <PortableText value={content} components={components} />
+      <PortableText value={content} components={portableTextComponents} />
     </div>
   );
 }

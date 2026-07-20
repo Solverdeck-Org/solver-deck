@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import type { SanityCaseStudy } from "@/components/CaseStudies";
+import { portableTextComponents } from "@/components/blog/BlogPostBody";
 
 interface CaseStudyCardProps {
   study: SanityCaseStudy;
@@ -26,8 +27,20 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
     } else {
       document.body.style.overflow = "";
     }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isModalOpen]);
 
@@ -35,16 +48,17 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
     setIsModalOpen(true);
   };
 
-  const closeModal = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const closeModal = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     setIsModalOpen(false);
   };
 
   return (
     <>
-      <div 
+      <button 
+        type="button"
         onClick={handleCardClick}
-        className="group relative bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden flex flex-col p-5 shadow-2xl transition-all duration-300 hover:border-white/20 hover:bg-[#0f0f0f] aspect-[16/12] justify-between cursor-pointer"
+        className="group relative bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden flex flex-col p-5 shadow-2xl transition-all duration-300 hover:border-white/20 hover:bg-[#0f0f0f] aspect-[16/12] justify-between cursor-pointer text-left w-full"
       >
         <div className="relative aspect-video w-full rounded-lg overflow-hidden bg-black border border-white/5 flex items-center justify-center shrink-0">
           {study.imageUrl ? (
@@ -61,13 +75,15 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             <p className="text-xs text-white/70 leading-relaxed font-light font-outfit line-clamp-2">{study.description}</p>
           </div>
         </div>
-      </div>
+      </button>
 
       {mounted && isModalOpen && typeof document !== "undefined" && createPortal(
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12">
           {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+          <button 
+            type="button"
+            aria-label="Close modal"
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity cursor-default w-full h-full border-0 p-0"
             onClick={closeModal}
           />
           
@@ -93,11 +109,11 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
                 </div>
               )}
               
-              <div className="prose prose-invert prose-lg max-w-none font-light leading-relaxed text-white/80">
+              <div className="w-full">
                 {study.body ? (
-                  <PortableText value={study.body} />
+                  <PortableText value={study.body as any} components={portableTextComponents as any} />
                 ) : (
-                  <p>{study.description}</p>
+                  <p className="text-white/80 leading-relaxed text-base font-outfit mb-5">{study.description}</p>
                 )}
               </div>
             </div>
