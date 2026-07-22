@@ -103,24 +103,31 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-30 flex flex-col items-center gap-4 sm:gap-6">
+      <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 z-30 flex flex-col items-center gap-3 sm:gap-4">
         <p className="text-white/50 text-xs sm:text-sm font-outfit uppercase tracking-widest text-center">
           Partnered With
         </p>
-        <div className="flex items-center justify-center gap-8 sm:gap-12">
+        <div className="flex items-center justify-center gap-8 sm:gap-12 md:gap-16 flex-wrap px-4">
           <Image
-            src="/shopify.svg"
-            alt="Shopify"
-            width={180}
+            src="/shopify-partners.png"
+            alt="Shopify Partners"
+            width={200}
             height={60}
-            className="h-8 sm:h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+            className="h-7 sm:h-8 md:h-9 lg:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
           />
           <Image
-            src="/google-cloud.svg"
+            src="/google-cloud.png"
             alt="Google Cloud"
-            width={180}
-            height={60}
-            className="h-8 sm:h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+            width={120}
+            height={120}
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+          />
+          <Image
+            src="/circleBadge-silver.png"
+            alt="Circle Silver Partner"
+            width={200}
+            height={80}
+            className="h-8 sm:h-10 md:h-11 lg:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
           />
         </div>
       </div>

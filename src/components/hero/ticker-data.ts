@@ -1,6 +1,6 @@
 const TOOLS = [
   "/vercel_wordmark.svg", "/cloudflare.svg", "/github_wordmark_light.svg", "/git.svg",
-  "/stripe_wordmark.svg", "/shopify.svg", "/google-cloud.svg", "/google-analytics.svg",
+  "/stripe_wordmark.svg", "/shopify-partners.png", "/google-cloud.png", "/circleBadge-silver.png", "/google-analytics.svg",
   "/Codex_wordmark_light.svg", "/claude-ai-wordmark-icon_light.svg", "/antigravity-wordmark.svg",
   "/Rust_light.svg", "/tauri.svg", "/react_wordmark_light.svg", "/nextjs_logo_light.svg",
   "/TailwindCSS_wordmark_light.svg", "/ui_light.svg", "/Motion_light.svg",
