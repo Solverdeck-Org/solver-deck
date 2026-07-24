@@ -1,7 +1,7 @@
 "use client";
 
 import gsap from "gsap";
-import { X } from "lucide-react";
+import { Star, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
@@ -50,29 +50,43 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent z-10" />
       <div className="relative z-20 px-5 sm:px-8 md:px-16 lg:px-20 flex flex-col items-start justify-center flex-1 pt-24 pb-32">
         <div ref={textRef} className="flex flex-col max-w-8xl gap-8 md:gap-16">
-          {showAuditBanner ? (
-            <div
-              data-hero-reveal
-              className="flex w-full max-w-xl items-center justify-between gap-3 rounded-full border border-white/15 bg-black/45 px-3 py-2 text-white opacity-0 shadow-2xl shadow-black/30 backdrop-blur-md sm:px-4"
-            >
-              <Link
-                href="https://cal.com/solverdeck"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-10 flex-1 items-center rounded-full px-3 font-outfit text-sm font-medium transition-colors hover:bg-white/10 sm:text-base"
-              >
-                Free Website audit
-              </Link>
-              <button
-                type="button"
-                aria-label="Dismiss free website audit banner"
-                onClick={() => setShowAuditBanner(false)}
-                className="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white"
-              >
-                <X aria-hidden="true" className="size-4" />
-              </button>
+          <div data-hero-reveal className="flex flex-wrap items-center gap-3 opacity-0">
+            {showAuditBanner ? (
+              <div className="flex items-center justify-between gap-3 rounded-full border border-white/15 bg-black/45 px-3 py-2 text-white shadow-2xl shadow-black/30 backdrop-blur-md sm:px-4">
+                <Link
+                  href="https://cal.com/solverdeck"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-10 items-center rounded-full px-3 font-outfit text-sm font-medium transition-colors hover:bg-white/10 sm:text-base"
+                >
+                  Free Website audit
+                </Link>
+                <button
+                  type="button"
+                  aria-label="Dismiss free website audit banner"
+                  onClick={() => setShowAuditBanner(false)}
+                  className="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                >
+                  <X aria-hidden="true" className="size-4" />
+                </button>
+              </div>
+            ) : null}
+
+            <div className="flex items-center gap-2.5 rounded-full border border-white/15 bg-black/45 px-4 py-2.5 text-white shadow-2xl shadow-black/30 backdrop-blur-md">
+              <Image
+                src="/google.svg"
+                alt="Google Logo"
+                width={20}
+                height={20}
+                className="w-5 h-5 object-contain"
+              />
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
             </div>
-          ) : null}
+          </div>
           <h1
             data-hero-reveal
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white opacity-0"

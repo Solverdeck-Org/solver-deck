@@ -57,14 +57,8 @@ export function CaseStudies({ studies = [] }: { studies?: SanityCaseStudy[] }) {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 font-outfit mb-12 md:mb-16">
           <div className="flex flex-col gap-3 max-w-2xl">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.1]">
-              Real results from real clients{" "}
-              <br className="hidden md:block" />
-              we've helped grow
+              Businesses we’ve helped to grow online, get more customers and saved time
             </h2>
-            <p className="text-white/60 text-base sm:text-lg">
-              See how we've helped businesses like yours get more customers,
-              save time, and grow online.
-            </p>
           </div>
           <Link
             href="/work"
