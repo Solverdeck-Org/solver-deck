@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { AboutHeader } from "@/features/about/AboutHeader";
 import { AboutHero } from "@/features/about/AboutHero";
-import { AboutFeatures } from "@/features/about/AboutFeatures";
 import { AboutMission } from "@/features/about/AboutMission";
-import { AboutAI } from "@/features/about/AboutAI";
+import { AboutValues } from "@/features/about/AboutValues";
+import { AboutServices } from "@/features/about/AboutServices";
 import { Cta } from "@/components/Cta";
+import { Testimonials } from "@/components/Testimonials";
+import { sanityFetch } from "@/sanity/lib/live";
+import { getHomepageTestimoniesQuery } from "@/sanity/lib/queries";
 
 export const metadata: Metadata = {
   title: "About Us — UK Digital Agency | Solverdeck",
@@ -17,13 +21,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { data: testimonials } = await sanityFetch({ query: getHomepageTestimoniesQuery });
+
   return (
     <main className="min-h-screen bg-black">
+      <AboutHeader />
       <AboutHero />
-      <AboutFeatures />
       <AboutMission />
-      <AboutAI />
+      <AboutValues />
+      <Testimonials testimonials={testimonials} />
+      <AboutServices />
       <Cta />
     </main>
   );

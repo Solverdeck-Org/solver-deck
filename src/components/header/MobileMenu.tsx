@@ -19,10 +19,10 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Services", href: "/#services" },
   { label: "Our Work", href: "/work" },
-  { label: "Insight", href: "/blog" },
+  { label: "Services", href: "/#services" },
   { label: "About", href: "/about" },
+  { label: "Insights", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];

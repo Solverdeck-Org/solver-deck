@@ -25,14 +25,6 @@ export function NavLinks({ activeMenu, onMenuEnter }: NavLinksProps) {
   return (
     <nav className="flex items-center gap-1">
       <Link
-        href="/#services"
-        className={navItemClass("services", activeMenu, pathname, "/#services")}
-        onMouseEnter={() => onMenuEnter(null)}
-      >
-        Services
-      </Link>
-
-      <Link
         href="/work"
         className={navItemClass("work", activeMenu, pathname, "/work")}
         onMouseEnter={() => onMenuEnter(null)}
@@ -40,11 +32,11 @@ export function NavLinks({ activeMenu, onMenuEnter }: NavLinksProps) {
         Our Work
       </Link>
       <Link
-        href="/blog"
-        className={navItemClass("insight", activeMenu, pathname, "/blog")}
+        href="/#services"
+        className={navItemClass("services", activeMenu, pathname, "/#services")}
         onMouseEnter={() => onMenuEnter(null)}
       >
-        Insight
+        Services
       </Link>
       <Link
         href="/about"
@@ -52,6 +44,13 @@ export function NavLinks({ activeMenu, onMenuEnter }: NavLinksProps) {
         onMouseEnter={() => onMenuEnter(null)}
       >
         About
+      </Link>
+      <Link
+        href="/blog"
+        className={navItemClass("insights", activeMenu, pathname, "/blog")}
+        onMouseEnter={() => onMenuEnter(null)}
+      >
+        Insights
       </Link>
       <Link
         href="/pricing"

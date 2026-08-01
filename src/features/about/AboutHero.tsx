@@ -21,11 +21,9 @@ export function AboutHero() {
       />
       {/* Gradient overlay: black top (under nav) fading to transparent, then black at bottom */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/20 to-black pointer-events-none" />
-      <div className="relative px-5 sm:px-8 pt-32 sm:pt-40 pb-20 sm:pb-32 max-w-7xl mx-auto">
+      <div className="relative px-5 sm:px-8 pt-16 sm:pt-24 pb-20 sm:pb-32 max-w-7xl mx-auto">
         <div className="max-w-3xl">
-          <p className="text-white font-mono text-xs uppercase tracking-widest mb-6">
-            About Solverdeck
-          </p>
+
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-6 sm:mb-8">
             What makes us stand out in the industry
           </h1>
