@@ -5,13 +5,16 @@ import { getAllBlogPostsQuery } from "@/sanity/lib/queries";
 const BASE = "https://solverdeck.com";
 
 const STATIC_ROUTES: { url: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
-  { url: BASE,               priority: 1.0, changeFrequency: "weekly" },
-  { url: `${BASE}/about`,    priority: 0.8, changeFrequency: "monthly" },
-  { url: `${BASE}/work`,     priority: 0.9, changeFrequency: "weekly" },
-  { url: `${BASE}/blog`,     priority: 0.9, changeFrequency: "daily" },
-  { url: `${BASE}/pricing`,  priority: 0.8, changeFrequency: "monthly" },
-  { url: `${BASE}/contact`,  priority: 0.7, changeFrequency: "monthly" },
-  { url: `${BASE}/faq`,      priority: 0.6, changeFrequency: "monthly" },
+  { url: BASE,                     priority: 1.0, changeFrequency: "weekly" },
+  { url: `${BASE}/about`,          priority: 0.8, changeFrequency: "monthly" },
+  { url: `${BASE}/work`,           priority: 0.9, changeFrequency: "weekly" },
+  { url: `${BASE}/blog`,           priority: 0.9, changeFrequency: "daily" },
+  { url: `${BASE}/pricing`,        priority: 0.8, changeFrequency: "monthly" },
+  { url: `${BASE}/contact`,        priority: 0.7, changeFrequency: "monthly" },
+  { url: `${BASE}/faq`,            priority: 0.6, changeFrequency: "monthly" },
+  { url: `${BASE}/testimonials`,   priority: 0.7, changeFrequency: "monthly" },
+  { url: `${BASE}/privacy`,        priority: 0.3, changeFrequency: "yearly" },
+  { url: `${BASE}/terms`,          priority: 0.3, changeFrequency: "yearly" },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

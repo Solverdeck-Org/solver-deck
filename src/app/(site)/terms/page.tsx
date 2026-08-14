@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: "Terms of Service | Solverdeck",
   description: "Read Solverdeck's terms of service governing use of our website and services.",
   alternates: { canonical: "https://solverdeck.com/terms" },
-  robots: { index: false, follow: false },
 };
 
 export default async function TermsPage() {

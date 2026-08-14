@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Solverdeck",
   description: "Read Solverdeck's privacy policy to understand how we collect, use, and protect your personal data in accordance with UK GDPR.",
   alternates: { canonical: "https://solverdeck.com/privacy" },
-  robots: { index: false, follow: false },
 };
 
 export default async function PrivacyPage() {

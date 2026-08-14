@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} — Solverdeck`,
     description: post.description ?? undefined,
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: { canonical: `https://solverdeck.com/blog/${slug}` },
   };
 }
 
