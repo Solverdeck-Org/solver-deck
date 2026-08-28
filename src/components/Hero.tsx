@@ -50,7 +50,10 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent z-10" />
       <div className="relative z-20 px-5 sm:px-8 md:px-16 lg:px-20 flex flex-col items-start justify-center flex-1 pt-24 pb-32">
         <div ref={textRef} className="flex flex-col max-w-8xl gap-8 md:gap-16">
-          <div data-hero-reveal className="flex flex-wrap items-center gap-3 opacity-0">
+          <div
+            data-hero-reveal
+            className="flex flex-wrap items-center gap-3 opacity-0"
+          >
             {showAuditBanner ? (
               <div className="flex items-center justify-between gap-3 rounded-full border border-white/15 bg-black/45 px-3 py-2 text-white shadow-2xl shadow-black/30 backdrop-blur-md sm:px-4">
                 <Link
@@ -82,7 +85,10 @@ export function Hero() {
               />
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  <Star
+                    key={star}
+                    className="w-4 h-4 fill-amber-400 text-amber-400"
+                  />
                 ))}
               </div>
             </div>
@@ -91,7 +97,8 @@ export function Hero() {
             data-hero-reveal
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-outfit font-medium leading-[0.95] tracking-tight mb-3 text-white opacity-0"
           >
-            Modern Websites & AI Automation <br /> Built for Growing Businesses & Trades.
+            Modern Websites & AI Automation <br /> Built for Growing Businesses
+            & Trades.
           </h1>
           {/* <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white max-w-5xl font-outfit font-medium leading-normal">
             We build websites and AI tools, so you spend less time on admin and more on growth.
@@ -129,13 +136,13 @@ export function Hero() {
             height={60}
             className="h-7 sm:h-8 md:h-9 lg:h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
           />
-          <Image
+          {/* <Image
             src="/google-cloud.png"
             alt="Google Cloud"
             width={120}
             height={120}
             className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
-          />
+          /> */}
           <Image
             src="/circleBadge-silver.png"
             alt="Circle Silver Partner"
