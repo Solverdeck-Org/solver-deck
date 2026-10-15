@@ -60,7 +60,7 @@ export function Cta() {
         </div>
         <div className="flex flex-col sm:flex-row items-stretch justify-center gap-3 sm:gap-4 mt-10 sm:mt-16">
           <Link
-            href="https://cal.com/solverdeck"
+            href="https://calendar.app.google/dU2JiKrE88bprwzu8"
             target="_blank"
             rel="noopener noreferrer"
             className="sm:flex-1 text-center px-8 sm:px-10 py-4 sm:py-6 rounded-full bg-primary text-white font-semibold text-lg sm:text-2xl hover:bg-white hover:text-primary transition-all duration-300"

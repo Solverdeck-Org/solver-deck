@@ -57,7 +57,7 @@ export function Hero() {
             {showAuditBanner ? (
               <div className="flex items-center justify-between gap-3 rounded-full border border-white/15 bg-black/45 px-3 py-2 text-white shadow-2xl shadow-black/30 backdrop-blur-md sm:px-4">
                 <Link
-                  href="https://cal.com/solverdeck"
+                  href="https://calendar.app.google/dU2JiKrE88bprwzu8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-10 items-center rounded-full px-3 font-outfit text-sm font-medium transition-colors hover:bg-white/10 sm:text-base"
@@ -114,7 +114,7 @@ export function Hero() {
               Our Services
             </Link>
             <Link
-              href="https://cal.com/solverdeck"
+              href="https://calendar.app.google/dU2JiKrE88bprwzu8"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border border-white/30 text-white hover:bg-white hover:text-black text-lg sm:text-2xl md:text-3xl rounded-full px-8 md:px-12 py-3 md:py-4 h-14 sm:h-16 md:h-20 font-outfit font-medium transition-colors inline-flex items-center justify-center"

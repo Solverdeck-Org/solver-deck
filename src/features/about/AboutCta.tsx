@@ -14,7 +14,7 @@ export function AboutCta() {
         </div>
         <div className="flex flex-col sm:flex-row gap-4 shrink-0">
           <Link
-            href="https://cal.com/solverdeck"
+            href="https://calendar.app.google/dU2JiKrE88bprwzu8"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 rounded-xl bg-white text-black font-semibold text-sm hover:bg-white/90 transition text-center"

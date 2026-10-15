@@ -29,7 +29,7 @@ export function WhyChooseUs() {
         </p>
 
         <Link
-          href="https://cal.com/solverdeck"
+          href="https://calendar.app.google/dU2JiKrE88bprwzu8"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-outfit font-medium text-base sm:text-lg hover:bg-black hover:text-white transition-all duration-300"
