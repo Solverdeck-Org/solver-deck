@@ -1,3 +1,5 @@
+import { COMPANY_ADDRESS } from "./company";
+
 const BASE_URL = "https://solverdeck.com";
 
 export const organizationSchema = {
@@ -23,9 +25,10 @@ export const localBusinessSchema = {
   telephone: "", // User will add later
   address: {
     "@type": "PostalAddress",
-    streetAddress: "", // User will add later
-    addressLocality: "Hull",
+    streetAddress: `${COMPANY_ADDRESS.building}, ${COMPANY_ADDRESS.street}`,
+    addressLocality: COMPANY_ADDRESS.city,
     addressRegion: "England",
+    postalCode: COMPANY_ADDRESS.postcode,
     addressCountry: "UK"
   },
   geo: {

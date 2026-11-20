@@ -1,3 +1,5 @@
+import { ADDRESS_ONE_LINE } from "@/lib/company";
+
 export function AboutMission() {
   return (
     <section className="px-5 sm:px-8 py-16 sm:py-32 bg-black border-t border-white/10">
@@ -20,7 +22,7 @@ export function AboutMission() {
         <div className="grid grid-cols-2 gap-4">
           {[
             { label: "Founded", value: "2025" },
-            { label: "Based in", value: "Hull, England" },
+            { label: "Based in", value: ADDRESS_ONE_LINE },
             { label: "Clients served", value: "15" },
             { label: "Industries", value: "12" },
           ].map(({ label, value }) => (

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
+import { ADDRESS_ONE_LINE } from "@/lib/company";
 
 const BULLETS = [
   "Tell us about your website or product needs",
@@ -11,7 +12,7 @@ const BULLETS = [
 const CONTACT_ITEMS = [
   { Icon: Mail, value: "hello@solverdeck.com", href: "mailto:hello@solverdeck.com" },
   { Icon: Phone, value: "(+44) 020 3836 3442", href: "tel:+442038363442" },
-  { Icon: MapPin, value: "Hull, England", href: null as string | null },
+  { Icon: MapPin, value: ADDRESS_ONE_LINE, href: null as string | null },
 ];
 
 const SOCIALS = [
